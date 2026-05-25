@@ -6,4 +6,5 @@ namespace Capa.Datos
     {
         public static SqlConnection cn = new SqlConnection(
             "Server=.;Database=Alquiler_VehiculosMJ;Integrated Security=true");
+    }
 }
