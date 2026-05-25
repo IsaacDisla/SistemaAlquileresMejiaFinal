@@ -47,23 +47,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(177, 471);
+            this.dgvPagos.Location = new System.Drawing.Point(165, 76);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
             this.dgvPagos.RowTemplate.Height = 24;
-            this.dgvPagos.Size = new System.Drawing.Size(952, 244);
+            this.dgvPagos.Size = new System.Drawing.Size(677, 150);
             this.dgvPagos.TabIndex = 0;
             this.dgvPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellContentClick);
             // 
             // txtIdAlquiler
             // 
-            this.txtIdAlquiler.Location = new System.Drawing.Point(269, 135);
+            this.txtIdAlquiler.Location = new System.Drawing.Point(175, 235);
             this.txtIdAlquiler.Name = "txtIdAlquiler";
             this.txtIdAlquiler.Size = new System.Drawing.Size(100, 22);
             this.txtIdAlquiler.TabIndex = 1;
@@ -218,6 +219,15 @@
             this.label7.Size = new System.Drawing.Size(96, 16);
             this.label7.TabIndex = 30;
             this.label7.Text = "Monto Pagado";
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(29, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormPagos
             // 
@@ -231,6 +241,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(911, 557);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnNuevo);
@@ -273,5 +285,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

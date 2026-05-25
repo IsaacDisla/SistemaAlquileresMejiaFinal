@@ -1,10 +1,12 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Capa.Datos
 {
-    public class Conexion
+    internal class Conexion
     {
-        public static SqlConnection cn = new SqlConnection(
-            "Server=.;Database=Alquiler_VehiculosMJ;Integrated Security=true");
     }
 }
