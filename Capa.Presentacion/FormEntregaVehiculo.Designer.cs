@@ -111,6 +111,7 @@
             this.txtIdDetalle.Name = "txtIdDetalle";
             this.txtIdDetalle.Size = new System.Drawing.Size(100, 22);
             this.txtIdDetalle.TabIndex = 36;
+            this.txtIdDetalle.TextChanged += new System.EventHandler(this.txtIdDetalle_TextChanged);
             // 
             // btnActualizar
             // 
