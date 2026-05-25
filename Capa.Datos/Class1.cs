@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Capa.Negocios
+namespace Capa.Datos
 {
     public class Class1
     {

@@ -33,7 +33,6 @@ namespace Capa.Datos
                 cmd.Parameters.AddWithValue("@Fecha_Pago", pago.Fecha_Pago);
                 cmd.Parameters.AddWithValue("@Metodo_Pago", pago.Metodo_Pago);
                 cmd.Parameters.AddWithValue("@Monto_Pagado", pago.Monto_Pagado);
-                cmd.Parameters.AddWithValue("@Estado", pago.Estado);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();
@@ -52,7 +51,6 @@ namespace Capa.Datos
                 cmd.Parameters.AddWithValue("@Fecha_Pago", pago.Fecha_Pago);
                 cmd.Parameters.AddWithValue("@Metodo_Pago", pago.Metodo_Pago);
                 cmd.Parameters.AddWithValue("@Monto_Pagado", pago.Monto_Pagado);
-                cmd.Parameters.AddWithValue("@Estado", pago.Estado);
 
                 cn.Open();
                 cmd.ExecuteNonQuery();

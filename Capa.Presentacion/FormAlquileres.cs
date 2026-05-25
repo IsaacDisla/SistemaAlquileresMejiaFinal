@@ -16,7 +16,7 @@ namespace Capa.Presentacion
     {
         AlquileresBL alquilerBLL = new AlquileresBL();
         ClientesBL clientesBL = new ClientesBL();
-        DetalleAlquileresBLL detalleBLL = new DetalleAlquileresBLL();
+        DetalleAlquileresBL detalleBLL = new DetalleAlquileresBL();
 
 
         int idAlquiler = 0;

@@ -43,10 +43,10 @@
   <ItemGroup>
     <Compile Include="AlquileresBL.cs" />
     <Compile Include="CargosAdicionalesBL.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ClientesBL.cs" />
     <Compile Include="DetalleAlquileresBL.cs" />
     <Compile Include="EntregaVehiculoBL.cs" />
+    <Compile Include="FacturaAlquilerBL.cs" />
     <Compile Include="PagosBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesBL.cs" />

@@ -4,7 +4,7 @@ using Capa.Entidades;
 
 namespace Capa.Negocios
 {
-    public class DetalleAlquileresBLL
+    public class DetalleAlquileresBL
     {
         DetalleAlquileresDAL dal = new DetalleAlquileresDAL();
 
