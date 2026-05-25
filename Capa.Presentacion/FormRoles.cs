@@ -91,5 +91,15 @@ namespace Capa.Presentacion
             txtNombreRol.Clear();
             rolSeleccionado = new Roles();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal frm =
+                      new FrmMenuPrincipal();
+
+            frm.Show();
+
+            this.Hide();
+        }
     }
 }

@@ -147,5 +147,15 @@ namespace Capa.Presentacion
                     frm.IdAlquilerSeleccionado.ToString();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal frm =
+                                  new FrmMenuPrincipal();
+
+            frm.Show();
+
+            this.Hide();
+        }
     }
 }

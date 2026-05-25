@@ -108,6 +108,7 @@
             this.btnBuscarDetalle.TabIndex = 39;
             this.btnBuscarDetalle.Text = "Seleccionar Vehiculo";
             this.btnBuscarDetalle.UseVisualStyleBackColor = true;
+            this.btnBuscarDetalle.Click += new System.EventHandler(this.btnBuscarDetalle_Click);
             // 
             // txtKilometraje
             // 

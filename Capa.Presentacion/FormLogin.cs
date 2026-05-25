@@ -19,6 +19,8 @@ namespace Capa.Presentacion
         public FormLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -64,6 +66,35 @@ namespace Capa.Presentacion
         private void FormLogin_Load(object sender, EventArgs e)
         {
 
+
+            txtUsuario.Text = "Ingrese su usuario";
+            txtUsuario.ForeColor = Color.Gray;
+
+            txtClave.Text = "Ingrese su contraseña";
+            txtClave.ForeColor = Color.Gray;
+
+
+
+            txtUsuario.Font = new Font("Arial", 14);
+            txtClave.Font = new Font("Arial", 14);
+            // TITULO
+            label6.Parent = pictureBox1;
+            label6.BackColor = Color.Transparent;
+
+            // RENT A CAR
+            label7.Parent = pictureBox1;
+            label7.BackColor = Color.Transparent;
+
+            // SISTEMA DE GESTION
+            label8.Parent = pictureBox1;
+            label8.BackColor = Color.Transparent;
+
+            // TEXTO DE ABAJO
+            label5.Parent = pictureBox1;
+            label5.BackColor = Color.Transparent;
+        
+
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -92,6 +123,11 @@ namespace Capa.Presentacion
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }

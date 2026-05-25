@@ -21,5 +21,10 @@ namespace Capa.Presentacion
         {
 
         }
+
+        private void btnBuscarDetalle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
