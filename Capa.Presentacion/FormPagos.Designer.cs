@@ -40,30 +40,37 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(12, 15);
+            this.dgvPagos.Location = new System.Drawing.Point(177, 471);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
             this.dgvPagos.RowTemplate.Height = 24;
-            this.dgvPagos.Size = new System.Drawing.Size(240, 150);
+            this.dgvPagos.Size = new System.Drawing.Size(952, 244);
             this.dgvPagos.TabIndex = 0;
             this.dgvPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellContentClick);
             // 
             // txtIdAlquiler
             // 
-            this.txtIdAlquiler.Location = new System.Drawing.Point(22, 189);
+            this.txtIdAlquiler.Location = new System.Drawing.Point(269, 135);
             this.txtIdAlquiler.Name = "txtIdAlquiler";
             this.txtIdAlquiler.Size = new System.Drawing.Size(100, 22);
             this.txtIdAlquiler.TabIndex = 1;
             // 
             // btnBuscarAlquiler
             // 
-            this.btnBuscarAlquiler.Location = new System.Drawing.Point(139, 186);
+            this.btnBuscarAlquiler.Location = new System.Drawing.Point(386, 132);
             this.btnBuscarAlquiler.Name = "btnBuscarAlquiler";
             this.btnBuscarAlquiler.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarAlquiler.TabIndex = 2;
@@ -73,7 +80,7 @@
             // 
             // dtFechaPago
             // 
-            this.dtFechaPago.Location = new System.Drawing.Point(31, 226);
+            this.dtFechaPago.Location = new System.Drawing.Point(269, 192);
             this.dtFechaPago.Name = "dtFechaPago";
             this.dtFechaPago.Size = new System.Drawing.Size(200, 22);
             this.dtFechaPago.TabIndex = 3;
@@ -81,14 +88,14 @@
             // cbMetodoPago
             // 
             this.cbMetodoPago.FormattingEnabled = true;
-            this.cbMetodoPago.Location = new System.Drawing.Point(34, 264);
+            this.cbMetodoPago.Location = new System.Drawing.Point(292, 234);
             this.cbMetodoPago.Name = "cbMetodoPago";
             this.cbMetodoPago.Size = new System.Drawing.Size(121, 24);
             this.cbMetodoPago.TabIndex = 4;
             // 
             // txtMontoPagado
             // 
-            this.txtMontoPagado.Location = new System.Drawing.Point(36, 309);
+            this.txtMontoPagado.Location = new System.Drawing.Point(269, 279);
             this.txtMontoPagado.Name = "txtMontoPagado";
             this.txtMontoPagado.Size = new System.Drawing.Size(100, 22);
             this.txtMontoPagado.TabIndex = 5;
@@ -96,14 +103,14 @@
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(42, 345);
+            this.cbEstado.Location = new System.Drawing.Point(269, 307);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(121, 24);
             this.cbEstado.TabIndex = 6;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(200, 309);
+            this.btnGuardar.Location = new System.Drawing.Point(338, 391);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 7;
@@ -113,7 +120,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(202, 348);
+            this.btnActualizar.Location = new System.Drawing.Point(419, 391);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 8;
@@ -123,7 +130,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(202, 391);
+            this.btnNuevo.Location = new System.Drawing.Point(500, 391);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 9;
@@ -134,7 +141,7 @@
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Location = new System.Drawing.Point(672, 15);
+            this.lblRol.Location = new System.Drawing.Point(808, 81);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(44, 16);
             this.lblRol.TabIndex = 23;
@@ -143,17 +150,87 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(513, 15);
+            this.lblUsuario.Location = new System.Drawing.Point(736, 81);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(44, 16);
             this.lblUsuario.TabIndex = 22;
             this.lblUsuario.Text = "label1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(506, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 16);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Form de pagoooos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(211, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 16);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Alquiler";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(140, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 16);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Form de pagoooos";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(183, 197);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 16);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Fecha pago";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(764, 501);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(123, 16);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Form de pagoooos";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(174, 237);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 16);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Metodo de pago";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(156, 282);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 16);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "Monto Pagado";
+            // 
             // FormPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1603, 971);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnNuevo);
@@ -189,5 +266,12 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

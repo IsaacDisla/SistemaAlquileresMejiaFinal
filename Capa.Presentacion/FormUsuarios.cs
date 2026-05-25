@@ -24,5 +24,10 @@ namespace Capa.Presentacion
 
             lblRol.Text = Sesion.Rol;
         }
+
+        private void cbRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

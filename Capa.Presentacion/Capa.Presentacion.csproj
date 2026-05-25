@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionSistemaAlquilerVehiculos.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAlquileres.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +58,12 @@
     </Compile>
     <Compile Include="FormBuscarAlquiler.Designer.cs">
       <DependentUpon>FormBuscarAlquiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBuscarDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBuscarDetalle.Designer.cs">
+      <DependentUpon>FormBuscarDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
@@ -119,6 +119,12 @@
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_FacturaAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_FacturaAlquiler.Designer.cs">
+      <DependentUpon>Menu_FacturaAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAlquileres.resx">
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBuscarAlquiler.resx">
       <DependentUpon>FormBuscarAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBuscarDetalle.resx">
+      <DependentUpon>FormBuscarDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
@@ -153,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_FacturaAlquiler.resx">
+      <DependentUpon>Menu_FacturaAlquiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -100,6 +100,7 @@
             this.cbRol.Name = "cbRol";
             this.cbRol.Size = new System.Drawing.Size(121, 24);
             this.cbRol.TabIndex = 7;
+            this.cbRol.SelectedIndexChanged += new System.EventHandler(this.cbRol_SelectedIndexChanged);
             // 
             // cbEstado
             // 

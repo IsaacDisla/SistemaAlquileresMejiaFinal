@@ -20,7 +20,7 @@ namespace Capa.Presentacion
 
         private void lblClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FormClientes());
+            AbrirFormulario(new Menu_FacturaAlquiler());
         }
 
         private void AbrirFormulario(Form formulario)
@@ -52,7 +52,7 @@ namespace Capa.Presentacion
 
         private void lblVehiculos_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FormUsuarios());
+            AbrirFormulario(new FormEntregaVehiculo());
         }
 
         private void lblPagos_Click(object sender, EventArgs e)
