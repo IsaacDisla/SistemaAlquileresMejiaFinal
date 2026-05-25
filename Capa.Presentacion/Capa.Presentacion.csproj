@@ -162,6 +162,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -189,6 +190,21 @@
       <Project>{400642c4-4e27-4ac8-be3a-804233ab12f7}</Project>
       <Name>Capa.Negocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\79740eb6-cc8b-4803-bd05-27aaf6e5ab91.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha-pequena-derecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\73be406e-bbf0-4f1a-8b64-8c491e0e88fb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 25 may 2026, 00_21_49.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChatGPT Image 25 may 2026, 00_25_35.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
