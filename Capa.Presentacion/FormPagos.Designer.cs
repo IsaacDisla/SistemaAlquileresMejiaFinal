@@ -40,30 +40,31 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(12, 15);
+            this.dgvPagos.Location = new System.Drawing.Point(165, 76);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
             this.dgvPagos.RowTemplate.Height = 24;
-            this.dgvPagos.Size = new System.Drawing.Size(240, 150);
+            this.dgvPagos.Size = new System.Drawing.Size(677, 150);
             this.dgvPagos.TabIndex = 0;
             this.dgvPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellContentClick);
             // 
             // txtIdAlquiler
             // 
-            this.txtIdAlquiler.Location = new System.Drawing.Point(22, 189);
+            this.txtIdAlquiler.Location = new System.Drawing.Point(175, 235);
             this.txtIdAlquiler.Name = "txtIdAlquiler";
             this.txtIdAlquiler.Size = new System.Drawing.Size(100, 22);
             this.txtIdAlquiler.TabIndex = 1;
             // 
             // btnBuscarAlquiler
             // 
-            this.btnBuscarAlquiler.Location = new System.Drawing.Point(139, 186);
+            this.btnBuscarAlquiler.Location = new System.Drawing.Point(292, 232);
             this.btnBuscarAlquiler.Name = "btnBuscarAlquiler";
             this.btnBuscarAlquiler.Size = new System.Drawing.Size(75, 23);
             this.btnBuscarAlquiler.TabIndex = 2;
@@ -73,7 +74,7 @@
             // 
             // dtFechaPago
             // 
-            this.dtFechaPago.Location = new System.Drawing.Point(31, 226);
+            this.dtFechaPago.Location = new System.Drawing.Point(184, 272);
             this.dtFechaPago.Name = "dtFechaPago";
             this.dtFechaPago.Size = new System.Drawing.Size(200, 22);
             this.dtFechaPago.TabIndex = 3;
@@ -81,14 +82,14 @@
             // cbMetodoPago
             // 
             this.cbMetodoPago.FormattingEnabled = true;
-            this.cbMetodoPago.Location = new System.Drawing.Point(34, 264);
+            this.cbMetodoPago.Location = new System.Drawing.Point(187, 310);
             this.cbMetodoPago.Name = "cbMetodoPago";
             this.cbMetodoPago.Size = new System.Drawing.Size(121, 24);
             this.cbMetodoPago.TabIndex = 4;
             // 
             // txtMontoPagado
             // 
-            this.txtMontoPagado.Location = new System.Drawing.Point(36, 309);
+            this.txtMontoPagado.Location = new System.Drawing.Point(189, 355);
             this.txtMontoPagado.Name = "txtMontoPagado";
             this.txtMontoPagado.Size = new System.Drawing.Size(100, 22);
             this.txtMontoPagado.TabIndex = 5;
@@ -96,14 +97,14 @@
             // cbEstado
             // 
             this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(42, 345);
+            this.cbEstado.Location = new System.Drawing.Point(195, 391);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(121, 24);
             this.cbEstado.TabIndex = 6;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(200, 309);
+            this.btnGuardar.Location = new System.Drawing.Point(353, 355);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 7;
@@ -113,7 +114,7 @@
             // 
             // btnActualizar
             // 
-            this.btnActualizar.Location = new System.Drawing.Point(202, 348);
+            this.btnActualizar.Location = new System.Drawing.Point(355, 394);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 8;
@@ -123,7 +124,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(202, 391);
+            this.btnNuevo.Location = new System.Drawing.Point(355, 437);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(75, 23);
             this.btnNuevo.TabIndex = 9;
@@ -149,11 +150,22 @@
             this.lblUsuario.TabIndex = 22;
             this.lblUsuario.Text = "label1";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(29, 43);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(911, 557);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.btnNuevo);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

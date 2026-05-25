@@ -64,6 +64,8 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquileres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleAlquiler)).BeginInit();
             this.panelMenu.SuspendLayout();
@@ -430,11 +432,31 @@
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(277, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 16);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "Clientes";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(242, 163);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 16);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Estado Alquiler";
+            // 
             // FormAlquileres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1510, 733);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -515,5 +537,7 @@
         private System.Windows.Forms.Label lblPagos;
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
