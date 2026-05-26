@@ -64,5 +64,10 @@ namespace Capa.Presentacion
         {
             AbrirFormulario(new FormAlquileres());
         }
+
+        private void lblBackups_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormBackup());
+        }
     }
 }

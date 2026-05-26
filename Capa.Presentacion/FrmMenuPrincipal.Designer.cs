@@ -31,12 +31,13 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.lblClientes = new System.Windows.Forms.Label();
-            this.lblVehiculos = new System.Windows.Forms.Label();
-            this.lblPagos = new System.Windows.Forms.Label();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
-            this.lblUsuarios = new System.Windows.Forms.Label();
             this.lblAlquileres = new System.Windows.Forms.Label();
+            this.lblUsuarios = new System.Windows.Forms.Label();
+            this.lblCerrarSesion = new System.Windows.Forms.Label();
+            this.lblPagos = new System.Windows.Forms.Label();
+            this.lblVehiculos = new System.Windows.Forms.Label();
+            this.lblClientes = new System.Windows.Forms.Label();
+            this.lblBackups = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panelMenu.Controls.Add(this.lblBackups);
             this.panelMenu.Controls.Add(this.lblAlquileres);
             this.panelMenu.Controls.Add(this.lblUsuarios);
             this.panelMenu.Controls.Add(this.lblCerrarSesion);
@@ -73,65 +75,20 @@
             this.panelMenu.Size = new System.Drawing.Size(207, 1018);
             this.panelMenu.TabIndex = 24;
             // 
-            // lblClientes
+            // lblAlquileres
             // 
-            this.lblClientes.AutoSize = true;
-            this.lblClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblClientes.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblClientes.Location = new System.Drawing.Point(12, 165);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(117, 32);
-            this.lblClientes.TabIndex = 25;
-            this.lblClientes.Text = "Clientes";
-            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
-            this.lblClientes.Enter += new System.EventHandler(this.Label_MouseEnter);
-            this.lblClientes.Leave += new System.EventHandler(this.Label_MouseLeave);
-            // 
-            // lblVehiculos
-            // 
-            this.lblVehiculos.AutoSize = true;
-            this.lblVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblVehiculos.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVehiculos.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblVehiculos.Location = new System.Drawing.Point(16, 215);
-            this.lblVehiculos.Name = "lblVehiculos";
-            this.lblVehiculos.Size = new System.Drawing.Size(136, 32);
-            this.lblVehiculos.TabIndex = 26;
-            this.lblVehiculos.Text = "Vehiculos";
-            this.lblVehiculos.Click += new System.EventHandler(this.lblVehiculos_Click);
-            this.lblVehiculos.Enter += new System.EventHandler(this.Label_MouseEnter);
-            this.lblVehiculos.Leave += new System.EventHandler(this.Label_MouseLeave);
-            // 
-            // lblPagos
-            // 
-            this.lblPagos.AutoSize = true;
-            this.lblPagos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblPagos.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPagos.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblPagos.Location = new System.Drawing.Point(16, 369);
-            this.lblPagos.Name = "lblPagos";
-            this.lblPagos.Size = new System.Drawing.Size(90, 32);
-            this.lblPagos.TabIndex = 27;
-            this.lblPagos.Text = "Pagos";
-            this.lblPagos.Click += new System.EventHandler(this.lblPagos_Click);
-            this.lblPagos.Enter += new System.EventHandler(this.Label_MouseEnter);
-            this.lblPagos.Leave += new System.EventHandler(this.Label_MouseLeave);
-            // 
-            // lblCerrarSesion
-            // 
-            this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(12, 513);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(185, 32);
-            this.lblCerrarSesion.TabIndex = 28;
-            this.lblCerrarSesion.Text = "Cerrar Sesion";
-            this.lblCerrarSesion.Click += new System.EventHandler(this.lblClientes_Click);
-            this.lblCerrarSesion.Enter += new System.EventHandler(this.Label_MouseEnter);
-            this.lblCerrarSesion.Leave += new System.EventHandler(this.Label_MouseLeave);
+            this.lblAlquileres.AutoSize = true;
+            this.lblAlquileres.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAlquileres.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlquileres.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblAlquileres.Location = new System.Drawing.Point(16, 274);
+            this.lblAlquileres.Name = "lblAlquileres";
+            this.lblAlquileres.Size = new System.Drawing.Size(140, 32);
+            this.lblAlquileres.TabIndex = 30;
+            this.lblAlquileres.Text = "Alquileres";
+            this.lblAlquileres.Click += new System.EventHandler(this.lblAlquileres_Click);
+            this.lblAlquileres.Enter += new System.EventHandler(this.Label_MouseEnter);
+            this.lblAlquileres.Leave += new System.EventHandler(this.Label_MouseLeave);
             // 
             // lblUsuarios
             // 
@@ -148,20 +105,78 @@
             this.lblUsuarios.Enter += new System.EventHandler(this.Label_MouseEnter);
             this.lblUsuarios.Leave += new System.EventHandler(this.Label_MouseLeave);
             // 
-            // lblAlquileres
+            // lblCerrarSesion
             // 
-            this.lblAlquileres.AutoSize = true;
-            this.lblAlquileres.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAlquileres.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlquileres.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblAlquileres.Location = new System.Drawing.Point(16, 274);
-            this.lblAlquileres.Name = "lblAlquileres";
-            this.lblAlquileres.Size = new System.Drawing.Size(140, 32);
-            this.lblAlquileres.TabIndex = 30;
-            this.lblAlquileres.Text = "Alquileres";
-            this.lblAlquileres.Click += new System.EventHandler(this.lblAlquileres_Click);
-            this.lblAlquileres.Enter += new System.EventHandler(this.Label_MouseEnter);
-            this.lblAlquileres.Leave += new System.EventHandler(this.Label_MouseLeave);
+            this.lblCerrarSesion.AutoSize = true;
+            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblCerrarSesion.Location = new System.Drawing.Point(12, 513);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(185, 32);
+            this.lblCerrarSesion.TabIndex = 28;
+            this.lblCerrarSesion.Text = "Cerrar Sesion";
+            this.lblCerrarSesion.Click += new System.EventHandler(this.lblClientes_Click);
+            this.lblCerrarSesion.Enter += new System.EventHandler(this.Label_MouseEnter);
+            this.lblCerrarSesion.Leave += new System.EventHandler(this.Label_MouseLeave);
+            // 
+            // lblPagos
+            // 
+            this.lblPagos.AutoSize = true;
+            this.lblPagos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPagos.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagos.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblPagos.Location = new System.Drawing.Point(16, 369);
+            this.lblPagos.Name = "lblPagos";
+            this.lblPagos.Size = new System.Drawing.Size(90, 32);
+            this.lblPagos.TabIndex = 27;
+            this.lblPagos.Text = "Pagos";
+            this.lblPagos.Click += new System.EventHandler(this.lblPagos_Click);
+            this.lblPagos.Enter += new System.EventHandler(this.Label_MouseEnter);
+            this.lblPagos.Leave += new System.EventHandler(this.Label_MouseLeave);
+            // 
+            // lblVehiculos
+            // 
+            this.lblVehiculos.AutoSize = true;
+            this.lblVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblVehiculos.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVehiculos.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblVehiculos.Location = new System.Drawing.Point(16, 215);
+            this.lblVehiculos.Name = "lblVehiculos";
+            this.lblVehiculos.Size = new System.Drawing.Size(136, 32);
+            this.lblVehiculos.TabIndex = 26;
+            this.lblVehiculos.Text = "Vehiculos";
+            this.lblVehiculos.Click += new System.EventHandler(this.lblVehiculos_Click);
+            this.lblVehiculos.Enter += new System.EventHandler(this.Label_MouseEnter);
+            this.lblVehiculos.Leave += new System.EventHandler(this.Label_MouseLeave);
+            // 
+            // lblClientes
+            // 
+            this.lblClientes.AutoSize = true;
+            this.lblClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblClientes.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientes.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblClientes.Location = new System.Drawing.Point(12, 165);
+            this.lblClientes.Name = "lblClientes";
+            this.lblClientes.Size = new System.Drawing.Size(117, 32);
+            this.lblClientes.TabIndex = 25;
+            this.lblClientes.Text = "Clientes";
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
+            this.lblClientes.Enter += new System.EventHandler(this.Label_MouseEnter);
+            this.lblClientes.Leave += new System.EventHandler(this.Label_MouseLeave);
+            // 
+            // lblBackups
+            // 
+            this.lblBackups.AutoSize = true;
+            this.lblBackups.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBackups.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBackups.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblBackups.Location = new System.Drawing.Point(39, 587);
+            this.lblBackups.Name = "lblBackups";
+            this.lblBackups.Size = new System.Drawing.Size(121, 32);
+            this.lblBackups.TabIndex = 31;
+            this.lblBackups.Text = "Backups";
+            this.lblBackups.Click += new System.EventHandler(this.lblBackups_Click);
             // 
             // FrmMenuPrincipal
             // 
@@ -192,5 +207,6 @@
         private System.Windows.Forms.Label lblPagos;
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblAlquileres;
+        private System.Windows.Forms.Label lblBackups;
     }
 }
