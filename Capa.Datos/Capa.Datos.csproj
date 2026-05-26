@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlquileresDAL.cs" />
+    <Compile Include="BackupDAL.cs" />
     <Compile Include="CargosAdicionalesDAL.cs" />
     <Compile Include="ClientesDAL.cs" />
     <Compile Include="Conexion.cs" />

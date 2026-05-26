@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AlquileresBL.cs" />
+    <Compile Include="BackupBLL.cs" />
     <Compile Include="CargosAdicionalesBL.cs" />
     <Compile Include="ClientesBL.cs" />
     <Compile Include="DetalleAlquileresBL.cs" />
