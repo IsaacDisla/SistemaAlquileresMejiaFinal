@@ -27,8 +27,7 @@ namespace Capa.Presentacion
             cbMetodoPago.Items.Add("Transferencia");
             cbMetodoPago.Items.Add("Tarjeta");
 
-            cbEstado.Items.Add("Pendiente");
-            cbEstado.Items.Add("Pagado");
+
 
             ListarPagos();
 
@@ -44,51 +43,68 @@ namespace Capa.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Pagos p = new Pagos();
+            try
+            {
+                Pagos p = new Pagos();
 
-            p.Id_Alquiler = Convert.ToInt32(txtIdAlquiler.Text);
-            p.Fecha_Pago = dtFechaPago.Value;
-            p.Metodo_Pago = cbMetodoPago.Text;
-            p.Monto_Pagado = Convert.ToDecimal(txtMontoPagado.Text);
-            p.Estado = cbEstado.Text;
+                p.Id_Alquiler =
+                    Convert.ToInt32(txtIdAlquiler.Text);
 
-            bl.Insertar(p);
+                p.Fecha_Pago =
+                    dtFechaPago.Value;
 
-            MessageBox.Show("Pago guardado correctamente");
+                p.Metodo_Pago =
+                    cbMetodoPago.Text;
 
-            Nuevo();
-            ListarPagos();
+                p.Monto_Pagado =
+                    Convert.ToDecimal(txtMontoPagado.Text);
+
+                bl.Insertar(p);
+
+                MessageBox.Show("Pago guardado correctamente");
+
+                Nuevo();
+                ListarPagos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (pagoSeleccionado.Id_Pago == 0)
+            try
             {
-                MessageBox.Show("Seleccione un pago");
-                return;
+                if (pagoSeleccionado.Id_Pago == 0)
+                {
+                    MessageBox.Show("Seleccione un pago");
+                    return;
+                }
+
+                pagoSeleccionado.Id_Alquiler =
+                    Convert.ToInt32(txtIdAlquiler.Text);
+
+                pagoSeleccionado.Fecha_Pago =
+                    dtFechaPago.Value;
+
+                pagoSeleccionado.Metodo_Pago =
+                    cbMetodoPago.Text;
+
+                pagoSeleccionado.Monto_Pagado =
+                    Convert.ToDecimal(txtMontoPagado.Text);
+
+                bl.Actualizar(pagoSeleccionado);
+
+                MessageBox.Show("Pago actualizado correctamente");
+
+                Nuevo();
+                ListarPagos();
             }
-
-            pagoSeleccionado.Id_Alquiler =
-            Convert.ToInt32(txtIdAlquiler.Text);
-
-            pagoSeleccionado.Fecha_Pago =
-            dtFechaPago.Value;
-
-            pagoSeleccionado.Metodo_Pago =
-            cbMetodoPago.Text;
-
-            pagoSeleccionado.Monto_Pagado =
-            Convert.ToDecimal(txtMontoPagado.Text);
-
-            pagoSeleccionado.Estado =
-            cbEstado.Text;
-
-            bl.Actualizar(pagoSeleccionado);
-
-            MessageBox.Show("Pago actualizado correctamente");
-
-            Nuevo();
-            ListarPagos();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void dgvPagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -96,24 +112,21 @@ namespace Capa.Presentacion
             if (e.RowIndex >= 0)
             {
                 pagoSeleccionado.Id_Pago =
-                Convert.ToInt32(
-                dgvPagos.Rows[e.RowIndex].Cells["Id_Pago"].Value);
+                    Convert.ToInt32(
+                    dgvPagos.Rows[e.RowIndex].Cells["Id_Pago"].Value);
 
                 txtIdAlquiler.Text =
-                dgvPagos.Rows[e.RowIndex].Cells["Id_Alquiler"].Value.ToString();
+                    dgvPagos.Rows[e.RowIndex].Cells["Id_Alquiler"].Value.ToString();
 
                 dtFechaPago.Value =
-                Convert.ToDateTime(
-                dgvPagos.Rows[e.RowIndex].Cells["Fecha_Pago"].Value);
+                    Convert.ToDateTime(
+                    dgvPagos.Rows[e.RowIndex].Cells["Fecha_Pago"].Value);
 
                 cbMetodoPago.Text =
-                dgvPagos.Rows[e.RowIndex].Cells["Metodo_Pago"].Value.ToString();
+                    dgvPagos.Rows[e.RowIndex].Cells["Metodo_Pago"].Value.ToString();
 
                 txtMontoPagado.Text =
-                dgvPagos.Rows[e.RowIndex].Cells["Monto_Pagado"].Value.ToString();
-
-                cbEstado.Text =
-                dgvPagos.Rows[e.RowIndex].Cells["Estado"].Value.ToString();
+                    dgvPagos.Rows[e.RowIndex].Cells["Monto_Pagado"].Value.ToString();
             }
         }
 
