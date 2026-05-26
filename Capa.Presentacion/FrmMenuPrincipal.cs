@@ -46,6 +46,7 @@ namespace Capa.Presentacion
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = Sesion.Nombre;
+            this.WindowState = FormWindowState.Maximized;
 
             lblRol.Text = Sesion.Rol;
         }
@@ -63,6 +64,21 @@ namespace Capa.Presentacion
         private void lblAlquileres_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FormAlquileres());
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRol_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
