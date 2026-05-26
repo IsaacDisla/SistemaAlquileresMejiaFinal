@@ -227,7 +227,7 @@ namespace Capa.Presentacion
         }
 
 
-        private void btnBuscarDetalle_Click(object sender, EventArgs e)
+        private void BtnBuscarDetalle_Click(object sender, EventArgs e)
         {
             FormBuscarDetalle frm = new FormBuscarDetalle();
 
@@ -322,6 +322,13 @@ namespace Capa.Presentacion
         }
         
 
+        private void txtIdDetalle_TextChanged(object sender, EventArgs e)
+        {
+        }
+        private void btnBuscarDetalle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

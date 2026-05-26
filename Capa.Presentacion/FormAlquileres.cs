@@ -32,6 +32,7 @@ namespace Capa.Presentacion
             CargarClientes();
             CargarEstados();
             CargarAlquileres();
+            this.WindowState = FormWindowState.Maximized;
 
             dtpFechaInicio.Value = DateTime.Now;
             lblUsuario.Text = "Usuario:";
@@ -420,6 +421,16 @@ namespace Capa.Presentacion
         private void lblCerrarSesion_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmMenuPrincipal());
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
 
         }
     }
