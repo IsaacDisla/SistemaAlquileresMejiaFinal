@@ -320,6 +320,7 @@ namespace Capa.Presentacion
                 txtObservaciones.Clear();
             }
         }
+        
 
         private void txtIdDetalle_TextChanged(object sender, EventArgs e)
         {

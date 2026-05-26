@@ -147,6 +147,11 @@
             this.lblUsuarios.Location = new System.Drawing.Point(101, 808);
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
+            this.lblUsuarios.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarios.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblUsuarios.Location = new System.Drawing.Point(32, 438);
+            this.lblUsuarios.Name = "lblUsuarios";
+            this.lblUsuarios.Size = new System.Drawing.Size(124, 32);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
             this.lblUsuarios.Click += new System.EventHandler(this.lblVehiculos_Click);
@@ -162,6 +167,11 @@
             this.lblCerrarSesion.Location = new System.Drawing.Point(52, 921);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
             this.lblCerrarSesion.Size = new System.Drawing.Size(188, 36);
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblCerrarSesion.Location = new System.Drawing.Point(12, 513);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(185, 32);
             this.lblCerrarSesion.TabIndex = 28;
             this.lblCerrarSesion.Text = "Cerrar Sesion";
             this.lblCerrarSesion.Click += new System.EventHandler(this.lblClientes_Click);
