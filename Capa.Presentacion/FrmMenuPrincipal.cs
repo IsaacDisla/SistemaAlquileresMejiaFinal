@@ -78,6 +78,7 @@ namespace Capa.Presentacion
 
         private void label3_Click(object sender, EventArgs e)
         {
+        }
 
         private void lblBackups_Click(object sender, EventArgs e)
         {

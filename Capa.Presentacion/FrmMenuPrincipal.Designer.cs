@@ -32,6 +32,11 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblAlquileres = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
@@ -39,11 +44,6 @@
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -57,18 +57,22 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -76,7 +80,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Cursor = System.Windows.Forms.Cursors.Hand;
+            label5.Font = new System.Drawing.Font("Cambria", 10.8F);
+            label5.ForeColor = System.Drawing.Color.DodgerBlue;
+            label5.Location = new System.Drawing.Point(128, 65);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(182, 21);
+            label5.TabIndex = 40;
+            label5.Text = "Y ALQUILA UN COCHE";
             // 
             // lblRol
             // 
@@ -103,6 +121,9 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panelMenu.Controls.Add(this.label23);
+            this.panelMenu.Controls.Add(this.pictureBox7);
+            this.panelMenu.Controls.Add(this.pictureBox6);
             this.panelMenu.Controls.Add(this.pictureBox4);
             this.panelMenu.Controls.Add(this.pictureBox3);
             this.panelMenu.Controls.Add(this.pictureBox2);
@@ -123,6 +144,67 @@
             this.panelMenu.Size = new System.Drawing.Size(431, 1055);
             this.panelMenu.TabIndex = 24;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(29, 295);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 36);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "GESTION";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.Location = new System.Drawing.Point(29, 744);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(256, 36);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "ADMINISTRACIÓN";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label1.ForeColor = System.Drawing.Color.Silver;
+            this.label1.Location = new System.Drawing.Point(29, 147);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(158, 36);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "PRINCIPAL";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pictureBox5);
+            this.panel2.Controls.Add(label5);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(431, 120);
+            this.panel2.TabIndex = 31;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label4.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(126, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 36);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Mejia Taller";
+            // 
             // lblAlquileres
             // 
             this.lblAlquileres.AutoSize = true;
@@ -142,16 +224,11 @@
             // 
             this.lblUsuarios.AutoSize = true;
             this.lblUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblUsuarios.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.lblUsuarios.Font = new System.Drawing.Font("Cambria", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarios.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblUsuarios.Location = new System.Drawing.Point(101, 808);
+            this.lblUsuarios.Location = new System.Drawing.Point(101, 832);
             this.lblUsuarios.Name = "lblUsuarios";
-            this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
-            this.lblUsuarios.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarios.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblUsuarios.Location = new System.Drawing.Point(32, 438);
-            this.lblUsuarios.Name = "lblUsuarios";
-            this.lblUsuarios.Size = new System.Drawing.Size(124, 32);
+            this.lblUsuarios.Size = new System.Drawing.Size(123, 34);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
             this.lblUsuarios.Click += new System.EventHandler(this.lblVehiculos_Click);
@@ -162,16 +239,11 @@
             // 
             this.lblCerrarSesion.AutoSize = true;
             this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 16.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(52, 921);
+            this.lblCerrarSesion.Location = new System.Drawing.Point(84, 988);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(188, 36);
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Arial Black", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(12, 513);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(185, 32);
+            this.lblCerrarSesion.Size = new System.Drawing.Size(180, 34);
             this.lblCerrarSesion.TabIndex = 28;
             this.lblCerrarSesion.Text = "Cerrar Sesion";
             this.lblCerrarSesion.Click += new System.EventHandler(this.lblClientes_Click);
@@ -227,6 +299,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lblRol);
             this.panel1.Controls.Add(this.lblUsuario);
@@ -235,90 +308,17 @@
             this.panel1.Size = new System.Drawing.Size(1658, 121);
             this.panel1.TabIndex = 31;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(label5);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(431, 120);
-            this.panel2.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(29, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 36);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "PRINCIPAL";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(29, 744);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(256, 36);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "ADMINISTRACIÓN";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(29, 295);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 36);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "GESTION";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(126, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 36);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Mejia Taller";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Cursor = System.Windows.Forms.Cursors.Hand;
-            label5.Font = new System.Drawing.Font("Cambria", 10.8F);
-            label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            label5.Location = new System.Drawing.Point(128, 65);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(182, 21);
-            label5.TabIndex = 40;
-            label5.Text = "Y ALQUILA UN COCHE";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label6.Font = new System.Drawing.Font("Cambria", 25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(32, 40);
+            this.label6.Location = new System.Drawing.Point(32, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(432, 36);
+            this.label6.Size = new System.Drawing.Size(268, 49);
             this.label6.TabIndex = 39;
-            this.label6.Text = "PANEL DE CONTROL PRINCIPAL";
+            this.label6.Text = "DASHBOARD";
             // 
             // panel3
             // 
@@ -418,18 +418,6 @@
             this.panel14.Size = new System.Drawing.Size(1423, 84);
             this.panel14.TabIndex = 41;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(29, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(432, 36);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "PANEL DE CONTROL PRINCIPAL";
-            // 
             // panel15
             // 
             this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -450,6 +438,18 @@
             this.label9.Size = new System.Drawing.Size(432, 36);
             this.label9.TabIndex = 40;
             this.label9.Text = "PANEL DE CONTROL PRINCIPAL";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(29, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(432, 36);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "PANEL DE CONTROL PRINCIPAL";
             // 
             // pictureBox4
             // 
@@ -499,13 +499,59 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Capa.Presentacion.Properties.Resources.ChatGPT_Image_26_may_2026__01_03_07;
+            this.pictureBox5.Image = global::Capa.Presentacion.Properties.Resources.ChatGPT_Image_25_may_2026__00_25_35;
             this.pictureBox5.Location = new System.Drawing.Point(34, 29);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(73, 64);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 39;
             this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::Capa.Presentacion.Properties.Resources.usuarios;
+            this.pictureBox6.Location = new System.Drawing.Point(45, 830);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 39;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label23.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label23.ForeColor = System.Drawing.SystemColors.Window;
+            this.label23.Location = new System.Drawing.Point(101, 212);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(156, 36);
+            this.label23.TabIndex = 43;
+            this.label23.Text = "Dashboard";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = global::Capa.Presentacion.Properties.Resources.paneles_de_yeso;
+            this.pictureBox7.Location = new System.Drawing.Point(45, 212);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 42;
+            this.pictureBox7.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Cambria", 14.8F);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(36, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(358, 30);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "PANEL DE CONTROL PRINCIPAL";
             // 
             // FrmMenuPrincipal
             // 
@@ -533,10 +579,10 @@
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel15.ResumeLayout(false);
@@ -546,6 +592,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -587,5 +635,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label7;
     }
 }

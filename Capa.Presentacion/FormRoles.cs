@@ -101,5 +101,10 @@ namespace Capa.Presentacion
 
             this.Hide();
         }
+
+        private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
