@@ -48,6 +48,9 @@ namespace Capa.Presentacion
             cbEstadoEntrada.Items.Add("Dañado");
 
             ListarEntregas();
+
+            lblUsuario.Text = Sesion.Nombre;
+            lblRol.Text = Sesion.Rol;
         }
 
         private void ListarEntregas()
@@ -139,19 +142,17 @@ namespace Capa.Presentacion
                     entrega.Dias_Retraso = 0;
                 }
 
-                // GUARDAR
-
                 bll.Insertar(entrega);
 
                 MessageBox.Show("Entrega guardada correctamente");
 
-                // LIMPIAR
-
+                // LIMPIAR FORM
                 Nuevo();
 
-                // RECARGAR GRID
-
+                // REFRESCAR DATAGRID
+                // Esto es lo importante para que el entregado desaparezca
                 ListarEntregas();
+
             }
             catch (Exception ex)
             {
@@ -327,10 +328,20 @@ namespace Capa.Presentacion
         }
         private void btnBuscarDetalle_Click(object sender, EventArgs e)
         {
+            FormBuscarDetalle frm = new FormBuscarDetalle();
 
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtIdDetalle.Text = frm.IdDetalleSeleccionado.ToString();
+            }
         }
 
         private void label22_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

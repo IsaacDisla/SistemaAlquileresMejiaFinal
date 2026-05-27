@@ -26,6 +26,9 @@ namespace Capa.Presentacion
         private void FormRoles_Load(object sender, EventArgs e)
         {
             ListarRoles();
+
+            lblUsuario.Text = Sesion.Nombre;
+            lblRol.Text = Sesion.Rol;
         }
 
         private void ListarRoles()

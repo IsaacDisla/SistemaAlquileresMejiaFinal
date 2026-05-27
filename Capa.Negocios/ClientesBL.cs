@@ -22,5 +22,11 @@ namespace Capa.Negocios
         {
             dal.ActualizarCliente(c);
         }
+
+        public DataTable Buscar(string buscar)
+        {
+            return dal.BuscarClientes(buscar);
+        }
+
     }
 }

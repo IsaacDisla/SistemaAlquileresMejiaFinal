@@ -35,9 +35,39 @@ namespace Capa.Presentacion
 
         }
 
+
+
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+        }
+
+        private void AbrirFormulario(Form formulario)
+        {
+            formulario.Show();
+            this.Hide();
+        }
+
+        private void Label_MouseEnter(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+            lbl.ForeColor = Color.Yellow;
+        }
+
+        private void Label_MouseLeave(object sender, EventArgs e)
+        {
+            Label lbl = (Label)sender;
+            lbl.ForeColor = Color.White;
+        }
+
         private void ListarVehiculos()
         {
             dgvVehiculos.DataSource = bl.Listar();
+        }
+
+        private void lblVehiculos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -132,5 +162,23 @@ namespace Capa.Presentacion
         {
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvVehiculos.DataSource = bl.Buscar(txtBuscar.Text);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+        }
+
     }
 }

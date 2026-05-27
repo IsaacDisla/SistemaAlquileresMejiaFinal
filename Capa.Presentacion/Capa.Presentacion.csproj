@@ -71,6 +71,12 @@
     <Compile Include="FormBuscarDetalle.Designer.cs">
       <DependentUpon>FormBuscarDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCargosAdicionales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCargosAdicionales.Designer.cs">
+      <DependentUpon>FormCargosAdicionales.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormClientes.cs">
       <SubType>Form</SubType>
     </Compile>
