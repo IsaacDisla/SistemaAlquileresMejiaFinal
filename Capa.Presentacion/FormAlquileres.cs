@@ -433,5 +433,10 @@ namespace Capa.Presentacion
         {
 
         }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

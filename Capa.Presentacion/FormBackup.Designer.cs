@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(815, 473);
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.lblUltimoBackup);
             this.Controls.Add(this.btnRestaurar);

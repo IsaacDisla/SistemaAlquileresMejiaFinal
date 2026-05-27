@@ -153,6 +153,16 @@ namespace Capa.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap paneles_de_yeso {
+            get {
+                object obj = ResourceManager.GetObject("paneles-de-yeso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap senal_de_alquiler {
             get {
                 object obj = ResourceManager.GetObject("senal-de-alquiler", resourceCulture);

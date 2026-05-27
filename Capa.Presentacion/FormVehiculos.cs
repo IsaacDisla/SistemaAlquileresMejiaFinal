@@ -122,5 +122,15 @@ namespace Capa.Presentacion
 
             vehiculoSeleccionado = new Vehiculos();
         }
+
+        private void txtMarca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
