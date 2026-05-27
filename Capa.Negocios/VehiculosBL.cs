@@ -22,5 +22,10 @@ namespace Capa.Negocios
         {
             dal.ActualizarVehiculo(v);
         }
+
+        public DataTable Buscar(string buscar)
+        {
+            return dal.BuscarVehiculos(buscar);
+        }
     }
 }

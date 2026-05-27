@@ -1,4 +1,5 @@
-﻿using Capa.Negocio;
+﻿using Capa.Entidades;
+using Capa.Negocio;
 using System;
 using System.Data;
 using System.Drawing;
@@ -13,6 +14,11 @@ namespace Capa.Presentacion
         public Menu_FacturaAlquiler()
         {
             InitializeComponent();
+
+
+            lblUsuario.Text = Sesion.Nombre;
+
+            lblRol.Text = Sesion.Rol;
         }
 
         private void Menu_FacturaAlquiler_Load(object sender, EventArgs e)
@@ -23,6 +29,8 @@ namespace Capa.Presentacion
 
             DarFormatoColumnas();
             ColorearBalance();
+
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -438,5 +438,16 @@ namespace Capa.Presentacion
         {
 
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvAlquileres.DataSource = alquilerBLL.Buscar(txtBuscar.Text);
+
+        }
+
+        private void lblAlquileres_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

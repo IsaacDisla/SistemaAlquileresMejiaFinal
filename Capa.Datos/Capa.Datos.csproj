@@ -46,6 +46,7 @@
     <Compile Include="CargosAdicionalesDAL.cs" />
     <Compile Include="ClientesDAL.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DashboardDAL.cs" />
     <Compile Include="DetalleAlquileresDAL.cs" />
     <Compile Include="EntregaVehiculoDAL.cs" />
     <Compile Include="FacturaAlquilerDAL.cs" />

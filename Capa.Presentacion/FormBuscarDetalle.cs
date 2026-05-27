@@ -1,5 +1,6 @@
 ﻿using Capa.Negocios;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace Capa.Presentacion
@@ -20,7 +21,13 @@ namespace Capa.Presentacion
 
         private void FormBuscarDetalle_Load(object sender, EventArgs e)
         {
-            dgvDetalles.DataSource = bl.Listar();
+            DataTable dt = bl.Listar();
+            DataView dv = new DataView(dt);
+
+            // FILTRAR SOLO ACTIVOS
+            dv.RowFilter = "Estado = 'Activo'";
+
+            dgvDetalles.DataSource = dv;
 
             dgvDetalles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDetalles.MultiSelect = false;
@@ -30,16 +37,13 @@ namespace Capa.Presentacion
             dgvDetalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             if (dgvDetalles.Columns.Contains("Seleccionar"))
-            {
                 dgvDetalles.Columns.Remove("Seleccionar");
-            }
 
             DataGridViewButtonColumn btnSeleccionar = new DataGridViewButtonColumn();
             btnSeleccionar.Name = "Seleccionar";
             btnSeleccionar.HeaderText = "ACCIÓN";
             btnSeleccionar.Text = "Elegir";
             btnSeleccionar.UseColumnTextForButtonValue = true;
-
             dgvDetalles.Columns.Add(btnSeleccionar);
 
         }

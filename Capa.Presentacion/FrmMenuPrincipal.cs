@@ -1,4 +1,5 @@
 ﻿using Capa.Entidades;
+using Capa.Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace Capa.Presentacion
 {
     public partial class FrmMenuPrincipal : Form
     {
+        DashboardBLL dashboard = new DashboardBLL();
         public FrmMenuPrincipal()
         {
             InitializeComponent();
@@ -49,6 +51,8 @@ namespace Capa.Presentacion
             this.WindowState = FormWindowState.Maximized;
 
             lblRol.Text = Sesion.Rol;
+
+            CargarDashboard();
         }
 
         private void lblVehiculos_Click(object sender, EventArgs e)
@@ -59,6 +63,18 @@ namespace Capa.Presentacion
         private void lblPagos_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FormPagos());
+        }
+
+        private void CargarDashboard()
+        {
+            lblVehiculosDisponibles.Text = dashboard.VehiculosDisponibles();
+            lblVehiculosRentados.Text = dashboard.VehiculosRentados();
+            lblVehiculosMantenimiento.Text = dashboard.VehiculosMantenimiento();
+            lblAlquileresActivos.Text = dashboard.AlquileresActivos();
+            lblPagosPendientes.Text = dashboard.PagosPendientes();
+
+            decimal ingresos = Convert.ToDecimal(dashboard.IngresosMes());
+            lblIngresosMes.Text = "RD$ " + ingresos.ToString("N2");
         }
 
         private void lblAlquileres_Click(object sender, EventArgs e)
@@ -82,7 +98,41 @@ namespace Capa.Presentacion
 
         private void lblBackups_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FormBackup());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+        }
+
+        private void lblAdicionales_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblAlquileres_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
         }
     }
 }

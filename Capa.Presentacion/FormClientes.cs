@@ -17,6 +17,8 @@ namespace Capa.Presentacion
         ClientesBL bl = new ClientesBL();
         Clientes clienteSeleccionado = new Clientes();
 
+
+
         public FormClientes()
         {
             InitializeComponent();
@@ -126,6 +128,31 @@ namespace Capa.Presentacion
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = bl.Buscar(txtBuscar.Text);
+        }
+
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblVehiculos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBackups_Click(object sender, EventArgs e)
         {
 
         }

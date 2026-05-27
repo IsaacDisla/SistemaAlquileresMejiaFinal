@@ -45,6 +45,7 @@
     <Compile Include="BackupBLL.cs" />
     <Compile Include="CargosAdicionalesBL.cs" />
     <Compile Include="ClientesBL.cs" />
+    <Compile Include="DashboardBLL.cs.cs" />
     <Compile Include="DetalleAlquileresBL.cs" />
     <Compile Include="EntregaVehiculoBL.cs" />
     <Compile Include="FacturaAlquilerBL.cs" />

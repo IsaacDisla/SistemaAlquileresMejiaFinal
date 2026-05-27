@@ -64,5 +64,20 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public DataTable BuscarVehiculos(string buscar)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("sp_BuscarVehiculos", cn);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Buscar", buscar);
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
     }
 }

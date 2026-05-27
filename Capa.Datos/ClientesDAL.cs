@@ -63,5 +63,26 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public DataTable BuscarClientes(string buscar)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da =
+                    new SqlDataAdapter("sp_BuscarClientes", cn);
+
+                da.SelectCommand.CommandType =
+                    CommandType.StoredProcedure;
+
+                da.SelectCommand.Parameters.AddWithValue(
+                    "@Buscar", buscar);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
     }
 }
