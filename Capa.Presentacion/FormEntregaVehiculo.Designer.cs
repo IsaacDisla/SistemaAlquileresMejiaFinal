@@ -82,6 +82,8 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
+            this.lblVehiculo = new System.Windows.Forms.Label();
+            this.lblFechaEsperada = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntregas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDiasRetraso)).BeginInit();
@@ -98,6 +100,18 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            label14.Font = new System.Drawing.Font("Cambria", 10.8F);
+            label14.ForeColor = System.Drawing.Color.DodgerBlue;
+            label14.Location = new System.Drawing.Point(128, 65);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(182, 21);
+            label14.TabIndex = 40;
+            label14.Text = "Y ALQUILA UN COCHE";
             // 
             // label3
             // 
@@ -131,7 +145,7 @@
             this.btnBuscarDetalle.Name = "btnBuscarDetalle";
             this.btnBuscarDetalle.Size = new System.Drawing.Size(233, 23);
             this.btnBuscarDetalle.TabIndex = 39;
-            this.btnBuscarDetalle.Text = "Seleccionar Vehiculo";
+            this.btnBuscarDetalle.Text = "Seleccionar Detalle";
             this.btnBuscarDetalle.UseVisualStyleBackColor = true;
             this.btnBuscarDetalle.Click += new System.EventHandler(this.btnBuscarDetalle_Click);
             // 
@@ -182,11 +196,11 @@
             // dgvEntregas
             // 
             this.dgvEntregas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntregas.Location = new System.Drawing.Point(219, 311);
+            this.dgvEntregas.Location = new System.Drawing.Point(-1, 0);
             this.dgvEntregas.Name = "dgvEntregas";
             this.dgvEntregas.RowHeadersWidth = 51;
             this.dgvEntregas.RowTemplate.Height = 24;
-            this.dgvEntregas.Size = new System.Drawing.Size(298, 150);
+            this.dgvEntregas.Size = new System.Drawing.Size(694, 150);
             this.dgvEntregas.TabIndex = 33;
             this.dgvEntregas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEntregas_CellContentClick);
             // 
@@ -204,10 +218,16 @@
             this.dtFechaEntrega.Name = "dtFechaEntrega";
             this.dtFechaEntrega.Size = new System.Drawing.Size(200, 22);
             this.dtFechaEntrega.TabIndex = 31;
+            this.dtFechaEntrega.ValueChanged += new System.EventHandler(this.dtFechaEntrega_ValueChanged);
             // 
             // numDiasRetraso
             // 
             this.numDiasRetraso.Location = new System.Drawing.Point(1359, 275);
+            this.numDiasRetraso.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numDiasRetraso.Name = "numDiasRetraso";
             this.numDiasRetraso.Size = new System.Drawing.Size(120, 22);
             this.numDiasRetraso.TabIndex = 53;
@@ -260,22 +280,24 @@
             // chkAplicaRetraso
             // 
             this.chkAplicaRetraso.AutoSize = true;
+            this.chkAplicaRetraso.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAplicaRetraso.Location = new System.Drawing.Point(1157, 280);
             this.chkAplicaRetraso.Name = "chkAplicaRetraso";
-            this.chkAplicaRetraso.Size = new System.Drawing.Size(95, 20);
+            this.chkAplicaRetraso.Size = new System.Drawing.Size(112, 20);
             this.chkAplicaRetraso.TabIndex = 59;
-            this.chkAplicaRetraso.Text = "checkBox1";
+            this.chkAplicaRetraso.Text = "Aplica retraso";
             this.chkAplicaRetraso.UseVisualStyleBackColor = true;
             this.chkAplicaRetraso.CheckedChanged += new System.EventHandler(this.chkAplicaRetraso_CheckedChanged_1);
             // 
             // chkTieneDanos
             // 
             this.chkTieneDanos.AutoSize = true;
+            this.chkTieneDanos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkTieneDanos.Location = new System.Drawing.Point(1530, 455);
             this.chkTieneDanos.Name = "chkTieneDanos";
-            this.chkTieneDanos.Size = new System.Drawing.Size(95, 20);
+            this.chkTieneDanos.Size = new System.Drawing.Size(105, 20);
             this.chkTieneDanos.TabIndex = 60;
-            this.chkTieneDanos.Text = "checkBox1";
+            this.chkTieneDanos.Text = "Tiene daños";
             this.chkTieneDanos.UseVisualStyleBackColor = true;
             this.chkTieneDanos.CheckedChanged += new System.EventHandler(this.chkTieneDanos_CheckedChanged_1);
             // 
@@ -344,7 +366,7 @@
             this.panel4.Controls.Add(this.dgvEntregas);
             this.panel4.Location = new System.Drawing.Point(465, 246);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(638, 655);
+            this.panel4.Size = new System.Drawing.Size(698, 655);
             this.panel4.TabIndex = 63;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
@@ -355,7 +377,7 @@
             this.panel5.Controls.Add(this.label7);
             this.panel5.Location = new System.Drawing.Point(465, 167);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(638, 82);
+            this.panel5.Size = new System.Drawing.Size(698, 82);
             this.panel5.TabIndex = 64;
             // 
             // label7
@@ -412,6 +434,7 @@
             this.lblAdicionales.Size = new System.Drawing.Size(259, 36);
             this.lblAdicionales.TabIndex = 46;
             this.lblAdicionales.Text = "Cargos Adicionales";
+            this.lblAdicionales.Click += new System.EventHandler(this.lblAdicionales_Click);
             // 
             // lblEntrega
             // 
@@ -424,6 +447,7 @@
             this.lblEntrega.Size = new System.Drawing.Size(129, 36);
             this.lblEntrega.TabIndex = 45;
             this.lblEntrega.Text = "Entregas";
+            this.lblEntrega.Click += new System.EventHandler(this.lblEntrega_Click);
             // 
             // label17
             // 
@@ -436,6 +460,7 @@
             this.label17.Size = new System.Drawing.Size(111, 36);
             this.label17.TabIndex = 44;
             this.label17.Text = "Factura";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // lblBackups
             // 
@@ -448,6 +473,7 @@
             this.lblBackups.Size = new System.Drawing.Size(124, 36);
             this.lblBackups.TabIndex = 43;
             this.lblBackups.Text = "Backups";
+            this.lblBackups.Click += new System.EventHandler(this.lblBackups_Click);
             // 
             // lblRoles
             // 
@@ -460,6 +486,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click);
             // 
             // label23
             // 
@@ -472,6 +499,7 @@
             this.label23.Size = new System.Drawing.Size(156, 36);
             this.label23.TabIndex = 41;
             this.label23.Text = "Dashboard";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // pictureBox7
             // 
@@ -600,18 +628,6 @@
             this.pictureBox5.TabIndex = 39;
             this.pictureBox5.TabStop = false;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            label14.Font = new System.Drawing.Font("Cambria", 10.8F);
-            label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            label14.Location = new System.Drawing.Point(128, 65);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(182, 21);
-            label14.TabIndex = 40;
-            label14.Text = "Y ALQUILA UN COCHE";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -635,6 +651,7 @@
             this.lblAlquileres.Size = new System.Drawing.Size(146, 36);
             this.lblAlquileres.TabIndex = 30;
             this.lblAlquileres.Text = "Alquileres";
+            this.lblAlquileres.Click += new System.EventHandler(this.lblAlquileres_Click);
             // 
             // lblUsuarios
             // 
@@ -647,6 +664,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click);
             // 
             // lblCerrarSesion
             // 
@@ -671,6 +689,7 @@
             this.lblPagos.Size = new System.Drawing.Size(90, 36);
             this.lblPagos.TabIndex = 27;
             this.lblPagos.Text = "Pagos";
+            this.lblPagos.Click += new System.EventHandler(this.lblPagos_Click);
             // 
             // lblVehiculos
             // 
@@ -683,6 +702,7 @@
             this.lblVehiculos.Size = new System.Drawing.Size(138, 36);
             this.lblVehiculos.TabIndex = 26;
             this.lblVehiculos.Text = "Vehiculos";
+            this.lblVehiculos.Click += new System.EventHandler(this.lblVehiculos_Click);
             // 
             // lblClientes
             // 
@@ -695,12 +715,33 @@
             this.lblClientes.Size = new System.Drawing.Size(118, 36);
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
+            // 
+            // lblVehiculo
+            // 
+            this.lblVehiculo.AutoSize = true;
+            this.lblVehiculo.Location = new System.Drawing.Point(1275, 174);
+            this.lblVehiculo.Name = "lblVehiculo";
+            this.lblVehiculo.Size = new System.Drawing.Size(44, 16);
+            this.lblVehiculo.TabIndex = 66;
+            this.lblVehiculo.Text = "label8";
+            // 
+            // lblFechaEsperada
+            // 
+            this.lblFechaEsperada.AutoSize = true;
+            this.lblFechaEsperada.Location = new System.Drawing.Point(1288, 206);
+            this.lblFechaEsperada.Name = "lblFechaEsperada";
+            this.lblFechaEsperada.Size = new System.Drawing.Size(44, 16);
+            this.lblFechaEsperada.TabIndex = 67;
+            this.lblFechaEsperada.Text = "label9";
             // 
             // FormEntregaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.lblFechaEsperada);
+            this.Controls.Add(this.lblVehiculo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -805,5 +846,7 @@
         private System.Windows.Forms.Label lblPagos;
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.Label lblVehiculo;
+        private System.Windows.Forms.Label lblFechaEsperada;
     }
 }

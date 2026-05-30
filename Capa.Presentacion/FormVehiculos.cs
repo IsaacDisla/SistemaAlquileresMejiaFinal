@@ -19,6 +19,9 @@ namespace Capa.Presentacion
         public FormVehiculos()
         {
             InitializeComponent();
+
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void FormVehiculos_Load(object sender, EventArgs e)
@@ -180,5 +183,60 @@ namespace Capa.Presentacion
             AbrirFormulario(new FormPagos());
         }
 
+        private void label23_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+        }
+
+        private void lblAlquileres_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void lblEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+
+        }
+
+        private void lblAdicionales_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblBackups_Click(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+
+        }
     }
 }

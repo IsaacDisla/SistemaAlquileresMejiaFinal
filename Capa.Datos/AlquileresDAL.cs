@@ -1,4 +1,5 @@
 ﻿using Capa.Entidades;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -22,7 +23,7 @@ namespace Capa.Datos
             }
         }
 
-        public void InsertarAlquiler(Alquileres alquiler)
+        public int InsertarAlquiler(Alquileres alquiler)
         {
             using (SqlConnection cn = new SqlConnection(conexion))
             {
@@ -35,9 +36,13 @@ namespace Capa.Datos
                 cmd.Parameters.AddWithValue("@Estado_Alquiler", alquiler.Estado_Alquiler);
 
                 cn.Open();
-                cmd.ExecuteNonQuery();
+
+                int idAlquiler = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return idAlquiler;
             }
         }
+
 
         public void ActualizarAlquiler(Alquileres alquiler)
         {

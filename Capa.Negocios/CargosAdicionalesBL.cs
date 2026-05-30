@@ -4,7 +4,7 @@ using Capa.Entidades;
 
 namespace Capa.Negocios
 {
-    public class CargosAdicionalesBLL
+    public class CargosAdicionalesBL
     {
         CargosAdicionalesDAL dal = new CargosAdicionalesDAL();
 
@@ -13,9 +13,29 @@ namespace Capa.Negocios
             return dal.ListarCargosAdicionales();
         }
 
+        public DataTable ListarCargosAdicionales()
+        {
+            return dal.ListarCargosAdicionales();
+        }
+
         public void Insertar(CargosAdicionales c)
         {
             dal.InsertarCargoAdicional(c);
+        }
+
+        public void InsertarCargoAdicional(CargosAdicionales cargo)
+        {
+            dal.InsertarCargoAdicional(cargo);
+        }
+
+        public DataTable ListarDetallesParaCargos()
+        {
+            return dal.ListarDetallesParaCargos();
+        }
+
+        public DataTable ListarDetallesEntregados()
+        {
+            return dal.ListarDetallesEntregados();
         }
     }
 }

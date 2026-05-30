@@ -13,6 +13,7 @@ namespace Capa.Negocios
             return dal.ListarClientes();
         }
 
+
         public void Insertar(Clientes c)
         {
             dal.InsertarCliente(c);

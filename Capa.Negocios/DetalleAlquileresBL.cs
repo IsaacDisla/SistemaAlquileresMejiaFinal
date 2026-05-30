@@ -18,6 +18,7 @@ namespace Capa.Negocios
             dal.InsertarDetalleAlquiler(d);
         }
 
+
         public void Actualizar(DetalleAlquileres d)
         {
             dal.ActualizarDetalleAlquiler(d);

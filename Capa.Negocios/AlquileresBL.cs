@@ -13,9 +13,11 @@ namespace Capa.Negocios
             return dal.ListarAlquileres();
         }
 
-        public void Insertar(Alquileres a)
+        public int InsertarAlquiler(Alquileres alquiler)
         {
-            dal.InsertarAlquiler(a);
+            AlquileresDAL dal = new AlquileresDAL();
+
+            return dal.InsertarAlquiler(alquiler);
         }
 
         public void Actualizar(Alquileres a)

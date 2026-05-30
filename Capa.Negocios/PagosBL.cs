@@ -22,5 +22,17 @@ namespace Capa.Negocios
         {
             dal.ActualizarPago(p);
         }
+    
+
+    public DataTable ListarAlquileresPendientesPago()
+        {
+            return dal.ListarAlquileresPendientesPago();
+        }
+
+        public DataTable ObtenerBalanceAlquiler(int idAlquiler)
+        {
+            return dal.ObtenerBalanceAlquiler(idAlquiler);
+        }
     }
+
 }

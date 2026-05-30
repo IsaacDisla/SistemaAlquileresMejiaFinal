@@ -83,6 +83,8 @@
             this.txtUsuario.TabIndex = 2;
             this.txtUsuario.Text = "Usuario";
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+            this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
+            this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
             // 
             // txtClave
             // 
@@ -96,6 +98,8 @@
             this.txtClave.TabIndex = 3;
             this.txtClave.Text = "Contraseña";
             this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
+            this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
+            this.txtClave.Leave += new System.EventHandler(this.txtClave_Leave);
             // 
             // btnIniciarSesion
             // 

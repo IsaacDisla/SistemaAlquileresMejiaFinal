@@ -22,6 +22,9 @@ namespace Capa.Presentacion
         public FormClientes()
         {
             InitializeComponent();
+
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void FormClientes_Load(object sender, EventArgs e)
@@ -142,19 +145,68 @@ namespace Capa.Presentacion
             dgvClientes.DataSource = bl.Buscar(txtBuscar.Text);
         }
 
+        private void AbrirFormulario(Form formulario)
+        {
+            formulario.Show();
+            this.Hide();
+        }
+
+
         private void lblClientes_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario(new FormClientes());
         }
 
         private void lblVehiculos_Click(object sender, EventArgs e)
         {
+            AbrirFormulario(new FormVehiculos());
 
         }
 
         private void lblBackups_Click(object sender, EventArgs e)
         {
+            FormBackup frm = new FormBackup();
 
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void lblPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+        }
+
+        private void lblEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+        }
+
+        private void lblAdicionales_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+        }
+
+        private void lblRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
         }
     }
 }
