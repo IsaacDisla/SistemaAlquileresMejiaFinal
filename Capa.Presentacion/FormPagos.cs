@@ -19,6 +19,9 @@ namespace Capa.Presentacion
         public FormPagos()
         {
             InitializeComponent();
+
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void FormPagos_Load(object sender, EventArgs e)
@@ -27,9 +30,9 @@ namespace Capa.Presentacion
             cbMetodoPago.Items.Add("Transferencia");
             cbMetodoPago.Items.Add("Tarjeta");
 
-
-
             ListarPagos();
+
+
 
             lblUsuario.Text = Sesion.Nombre;
 
@@ -39,6 +42,12 @@ namespace Capa.Presentacion
         private void ListarPagos()
         {
             dgvPagos.DataSource = bl.Listar();
+        }
+
+        private void AbrirFormulario(Form formulario)
+        {
+            formulario.Show();
+            this.Hide();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -60,6 +69,7 @@ namespace Capa.Presentacion
                     Convert.ToDecimal(txtMontoPagado.Text);
 
                 bl.Insertar(p);
+                ActualizarBalance();
 
                 MessageBox.Show("Pago guardado correctamente");
 
@@ -141,7 +151,6 @@ namespace Capa.Presentacion
             txtMontoPagado.Clear();
 
             cbMetodoPago.SelectedIndex = -1;
-            cbEstado.SelectedIndex = -1;
 
             dtFechaPago.Value = DateTime.Now;
 
@@ -151,13 +160,28 @@ namespace Capa.Presentacion
         private void btnBuscarAlquiler_Click(object sender, EventArgs e)
         {
 
-            FormBuscarAlquiler frm =
-                new FormBuscarAlquiler();
+            FormBuscarAlquilerPago frm =
+         new FormBuscarAlquilerPago();
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtIdAlquiler.Text =
                     frm.IdAlquilerSeleccionado.ToString();
+
+                txtCliente.Text =
+                    frm.ClienteSeleccionado;
+
+                lblTotalAlquiler.Text =
+                    frm.TotalAlquiler.ToString("N2");
+
+                lblTotalPagado.Text =
+                    frm.TotalPagado.ToString("N2");
+
+                lblBalancePendiente.Text =
+                    frm.BalancePendiente.ToString("N2");
+
+                txtEstado.Text =
+                    frm.EstadoSeleccionado;
             }
         }
 
@@ -192,6 +216,119 @@ namespace Capa.Presentacion
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+        }
+
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblVehiculos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void lblAlquileres_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void lblPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+
+        }
+
+        private void lblEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+        }
+
+        private void lblAdicionales_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+        }
+
+        private void lblBackups_Click(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+
+        }
+
+        private void ActualizarBalance()
+        {
+            if (txtIdAlquiler.Text == "")
+                return;
+
+            DataTable dt =
+                bl.ObtenerBalanceAlquiler(
+                Convert.ToInt32(txtIdAlquiler.Text));
+
+            if (dt.Rows.Count > 0)
+            {
+                lblTotalAlquiler.Text =
+                    Convert.ToDecimal(
+                    dt.Rows[0]["Total_Alquiler"]).ToString("N2");
+
+                lblTotalPagado.Text =
+                    Convert.ToDecimal(
+                    dt.Rows[0]["Total_Pagado"]).ToString("N2");
+
+                lblBalancePendiente.Text =
+                    Convert.ToDecimal(
+                    dt.Rows[0]["Balance_Pendiente"]).ToString("N2");
+            }
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTotalAlquiler_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotalPagado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblBalancePendiente_Click(object sender, EventArgs e)
         {
 
         }

@@ -42,7 +42,6 @@ namespace Capa.Presentacion
                 Sesion.Rol =
                 dt.Rows[0]["Nombre_Rol"].ToString();
 
-                MessageBox.Show("Bienvenido " + Sesion.Nombre);
 
                 FrmMenuPrincipal frm =
                 new FrmMenuPrincipal();
@@ -92,9 +91,48 @@ namespace Capa.Presentacion
             // TEXTO DE ABAJO
             label5.Parent = pictureBox1;
             label5.BackColor = Color.Transparent;
-        
+
+            txtClave.UseSystemPasswordChar = false;
+
+        }
 
 
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "Ingrese su usuario")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "Ingrese su usuario";
+                txtUsuario.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtClave_Enter(object sender, EventArgs e)
+        {
+            if (txtClave.Text == "Ingrese su contraseña")
+            {
+                txtClave.Text = "";
+                txtClave.ForeColor = Color.Black;
+                txtClave.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtClave_Leave(object sender, EventArgs e)
+        {
+            if (txtClave.Text == "")
+            {
+                txtClave.Text = "Ingrese su contraseña";
+                txtClave.ForeColor = Color.Gray;
+                txtClave.UseSystemPasswordChar = false;
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

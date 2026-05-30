@@ -16,12 +16,19 @@ namespace Capa.Presentacion
     {
         EntregaVehiculoBLL bll = new EntregaVehiculoBLL();
         EntregaVehiculo entregaSeleccionada = new EntregaVehiculo();
+
+        DateTime fechaEsperada;
+
+        decimal precioDia;
         public FormEntregaVehiculo()
         {
             InitializeComponent();
 
             chkAplicaRetraso.CheckedChanged += chkAplicaRetraso_CheckedChanged_1;
             chkTieneDanos.CheckedChanged += chkTieneDanos_CheckedChanged_1;
+
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void txtObservaciones_TextChanged(object sender, EventArgs e)
@@ -234,7 +241,22 @@ namespace Capa.Presentacion
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtIdDetalle.Text = frm.IdDetalleSeleccionado.ToString();
+                txtIdDetalle.Text =
+                    frm.IdDetalleSeleccionado.ToString();
+
+                fechaEsperada =
+                    frm.FechaEntregaEsperada;
+
+                precioDia =
+                    frm.PrecioDia;
+
+                lblVehiculo.Text =
+                    frm.Vehiculo;
+
+                lblFechaEsperada.Text =
+                    fechaEsperada.ToShortDateString();
+
+                CalcularRetraso();
             }
         }
 
@@ -278,9 +300,34 @@ namespace Capa.Presentacion
                 }
             }
         }
-    
 
-            private void Nuevo()
+        private void CalcularRetraso()
+        {
+            if (fechaEsperada == DateTime.MinValue)
+            {
+                return;
+            }
+
+            int dias =
+                (dtFechaEntrega.Value.Date - fechaEsperada.Date).Days;
+
+            if (dias > 0)
+            {
+                chkAplicaRetraso.Checked = true;
+
+                numDiasRetraso.Value =
+                    Math.Min(dias, numDiasRetraso.Maximum);
+            }
+            else
+            {
+                chkAplicaRetraso.Checked = false;
+
+                numDiasRetraso.Value = 0;
+            }
+        }
+
+
+        private void Nuevo()
         {
             txtIdDetalle.Clear();
             txtKilometrajeEntrada.Clear();
@@ -345,7 +392,80 @@ namespace Capa.Presentacion
         {
 
         }
-    }
 
+
+        private void AbrirFormulario(Form formulario)
+        {
+            formulario.Show();
+            this.Hide();
+        }
+
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+        }
+
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+        }
+
+        private void lblVehiculos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+        }
+
+        private void lblAlquileres_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+        }
+
+        private void lblPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+        }
+
+        private void lblEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+        }
+
+        private void lblAdicionales_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+        }
+
+        private void lblRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+        }
+
+        private void lblBackups_Click(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void dtFechaEntrega_ValueChanged(object sender, EventArgs e)
+        {
+            CalcularRetraso();
+
+        }
+    }
 }
+
 

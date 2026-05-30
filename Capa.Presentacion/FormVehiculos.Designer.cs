@@ -104,6 +104,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            label14.Font = new System.Drawing.Font("Cambria", 10.8F);
+            label14.ForeColor = System.Drawing.Color.DodgerBlue;
+            label14.Location = new System.Drawing.Point(128, 65);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(182, 21);
+            label14.TabIndex = 40;
+            label14.Text = "Y ALQUILA UN COCHE";
+            // 
             // dgvVehiculos
             // 
             this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -482,6 +494,7 @@
             this.lblAdicionales.Size = new System.Drawing.Size(259, 36);
             this.lblAdicionales.TabIndex = 46;
             this.lblAdicionales.Text = "Cargos Adicionales";
+            this.lblAdicionales.Click += new System.EventHandler(this.lblAdicionales_Click);
             // 
             // lblEntrega
             // 
@@ -494,6 +507,7 @@
             this.lblEntrega.Size = new System.Drawing.Size(129, 36);
             this.lblEntrega.TabIndex = 45;
             this.lblEntrega.Text = "Entregas";
+            this.lblEntrega.Click += new System.EventHandler(this.lblEntrega_Click);
             // 
             // lblFactura
             // 
@@ -519,6 +533,7 @@
             this.lblBackups.Size = new System.Drawing.Size(124, 36);
             this.lblBackups.TabIndex = 43;
             this.lblBackups.Text = "Backups";
+            this.lblBackups.Click += new System.EventHandler(this.lblBackups_Click);
             // 
             // lblRoles
             // 
@@ -531,6 +546,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click);
             // 
             // label23
             // 
@@ -543,6 +559,7 @@
             this.label23.Size = new System.Drawing.Size(156, 36);
             this.label23.TabIndex = 41;
             this.label23.Text = "Dashboard";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // pictureBox7
             // 
@@ -671,18 +688,6 @@
             this.pictureBox5.TabIndex = 39;
             this.pictureBox5.TabStop = false;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            label14.Font = new System.Drawing.Font("Cambria", 10.8F);
-            label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            label14.Location = new System.Drawing.Point(128, 65);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(182, 21);
-            label14.TabIndex = 40;
-            label14.Text = "Y ALQUILA UN COCHE";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -706,6 +711,7 @@
             this.lblAlquileres.Size = new System.Drawing.Size(146, 36);
             this.lblAlquileres.TabIndex = 30;
             this.lblAlquileres.Text = "Alquileres";
+            this.lblAlquileres.Click += new System.EventHandler(this.lblAlquileres_Click);
             // 
             // lblUsuarios
             // 
@@ -718,6 +724,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click);
             // 
             // lblCerrarSesion
             // 
@@ -755,6 +762,7 @@
             this.lblVehiculos.Size = new System.Drawing.Size(138, 36);
             this.lblVehiculos.TabIndex = 26;
             this.lblVehiculos.Text = "Vehiculos";
+            this.lblVehiculos.Click += new System.EventHandler(this.lblVehiculos_Click_1);
             // 
             // lblClientes
             // 
@@ -767,6 +775,7 @@
             this.lblClientes.Size = new System.Drawing.Size(118, 36);
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click_1);
             // 
             // txtBuscar
             // 

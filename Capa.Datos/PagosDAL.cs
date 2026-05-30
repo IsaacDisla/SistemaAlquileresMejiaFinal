@@ -56,5 +56,51 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public DataTable ListarAlquileresPendientesPago()
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da =
+                    new SqlDataAdapter(
+                        "sp_ListarAlquileresPendientesPago",
+                        cn);
+
+                da.SelectCommand.CommandType =
+                    CommandType.StoredProcedure;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+        public DataTable ObtenerBalanceAlquiler(int idAlquiler)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da =
+                    new SqlDataAdapter(
+                        "sp_ObtenerBalanceAlquiler",
+                        cn);
+
+                da.SelectCommand.CommandType =
+                    CommandType.StoredProcedure;
+
+                da.SelectCommand.Parameters.AddWithValue(
+                    "@Id_Alquiler",
+                    idAlquiler);
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+
     }
 }

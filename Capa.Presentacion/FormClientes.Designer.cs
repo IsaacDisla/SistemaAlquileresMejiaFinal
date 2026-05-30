@@ -78,11 +78,11 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblRoles = new System.Windows.Forms.Label();
-            this.lblBackups = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblEntrega = new System.Windows.Forms.Label();
             this.lblAdicionales = new System.Windows.Forms.Label();
+            this.lblEntrega = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblBackups = new System.Windows.Forms.Label();
+            this.lblRoles = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
@@ -476,6 +476,7 @@
             this.lblPagos.Size = new System.Drawing.Size(90, 36);
             this.lblPagos.TabIndex = 27;
             this.lblPagos.Text = "Pagos";
+            this.lblPagos.Click += new System.EventHandler(this.lblPagos_Click);
             // 
             // lblCerrarSesion
             // 
@@ -500,6 +501,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click);
             // 
             // lblAlquileres
             // 
@@ -663,6 +665,7 @@
             this.label23.Size = new System.Drawing.Size(156, 36);
             this.label23.TabIndex = 41;
             this.label23.Text = "Dashboard";
+            this.label23.Click += new System.EventHandler(this.label23_Click);
             // 
             // panel1
             // 
@@ -695,17 +698,44 @@
             this.panel1.Size = new System.Drawing.Size(431, 1055);
             this.panel1.TabIndex = 39;
             // 
-            // lblRoles
+            // lblAdicionales
             // 
-            this.lblRoles.AutoSize = true;
-            this.lblRoles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblRoles.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.lblRoles.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblRoles.Location = new System.Drawing.Point(101, 891);
-            this.lblRoles.Name = "lblRoles";
-            this.lblRoles.Size = new System.Drawing.Size(85, 36);
-            this.lblRoles.TabIndex = 42;
-            this.lblRoles.Text = "Roles";
+            this.lblAdicionales.AutoSize = true;
+            this.lblAdicionales.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblAdicionales.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.lblAdicionales.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblAdicionales.Location = new System.Drawing.Point(106, 718);
+            this.lblAdicionales.Name = "lblAdicionales";
+            this.lblAdicionales.Size = new System.Drawing.Size(259, 36);
+            this.lblAdicionales.TabIndex = 46;
+            this.lblAdicionales.Text = "Cargos Adicionales";
+            this.lblAdicionales.Click += new System.EventHandler(this.lblAdicionales_Click);
+            // 
+            // lblEntrega
+            // 
+            this.lblEntrega.AutoSize = true;
+            this.lblEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEntrega.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.lblEntrega.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblEntrega.Location = new System.Drawing.Point(106, 650);
+            this.lblEntrega.Name = "lblEntrega";
+            this.lblEntrega.Size = new System.Drawing.Size(129, 36);
+            this.lblEntrega.TabIndex = 45;
+            this.lblEntrega.Text = "Entregas";
+            this.lblEntrega.Click += new System.EventHandler(this.lblEntrega_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label17.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label17.ForeColor = System.Drawing.SystemColors.Window;
+            this.label17.Location = new System.Drawing.Point(106, 515);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(111, 36);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "Factura";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // lblBackups
             // 
@@ -720,41 +750,18 @@
             this.lblBackups.Text = "Backups";
             this.lblBackups.Click += new System.EventHandler(this.lblBackups_Click);
             // 
-            // label17
+            // lblRoles
             // 
-            this.label17.AutoSize = true;
-            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label17.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label17.ForeColor = System.Drawing.SystemColors.Window;
-            this.label17.Location = new System.Drawing.Point(106, 515);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(111, 36);
-            this.label17.TabIndex = 44;
-            this.label17.Text = "Factura";
-            // 
-            // lblEntrega
-            // 
-            this.lblEntrega.AutoSize = true;
-            this.lblEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEntrega.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.lblEntrega.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblEntrega.Location = new System.Drawing.Point(106, 650);
-            this.lblEntrega.Name = "lblEntrega";
-            this.lblEntrega.Size = new System.Drawing.Size(129, 36);
-            this.lblEntrega.TabIndex = 45;
-            this.lblEntrega.Text = "Entregas";
-            // 
-            // lblAdicionales
-            // 
-            this.lblAdicionales.AutoSize = true;
-            this.lblAdicionales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblAdicionales.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.lblAdicionales.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblAdicionales.Location = new System.Drawing.Point(106, 718);
-            this.lblAdicionales.Name = "lblAdicionales";
-            this.lblAdicionales.Size = new System.Drawing.Size(259, 36);
-            this.lblAdicionales.TabIndex = 46;
-            this.lblAdicionales.Text = "Cargos Adicionales";
+            this.lblRoles.AutoSize = true;
+            this.lblRoles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblRoles.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.lblRoles.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblRoles.Location = new System.Drawing.Point(101, 891);
+            this.lblRoles.Name = "lblRoles";
+            this.lblRoles.Size = new System.Drawing.Size(85, 36);
+            this.lblRoles.TabIndex = 42;
+            this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click);
             // 
             // txtBuscar
             // 

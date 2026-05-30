@@ -1,6 +1,4 @@
-﻿using Capa.Entidades;
-using Capa.Negocios;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,418 +7,289 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa.Entidades;
+using Capa.Negocios;
 
 namespace Capa.Presentacion
 {
     public partial class FormAlquileres : Form
     {
-        AlquileresBL alquilerBLL = new AlquileresBL();
-        ClientesBL clientesBL = new ClientesBL();
-        DetalleAlquileresBL detalleBLL = new DetalleAlquileresBL();
+        private AlquileresBL alquilerBL = new AlquileresBL();
+        private DetalleAlquileresBL detalleBL = new DetalleAlquileresBL();
 
+        private DataTable detalles = new DataTable();
+        private VehiculosBL vehiculoBL = new VehiculosBL();
 
-        int idAlquiler = 0;
-        int idVehiculo = 0;
-
+        private ClientesBL clienteBL = new ClientesBL();
         public FormAlquileres()
         {
             InitializeComponent();
-        }
 
-        private void FormAlquileres_Load(object sender, EventArgs e)
-        {
-            CargarClientes();
-            CargarEstados();
-            CargarAlquileres();
             this.WindowState = FormWindowState.Maximized;
 
-            dtpFechaInicio.Value = DateTime.Now;
-            lblUsuario.Text = "Usuario:";
-
-            txtSubtotal.ReadOnly = true;
-            txtVehiculo.ReadOnly = true;
-            txtPrecioDia.ReadOnly = true;
-            txtKilometrajeSalida.ReadOnly = true;
-
-            CargarDetalleAlquileres();
-
-            lblUsuario.Text = Sesion.Nombre;
-            lblRol.Text = Sesion.Rol;
-        }
-
-        private void AbrirFormulario(Form formulario)
-        {
-            formulario.Show();
-            this.Hide();
-        }
-
-        private void Label_MouseEnter(object sender, EventArgs e)
-        {
-            Label lbl = (Label)sender;
-            lbl.ForeColor = Color.Yellow;
-        }
-
-        private void Label_MouseLeave(object sender, EventArgs e)
-        {
-            Label lbl = (Label)sender;
-            lbl.ForeColor = Color.White;
-        }
-
-
-        private void CargarDetalleAlquileres()
-        {
-            dgvDetalleAlquiler.DataSource = detalleBLL.Listar();
-        }
-
-        private void CargarClientes()
-        {
-            cbCliente.DataSource = clientesBL.Listar();
-            cbCliente.DisplayMember = "Cliente";
-            cbCliente.ValueMember = "Id_Cliente";
-
-            if (cbCliente.Items.Count > 0)
-            {
-                cbCliente.SelectedIndex = cbCliente.Items.Count - 1;
-            }
-        }
-
-        private void CargarEstados()
-        {
-            cbEstadoAlquiler.Items.Clear();
-            cbEstadoAlquiler.Items.Add("Activo");
-            cbEstadoAlquiler.Items.Add("Finalizado");
-            cbEstadoAlquiler.Items.Add("Cancelado");
-            cbEstadoAlquiler.SelectedIndex = 0;
-
-            cbCombustibleSalida.Items.Clear();
-            cbCombustibleSalida.Items.Add("Lleno");
-            cbCombustibleSalida.Items.Add("Medio");
-            cbCombustibleSalida.Items.Add("Bajo");
-            cbCombustibleSalida.Items.Add("Vacío");
-            cbCombustibleSalida.SelectedIndex = 0;
-
-            cbEstadoSalida.Items.Clear();
-            cbEstadoSalida.Items.Add("Bueno");
-            cbEstadoSalida.Items.Add("Regular");
-            cbEstadoSalida.Items.Add("Dañado");
-            cbEstadoSalida.SelectedIndex = 0;
-
-            cbEstadoDetalle.Items.Clear();
-            cbEstadoDetalle.Items.Add("Activo");
-            cbEstadoDetalle.Items.Add("Finalizado");
-            cbEstadoDetalle.Items.Add("Cancelado");
-            cbEstadoDetalle.SelectedIndex = 0;
-        }
-
-        private void CargarAlquileres()
-        {
-            dgvAlquileres.DataSource = alquilerBLL.Listar();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Alquileres a = new Alquileres();
-
-            a.Id_Cliente = Convert.ToInt32(cbCliente.SelectedValue);
-            a.Id_Usuario = 1;
-            a.Fecha_Inicio = dtpFechaInicio.Value;
-            a.Estado_Alquiler = cbEstadoAlquiler.Text;
-
-            alquilerBLL.Insertar(a);
-
-            MessageBox.Show("Alquiler registrado correctamente");
-
-            CargarAlquileres();
-            Limpiar();
-        }
-
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            if (idAlquiler == 0)
-            {
-                MessageBox.Show("Seleccione un alquiler del listado");
-                return;
-            }
-            Alquileres a = new Alquileres();
-
-            a.Id_Alquiler = idAlquiler;
-            a.Id_Cliente = Convert.ToInt32(cbCliente.SelectedValue);
-            a.Id_Usuario = 1; // Temporal
-            a.Fecha_Inicio = dtpFechaInicio.Value;
-            a.Estado_Alquiler = cbEstadoAlquiler.Text;
-
-            alquilerBLL.Actualizar(a);
-
-            MessageBox.Show("Alquiler actualizado correctamente");
-
-            CargarAlquileres();
-            Limpiar();
-
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-
-        }
-
-        private void dgvAlquileres_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                idAlquiler = Convert.ToInt32(
-                    dgvAlquileres.Rows[e.RowIndex].Cells["Id_Alquiler"].Value
-                );
-
-                cbCliente.SelectedValue = Convert.ToInt32(
-                    dgvAlquileres.Rows[e.RowIndex].Cells["Id_Cliente"].Value
-                );
-
-                dtpFechaInicio.Value = Convert.ToDateTime(
-                    dgvAlquileres.Rows[e.RowIndex].Cells["Fecha_Inicio"].Value
-                );
-
-                cbEstadoAlquiler.Text =
-                    dgvAlquileres.Rows[e.RowIndex].Cells["Estado_Alquiler"].Value.ToString();
-            }
-        }
-
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnSeleccionarVehiculo_Click(object sender, EventArgs e)
-        {
-            FormSeleccionarVehiculo frm = new FormSeleccionarVehiculo();
-
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                idVehiculo = frm.IdVehiculo;
-
-                txtVehiculo.Text = frm.Vehiculo;
-                txtPrecioDia.Text = frm.PrecioDia.ToString();
-                txtKilometrajeSalida.Text = frm.Kilometraje.ToString();
-
-                CalcularSubtotal();
-            }
-        }
-
-        private void txtDiasAlquilados_TextChanged(object sender, EventArgs e)
-        {
-            CalcularSubtotal();
-        }
-
-        private void CalcularSubtotal()
-        {
-            if (decimal.TryParse(txtPrecioDia.Text, out decimal precio) &&
-                int.TryParse(txtDiasAlquilados.Text, out int dias))
-            {
-                txtSubtotal.Text = (precio * dias).ToString("0.00");
-            }
-            else
-            {
-                txtSubtotal.Text = "0.00";
-            }
-        }
-
-        private int ObtenerUltimoAlquiler()
-        {
-            DataTable dt = alquilerBLL.Listar();
-
-            if (dt.Rows.Count > 0)
-            {
-                return Convert.ToInt32(dt.Rows[dt.Rows.Count - 1]["Id_Alquiler"]);
-            }
-
-            return 0;
         }
 
         private void btnGuardarAlquiler_Click(object sender, EventArgs e)
         {
-            if (idVehiculo == 0)
+
+        }
+
+        private void CargarAlquileres()
+        {
+            dgvAlquileres.DataSource = alquilerBL.Listar();
+
+        }
+
+        private void FormAlquileres_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = Sesion.Nombre;
+            lblRol.Text = Sesion.Rol;
+
+            cbCombustible.Items.Add("Lleno");
+            cbCombustible.Items.Add("Medio");
+            cbCombustible.Items.Add("Reserva");
+
+            cbEstadoSalida.Items.Add("Buenas Condiciones");
+            cbEstadoSalida.Items.Add("Regular");
+            cbEstadoSalida.Items.Add("Mal Estado");
+
+            CrearTablaDetalles();
+            CargarClientes();
+
+            cbCliente.AutoCompleteMode =
+                AutoCompleteMode.SuggestAppend;
+
+            cbCliente.AutoCompleteSource =
+                AutoCompleteSource.ListItems;
+
+            cbCliente.DropDownStyle =
+                ComboBoxStyle.DropDown;
+
+            CargarAlquileres();
+
+ 
+
+        }
+
+
+
+        private void CrearTablaDetalles()
+        {
+            detalles.Columns.Add("Id_Vehiculo");
+            detalles.Columns.Add("Vehiculo");
+            detalles.Columns.Add("Fecha_Entrega");
+            detalles.Columns.Add("Precio_Dia");
+            detalles.Columns.Add("Dias");
+            detalles.Columns.Add("Subtotal");
+            detalles.Columns.Add("Kilometraje");
+            detalles.Columns.Add("Combustible");
+            detalles.Columns.Add("Estado_Salida");
+
+            dgvDetalles.DataSource = detalles;
+        }
+
+        private void btnAgregarVehiculo_Click(object sender, EventArgs e)
+        {
+            foreach (DataRow fila in detalles.Rows)
             {
-                MessageBox.Show("Debe seleccionar un vehículo");
-                return;
+                if (fila["Id_Vehiculo"].ToString() == txtIdVehiculo.Text)
+                {
+                    MessageBox.Show("Este vehículo ya fue agregado.");
+                    return;
+                }
             }
 
-            if (txtDiasAlquilados.Text == "")
+            decimal precio = Convert.ToDecimal(txtPrecioDia.Text);
+            int dias = Convert.ToInt32(txtDias.Text);
+
+            decimal subtotal = precio * dias;
+
+            txtSubtotal.Text = subtotal.ToString();
+
+            detalles.Rows.Add(
+                txtIdVehiculo.Text,
+                txtVehiculo.Text,
+                dtpFechaEntrega.Value.ToShortDateString(),
+                txtPrecioDia.Text,
+                txtDias.Text,
+                subtotal,
+                txtKilometrajeSalida.Text,
+                cbCombustible.Text,
+                cbEstadoSalida.Text
+            );
+
+            LimpiarDetalle();
+        }
+
+        private void CargarClientes()
+        {
+            cbCliente.DataSource = clienteBL.Listar();
+
+            cbCliente.DisplayMember = "Nombre";
+
+            cbCliente.ValueMember = "Id_Cliente";
+
+            cbCliente.SelectedIndex = -1;
+
+            if (cbCliente.Items.Count > 0)
             {
-                MessageBox.Show("Debe colocar los días alquilados");
+                cbCliente.SelectedIndex =
+                    cbCliente.Items.Count - 1;
+            }
+        }
+
+        private void LimpiarDetalle()
+        {
+            txtIdVehiculo.Clear();
+            txtVehiculo.Clear();
+            txtPrecioDia.Clear();
+            txtDias.Value = 0;
+            txtSubtotal.Clear();
+            txtKilometrajeSalida.Clear();
+
+            cbCombustible.SelectedIndex = -1;
+            cbEstadoSalida.SelectedIndex = -1;
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (detalles.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar vehículos.");
                 return;
             }
 
             Alquileres alquiler = new Alquileres();
 
             alquiler.Id_Cliente = Convert.ToInt32(cbCliente.SelectedValue);
+
             alquiler.Id_Usuario = Sesion.IdUsuario;
+
             alquiler.Fecha_Inicio = dtpFechaInicio.Value;
-            alquiler.Estado_Alquiler = cbEstadoAlquiler.Text;
 
-            alquilerBLL.Insertar(alquiler);
-            idAlquiler = ObtenerUltimoAlquiler();
+            alquiler.Estado_Alquiler = "Activo";
 
-            DetalleAlquileres detalle = new DetalleAlquileres();
+            int idAlquiler = alquilerBL.InsertarAlquiler(alquiler);
 
-            detalle.Id_Alquiler = idAlquiler;
-            detalle.Id_Vehiculo = idVehiculo;
-            detalle.Fecha_Entrega_Esperada = dtpFechaEntregaEsperada.Value;
-            detalle.Precio_Dia = Convert.ToDecimal(txtPrecioDia.Text);
-            detalle.Dias_Alquilados = Convert.ToInt32(txtDiasAlquilados.Text);
-            detalle.Subtotal = Convert.ToDecimal(txtSubtotal.Text);
-            detalle.Kilometraje_Salida = Convert.ToInt32(txtKilometrajeSalida.Text);
-            detalle.Combustible_Salida = cbCombustibleSalida.Text;
-            detalle.Estado_Salida = cbEstadoSalida.Text;
-            detalle.Estado = cbEstadoDetalle.Text;
+            foreach (DataRow fila in detalles.Rows)
+            {
+                DetalleAlquileres detalle = new DetalleAlquileres();
 
+                detalle.Id_Alquiler = idAlquiler;
 
-            detalleBLL.Insertar(detalle);
+                detalle.Id_Vehiculo =
+                    Convert.ToInt32(fila["Id_Vehiculo"]);
 
-            detalleBLL.Insertar(detalle);
+                detalle.Fecha_Entrega_Esperada =
+                    Convert.ToDateTime(fila["Fecha_Entrega"]);
 
-            MessageBox.Show("Alquiler registrado correctamente");
+                detalle.Precio_Dia =
+                    Convert.ToDecimal(fila["Precio_Dia"]);
 
-            Limpiar();
+                detalle.Dias_Alquilados =
+                    Convert.ToInt32(fila["Dias"]);
+
+                detalle.Subtotal =
+                    Convert.ToDecimal(fila["Subtotal"]);
+
+                detalle.Kilometraje_Salida =
+                    Convert.ToInt32(fila["Kilometraje"]);
+
+                detalle.Combustible_Salida =
+                    fila["Combustible"].ToString();
+
+                detalle.Estado_Salida =
+                    fila["Estado_Salida"].ToString();
+
+                detalle.Estado = "Alquilado";
+
+                detalleBL.Insertar(detalle);
+
+                vehiculoBL.ActualizarEstadoVehiculo(
+                    detalle.Id_Vehiculo,
+                    "Alquilado"
+                );
+            }
+
+            MessageBox.Show("Alquiler guardado correctamente.");
+
+            CargarAlquileres();
+
+            btnNuevoAlquiler.PerformClick();
+
         }
 
-        private void Limpiar()
+        private void btnQuitarVehiculo_Click(object sender, EventArgs e)
         {
-            idAlquiler = 0;
-            idVehiculo = 0;
+            if (dgvDetalles.CurrentRow != null)
+            {
+                dgvDetalles.Rows.RemoveAt(dgvDetalles.CurrentRow.Index);
+            }
+        }
 
-            if (cbCliente.Items.Count > 0)
-                cbCliente.SelectedIndex = cbCliente.Items.Count - 1;
+        private void btnNuevoAlquiler_Click(object sender, EventArgs e)
+        {
+            cbCliente.SelectedIndex = -1;
 
-            cbEstadoAlquiler.SelectedIndex = 0;
-            cbCombustibleSalida.SelectedIndex = 0;
-            cbEstadoSalida.SelectedIndex = 0;
-            cbEstadoDetalle.SelectedIndex = 0;
+            detalles.Rows.Clear();
+
+            LimpiarDetalle();
 
             dtpFechaInicio.Value = DateTime.Now;
-            dtpFechaEntregaEsperada.Value = DateTime.Now;
 
-            txtVehiculo.Clear();
-            txtPrecioDia.Clear();
-            txtDiasAlquilados.Clear();
+            dtpFechaEntrega.Value = DateTime.Now;
+
             txtSubtotal.Clear();
-            txtKilometrajeSalida.Clear();
         }
 
-        private void txtSubtotal_TextChanged(object sender, EventArgs e)
+        private void CalcularFechaEntrega()
         {
+            int dias = Convert.ToInt32(txtDias.Value);
 
+            dtpFechaEntrega.Value =
+                dtpFechaInicio.Value.AddDays(dias);
         }
 
-        private void lblRol_Click(object sender, EventArgs e)
+        private void CalcularSubtotal()
         {
+            decimal precio = 0;
 
+            decimal.TryParse(txtPrecioDia.Text, out precio);
+
+            int dias = Convert.ToInt32(txtDias.Value);
+
+            decimal subtotal = precio * dias;
+
+            txtSubtotal.Text = subtotal.ToString("N2");
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void btnSeleccionarVehiculo_Click(object sender, EventArgs e)
         {
+            FormSeleccionarVehiculo frm =
+                   new FormSeleccionarVehiculo();
 
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                txtIdVehiculo.Text =
+                    frm.IdVehiculo.ToString();
+
+                txtVehiculo.Text =
+                    frm.Vehiculo;
+
+                txtPrecioDia.Text =
+                    frm.PrecioDia.ToString();
+
+                CalcularSubtotal();
+
+                CalcularFechaEntrega();
+
+                txtKilometrajeSalida.Text =
+                    frm.Kilometraje.ToString();
+            }
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void txtIdVehiculo_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbEstadoSalida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbEstadoDetalle_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbCombustibleSalida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpFechaEntregaEsperada_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtKilometrajeSalida_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPrecioDia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtVehiculo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbEstadoAlquiler_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblVehiculos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCerrarSesion_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FrmMenuPrincipal());
 
         }
 
@@ -429,24 +298,77 @@ namespace Capa.Presentacion
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void txtDias_ValueChanged(object sender, EventArgs e)
         {
+            CalcularFechaEntrega();
 
+            CalcularSubtotal();
         }
 
-        private void lblUsuarios_Click(object sender, EventArgs e)
+        private void AbrirFormulario(Form formulario)
         {
-
+            formulario.Show();
+            this.Hide();
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void label23_Click(object sender, EventArgs e)
         {
-            dgvAlquileres.DataSource = alquilerBLL.Buscar(txtBuscar.Text);
+            AbrirFormulario(new FrmMenuPrincipal());
+        }
 
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+        }
+
+        private void lblVehiculos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
         }
 
         private void lblAlquileres_Click(object sender, EventArgs e)
         {
+            AbrirFormulario(new FormAlquileres());
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void lblPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+        }
+
+        private void lblEntrega_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+        }
+
+        private void lblAdicionales_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+        }
+
+        private void lblRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+        }
+
+        private void lblBackups_Click(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
 
         }
     }

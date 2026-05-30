@@ -23,6 +23,20 @@ namespace Capa.Negocios
             dal.ActualizarVehiculo(v);
         }
 
+        public DataTable ListarVehiculosDisponibles()
+        {
+            VehiculosDAL dal = new VehiculosDAL();
+
+            return dal.ListarVehiculosDisponibles();
+        }
+
+        public void ActualizarEstadoVehiculo(int idVehiculo, string estado)
+        {
+            VehiculosDAL dal = new VehiculosDAL();
+
+            dal.ActualizarEstadoVehiculo(idVehiculo, estado);
+        }
+
         public DataTable Buscar(string buscar)
         {
             return dal.BuscarVehiculos(buscar);

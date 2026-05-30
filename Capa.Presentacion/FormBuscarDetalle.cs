@@ -11,6 +11,14 @@ namespace Capa.Presentacion
 
         public int IdDetalleSeleccionado { get; set; }
 
+        public DateTime FechaEntregaEsperada { get; set; }
+
+        public decimal PrecioDia { get; set; }
+
+        public int DiasAlquilados { get; set; }
+
+        public string Vehiculo { get; set; }
+
 
         public FormBuscarDetalle()
         {
@@ -25,8 +33,7 @@ namespace Capa.Presentacion
             DataView dv = new DataView(dt);
 
             // FILTRAR SOLO ACTIVOS
-            dv.RowFilter = "Estado = 'Activo'";
-
+            dv.RowFilter = "Estado = 'Alquilado'";
             dgvDetalles.DataSource = dv;
 
             dgvDetalles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -56,6 +63,28 @@ namespace Capa.Presentacion
                     dgvDetalles.Rows[e.RowIndex].Cells["Id_Detalle"].Value
                 );
 
+                FechaEntregaEsperada =
+                          Convert.ToDateTime(
+                             dgvDetalles.Rows[e.RowIndex]
+                                    .Cells["Fecha_Entrega_Esperada"].Value
+                                  );
+
+                             PrecioDia =
+                                Convert.ToDecimal(
+                                dgvDetalles.Rows[e.RowIndex]
+                        .Cells["Precio_Por_Dia"].Value
+                    );
+
+                DiasAlquilados =
+                    Convert.ToInt32(
+                        dgvDetalles.Rows[e.RowIndex]
+                        .Cells["Dias_Alquilados"].Value
+                    );
+
+                Vehiculo =
+                    dgvDetalles.Rows[e.RowIndex]
+                    .Cells["Vehiculo"].Value.ToString();
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
@@ -68,6 +97,28 @@ namespace Capa.Presentacion
                 IdDetalleSeleccionado = Convert.ToInt32(
                     dgvDetalles.Rows[e.RowIndex].Cells["Id_Detalle"].Value
                 );
+
+                FechaEntregaEsperada =
+    Convert.ToDateTime(
+        dgvDetalles.Rows[e.RowIndex]
+        .Cells["Fecha_Entrega_Esperada"].Value
+    );
+
+                PrecioDia =
+                    Convert.ToDecimal(
+                        dgvDetalles.Rows[e.RowIndex]
+                        .Cells["Precio_Por_Dia"].Value
+                    );
+
+                DiasAlquilados =
+                    Convert.ToInt32(
+                        dgvDetalles.Rows[e.RowIndex]
+                        .Cells["Dias_Alquilados"].Value
+                    );
+
+                Vehiculo =
+                    dgvDetalles.Rows[e.RowIndex]
+                    .Cells["Vehiculo"].Value.ToString();
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

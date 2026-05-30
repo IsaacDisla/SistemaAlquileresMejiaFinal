@@ -22,6 +22,44 @@ namespace Capa.Datos
             }
         }
 
+        public DataTable ListarDetallesEntregados()
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da = new SqlDataAdapter(
+                    "sp_ListarDetallesEntregados",
+                    cn
+                );
+
+                da.SelectCommand.CommandType =
+                    CommandType.StoredProcedure;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+        public DataTable ListarDetallesParaCargos()
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da =
+                    new SqlDataAdapter("sp_ListarDetallesParaCargos", cn);
+
+                da.SelectCommand.CommandType =
+                    CommandType.StoredProcedure;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
         public void InsertarCargoAdicional(CargosAdicionales cargo)
         {
             using (SqlConnection cn = new SqlConnection(conexion))

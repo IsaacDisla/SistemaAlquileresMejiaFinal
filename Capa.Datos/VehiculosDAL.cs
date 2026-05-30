@@ -43,6 +43,7 @@ namespace Capa.Datos
             }
         }
 
+
         public void ActualizarVehiculo(Vehiculos vehiculo)
         {
             using (SqlConnection cn = new SqlConnection(conexion))
@@ -77,6 +78,41 @@ namespace Capa.Datos
                 da.Fill(dt);
 
                 return dt;
+            }
+        }
+
+
+
+        public DataTable ListarVehiculosDisponibles()
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlDataAdapter da = new SqlDataAdapter("sp_ListarVehiculosDisponibles", cn);
+
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                DataTable dt = new DataTable();
+
+                da.Fill(dt);
+
+                return dt;
+            }
+        }
+
+        public void ActualizarEstadoVehiculo(int idVehiculo, string estado)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd =
+                    new SqlCommand("sp_ActualizarEstadoVehiculo", cn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id_Vehiculo", idVehiculo);
+                cmd.Parameters.AddWithValue("@Estado", estado);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
             }
         }
     }

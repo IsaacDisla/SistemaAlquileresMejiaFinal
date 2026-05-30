@@ -53,6 +53,9 @@ namespace Capa.Presentacion
             lblRol.Text = Sesion.Rol;
 
             CargarDashboard();
+
+           /*AplicarPermisos();*/
+
         }
 
         private void lblVehiculos_Click(object sender, EventArgs e)
@@ -77,10 +80,6 @@ namespace Capa.Presentacion
             lblIngresosMes.Text = "RD$ " + ingresos.ToString("N2");
         }
 
-        private void lblAlquileres_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormAlquileres());
-        }
 
         private void lblUsuario_Click(object sender, EventArgs e)
         {
@@ -132,6 +131,21 @@ namespace Capa.Presentacion
         private void lblClientes_Click_1(object sender, EventArgs e)
         {
             AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
 
         }
     }

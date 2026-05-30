@@ -27,7 +27,13 @@ namespace Capa.Presentacion
 
         private void FormSeleccionarVehiculo_Load(object sender, EventArgs e)
         {
-            dgvVehiculos.DataSource = vehiculosBL.Listar();
+            DataTable dt = vehiculosBL.Listar();
+
+            DataView dv = dt.DefaultView;
+
+            dv.RowFilter = "Estado_Vehiculo = 'Disponible'";
+
+            dgvVehiculos.DataSource = dv;
 
             AgregarBotonSeleccionar();
 
@@ -52,23 +58,28 @@ namespace Capa.Presentacion
 
         private void dgvVehiculos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && dgvVehiculos.Columns[e.ColumnIndex].Name == "Seleccionar")
+            if (e.RowIndex >= 0 &&
+                            dgvVehiculos.Columns[e.ColumnIndex].Name == "Seleccionar")
             {
-                IdVehiculo = Convert.ToInt32(dgvVehiculos.Rows[e.RowIndex].Cells["Id_Vehiculo"].Value);
+                IdVehiculo = Convert.ToInt32(
+                    dgvVehiculos.Rows[e.RowIndex].Cells["Id_Vehiculo"].Value);
 
                 Vehiculo =
                     dgvVehiculos.Rows[e.RowIndex].Cells["Marca"].Value.ToString()
                     + " " +
                     dgvVehiculos.Rows[e.RowIndex].Cells["Modelo"].Value.ToString();
 
-                PrecioDia = Convert.ToDecimal(dgvVehiculos.Rows[e.RowIndex].Cells["Precio_Dia"].Value);
+                PrecioDia = Convert.ToDecimal(
+                    dgvVehiculos.Rows[e.RowIndex].Cells["Precio_Dia"].Value);
 
-                Kilometraje = Convert.ToInt32(dgvVehiculos.Rows[e.RowIndex].Cells["Kilometraje"].Value);
+                Kilometraje = Convert.ToInt32(
+                    dgvVehiculos.Rows[e.RowIndex].Cells["Kilometraje"].Value);
 
                 DialogResult = DialogResult.OK;
                 Close();
             }
         }
+
     }
 }
 
