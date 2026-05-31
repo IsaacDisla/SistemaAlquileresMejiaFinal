@@ -35,7 +35,7 @@
             // dgvAlquileres
             // 
             this.dgvAlquileres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlquileres.Location = new System.Drawing.Point(63, 34);
+            this.dgvAlquileres.Location = new System.Drawing.Point(59, 164);
             this.dgvAlquileres.Name = "dgvAlquileres";
             this.dgvAlquileres.RowHeadersWidth = 51;
             this.dgvAlquileres.RowTemplate.Height = 24;

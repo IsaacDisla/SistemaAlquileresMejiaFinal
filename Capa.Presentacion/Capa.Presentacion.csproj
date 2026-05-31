@@ -373,6 +373,17 @@
     <None Include="Resources\paneles-de-yeso.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\archivo-factura-dolar.png" />
+    <None Include="Resources\cajas.png" />
+    <None Include="Resources\tacometro-alt-mas-rapido.png" />
+    <None Include="Resources\carros.png" />
+    <None Include="Resources\accidente-automovilistico.png" />
+    <None Include="Resources\salario-calendario.png" />
+    <None Include="Resources\llave-de-mano.png" />
+    <None Include="Resources\ingresos-de-dinero.png" />
+    <None Include="Resources\garaje.png" />
+    <None Include="Resources\lapiz-de-usuario %281%29.png" />
+    <None Include="Resources\respaldo.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

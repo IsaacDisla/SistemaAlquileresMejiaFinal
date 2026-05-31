@@ -36,17 +36,10 @@
             this.lblBackups = new System.Windows.Forms.Label();
             this.lblRoles = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
             this.lblAlquileres = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
@@ -67,20 +60,56 @@
             this.btnBuscarDetalle = new System.Windows.Forms.Button();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.dgvCargos = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Vehiculo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -98,7 +127,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.pictureBox12);
+            this.panel1.Controls.Add(this.pictureBox11);
+            this.panel1.Controls.Add(this.pictureBox10);
             this.panel1.Controls.Add(this.lblAdicionales);
+            this.panel1.Controls.Add(this.pictureBox9);
+            this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.lblEntrega);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lblBackups);
@@ -123,7 +157,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 819);
+            this.panel1.Size = new System.Drawing.Size(431, 1055);
             this.panel1.TabIndex = 46;
             // 
             // lblAdicionales
@@ -198,72 +232,6 @@
             this.label23.TabIndex = 41;
             this.label23.Text = "Dashboard";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Image = global::Capa.Presentacion.Properties.Resources.paneles_de_yeso;
-            this.pictureBox7.Location = new System.Drawing.Point(45, 192);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 40;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = global::Capa.Presentacion.Properties.Resources.usuarios;
-            this.pictureBox6.Location = new System.Drawing.Point(45, 830);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 39;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Image = global::Capa.Presentacion.Properties.Resources.cartera;
-            this.pictureBox4.Location = new System.Drawing.Point(45, 586);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 38;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = global::Capa.Presentacion.Properties.Resources.senal_de_alquiler;
-            this.pictureBox3.Location = new System.Drawing.Point(45, 446);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 37;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Capa.Presentacion.Properties.Resources.lado_del_coche;
-            this.pictureBox2.Location = new System.Drawing.Point(45, 373);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 36;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Capa.Presentacion.Properties.Resources.usuarios;
-            this.pictureBox1.Location = new System.Drawing.Point(45, 309);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -307,23 +275,12 @@
             this.panel2.Controls.Add(this.pictureBox5);
             this.panel2.Controls.Add(label15);
             this.panel2.Controls.Add(this.label25);
+            this.panel2.Controls.Add(this.textBox1);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(431, 120);
             this.panel2.TabIndex = 31;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = global::Capa.Presentacion.Properties.Resources.ChatGPT_Image_25_may_2026__00_25_35;
-            this.pictureBox5.Location = new System.Drawing.Point(34, 29);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(73, 64);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 39;
-            this.pictureBox5.TabStop = false;
             // 
             // label25
             // 
@@ -411,177 +368,525 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Location = new System.Drawing.Point(-16, -1);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 47;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtIdDetalle
             // 
-            this.txtIdDetalle.Location = new System.Drawing.Point(465, 20);
+            this.txtIdDetalle.BackColor = System.Drawing.Color.White;
+            this.txtIdDetalle.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.txtIdDetalle.Location = new System.Drawing.Point(52, 74);
+            this.txtIdDetalle.Multiline = true;
             this.txtIdDetalle.Name = "txtIdDetalle";
             this.txtIdDetalle.ReadOnly = true;
-            this.txtIdDetalle.Size = new System.Drawing.Size(190, 22);
+            this.txtIdDetalle.Size = new System.Drawing.Size(266, 36);
             this.txtIdDetalle.TabIndex = 48;
             // 
             // txtVehiculo
             // 
-            this.txtVehiculo.Location = new System.Drawing.Point(462, 56);
+            this.txtVehiculo.BackColor = System.Drawing.Color.White;
+            this.txtVehiculo.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.txtVehiculo.Location = new System.Drawing.Point(53, 167);
             this.txtVehiculo.Name = "txtVehiculo";
             this.txtVehiculo.ReadOnly = true;
-            this.txtVehiculo.Size = new System.Drawing.Size(193, 22);
+            this.txtVehiculo.Size = new System.Drawing.Size(376, 31);
             this.txtVehiculo.TabIndex = 49;
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(461, 92);
+            this.txtCliente.BackColor = System.Drawing.Color.White;
+            this.txtCliente.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.txtCliente.Location = new System.Drawing.Point(471, 81);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(194, 22);
+            this.txtCliente.Size = new System.Drawing.Size(373, 31);
             this.txtCliente.TabIndex = 50;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(462, 136);
+            this.dtpFecha.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.dtpFecha.Location = new System.Drawing.Point(53, 328);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(274, 22);
+            this.dtpFecha.Size = new System.Drawing.Size(376, 31);
             this.dtpFecha.TabIndex = 51;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // cbTipoCargo
             // 
+            this.cbTipoCargo.Font = new System.Drawing.Font("Cambria", 12.2F);
             this.cbTipoCargo.FormattingEnabled = true;
-            this.cbTipoCargo.Location = new System.Drawing.Point(463, 171);
+            this.cbTipoCargo.Location = new System.Drawing.Point(471, 167);
             this.cbTipoCargo.Name = "cbTipoCargo";
-            this.cbTipoCargo.Size = new System.Drawing.Size(216, 24);
+            this.cbTipoCargo.Size = new System.Drawing.Size(262, 31);
             this.cbTipoCargo.TabIndex = 52;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(462, 238);
+            this.txtDescripcion.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.txtDescripcion.Location = new System.Drawing.Point(899, 81);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(298, 89);
+            this.txtDescripcion.Size = new System.Drawing.Size(383, 200);
             this.txtDescripcion.TabIndex = 53;
             // 
             // txtEstadoAlquiler
             // 
-            this.txtEstadoAlquiler.Location = new System.Drawing.Point(465, 210);
+            this.txtEstadoAlquiler.BackColor = System.Drawing.Color.White;
+            this.txtEstadoAlquiler.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.txtEstadoAlquiler.Location = new System.Drawing.Point(472, 250);
             this.txtEstadoAlquiler.Name = "txtEstadoAlquiler";
             this.txtEstadoAlquiler.ReadOnly = true;
-            this.txtEstadoAlquiler.Size = new System.Drawing.Size(214, 22);
+            this.txtEstadoAlquiler.Size = new System.Drawing.Size(385, 31);
             this.txtEstadoAlquiler.TabIndex = 54;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(479, 369);
+            this.btnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGuardar.Font = new System.Drawing.Font("Cambria", 15.2F);
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(899, 300);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(161, 69);
             this.btnGuardar.TabIndex = 55;
-            this.btnGuardar.Text = "button1";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(589, 373);
+            this.btnNuevo.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNuevo.Font = new System.Drawing.Font("Cambria", 15.2F);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
+            this.btnNuevo.Location = new System.Drawing.Point(1115, 300);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.Size = new System.Drawing.Size(167, 69);
             this.btnNuevo.TabIndex = 56;
-            this.btnNuevo.Text = "button2";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Text = "Cancelar";
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnBuscarDetalle
             // 
-            this.btnBuscarDetalle.Location = new System.Drawing.Point(685, 19);
+            this.btnBuscarDetalle.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBuscarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscarDetalle.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.btnBuscarDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarDetalle.Location = new System.Drawing.Point(312, 74);
             this.btnBuscarDetalle.Name = "btnBuscarDetalle";
-            this.btnBuscarDetalle.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarDetalle.Size = new System.Drawing.Size(117, 38);
             this.btnBuscarDetalle.TabIndex = 57;
-            this.btnBuscarDetalle.Text = "button3";
-            this.btnBuscarDetalle.UseVisualStyleBackColor = true;
+            this.btnBuscarDetalle.Text = "Buscar";
+            this.btnBuscarDetalle.UseVisualStyleBackColor = false;
             this.btnBuscarDetalle.Click += new System.EventHandler(this.btnBuscarDetalle_Click);
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(461, 341);
+            this.txtMonto.Font = new System.Drawing.Font("Cambria", 12.2F);
+            this.txtMonto.Location = new System.Drawing.Point(53, 250);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(275, 22);
+            this.txtMonto.Size = new System.Drawing.Size(376, 31);
             this.txtMonto.TabIndex = 58;
             this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
             // 
             // dgvCargos
             // 
             this.dgvCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCargos.Location = new System.Drawing.Point(486, 430);
+            this.dgvCargos.Location = new System.Drawing.Point(484, 759);
             this.dgvCargos.Name = "dgvCargos";
             this.dgvCargos.RowHeadersWidth = 51;
             this.dgvCargos.RowTemplate.Height = 24;
-            this.dgvCargos.Size = new System.Drawing.Size(600, 222);
+            this.dgvCargos.Size = new System.Drawing.Size(1329, 335);
             this.dgvCargos.TabIndex = 59;
             // 
-            // textBox2
+            // panel3
             // 
-            this.textBox2.Location = new System.Drawing.Point(775, 210);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(298, 89);
-            this.textBox2.TabIndex = 60;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.lblRol);
+            this.panel3.Controls.Add(this.lblUsuario);
+            this.panel3.Location = new System.Drawing.Point(430, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1658, 121);
+            this.panel3.TabIndex = 63;
             // 
-            // dateTimePicker1
+            // label7
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(799, 149);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
-            this.dateTimePicker1.TabIndex = 61;
+            this.label7.AutoSize = true;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Cambria", 14.8F);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(36, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(501, 30);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Registro de cargos por daños, retrasos u otros";
             // 
-            // textBox3
+            // label6
             // 
-            this.textBox3.Location = new System.Drawing.Point(766, 364);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 62;
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Cambria", 25F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(32, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(451, 49);
+            this.label6.TabIndex = 39;
+            this.label6.Text = "CARGOS ADICIONALES";
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.Location = new System.Drawing.Point(1356, 29);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(90, 33);
+            this.lblRol.TabIndex = 23;
+            this.lblRol.Text = "label1";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(1205, 29);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(90, 33);
+            this.lblUsuario.TabIndex = 22;
+            this.lblUsuario.Text = "label1";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label16);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.Vehiculo);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.txtMonto);
+            this.panel4.Controls.Add(this.btnBuscarDetalle);
+            this.panel4.Controls.Add(this.btnNuevo);
+            this.panel4.Controls.Add(this.btnGuardar);
+            this.panel4.Controls.Add(this.txtEstadoAlquiler);
+            this.panel4.Controls.Add(this.txtDescripcion);
+            this.panel4.Controls.Add(this.cbTipoCargo);
+            this.panel4.Controls.Add(this.dtpFecha);
+            this.panel4.Controls.Add(this.txtCliente);
+            this.panel4.Controls.Add(this.txtVehiculo);
+            this.panel4.Controls.Add(this.txtIdDetalle);
+            this.panel4.Location = new System.Drawing.Point(484, 234);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1329, 422);
+            this.panel4.TabIndex = 64;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Location = new System.Drawing.Point(484, 164);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1329, 72);
+            this.panel5.TabIndex = 65;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.Font = new System.Drawing.Font("Cambria", 17F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(13, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(351, 34);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "Datos del cargo adicional";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label2.Location = new System.Drawing.Point(49, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 27);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Detalle";
+            // 
+            // Vehiculo
+            // 
+            this.Vehiculo.AutoSize = true;
+            this.Vehiculo.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.Vehiculo.Location = new System.Drawing.Point(50, 133);
+            this.Vehiculo.Name = "Vehiculo";
+            this.Vehiculo.Size = new System.Drawing.Size(95, 27);
+            this.Vehiculo.TabIndex = 64;
+            this.Vehiculo.Text = "Vehiculo";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label4.Location = new System.Drawing.Point(50, 222);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 27);
+            this.label4.TabIndex = 65;
+            this.label4.Text = "Monto";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label5.Location = new System.Drawing.Point(469, 137);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 27);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "Tipo_cargo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label8.Location = new System.Drawing.Point(468, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 27);
+            this.label8.TabIndex = 66;
+            this.label8.Text = "Cliente";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label9.Location = new System.Drawing.Point(469, 222);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(164, 27);
+            this.label9.TabIndex = 68;
+            this.label9.Text = "Estado_alquiler";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label10.Location = new System.Drawing.Point(50, 300);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 27);
+            this.label10.TabIndex = 69;
+            this.label10.Text = "Fecha";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Cambria", 13.8F);
+            this.label16.Location = new System.Drawing.Point(894, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(128, 27);
+            this.label16.TabIndex = 70;
+            this.label16.Text = "Descripcion";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Location = new System.Drawing.Point(484, 692);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1329, 72);
+            this.panel6.TabIndex = 66;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.Font = new System.Drawing.Font("Cambria", 17F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(13, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(212, 34);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Lista de cargos";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Image = global::Capa.Presentacion.Properties.Resources.tacometro_alt_mas_rapido;
+            this.pictureBox10.Location = new System.Drawing.Point(45, 715);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 65;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.Image = global::Capa.Presentacion.Properties.Resources.cajas;
+            this.pictureBox9.Location = new System.Drawing.Point(45, 650);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 64;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::Capa.Presentacion.Properties.Resources.archivo_factura_dolar;
+            this.pictureBox8.Location = new System.Drawing.Point(45, 511);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 63;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = global::Capa.Presentacion.Properties.Resources.paneles_de_yeso;
+            this.pictureBox7.Location = new System.Drawing.Point(45, 192);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 40;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::Capa.Presentacion.Properties.Resources.usuarios;
+            this.pictureBox6.Location = new System.Drawing.Point(45, 830);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 39;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::Capa.Presentacion.Properties.Resources.cartera;
+            this.pictureBox4.Location = new System.Drawing.Point(45, 586);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 38;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::Capa.Presentacion.Properties.Resources.senal_de_alquiler;
+            this.pictureBox3.Location = new System.Drawing.Point(45, 446);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 37;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Capa.Presentacion.Properties.Resources.lado_del_coche;
+            this.pictureBox2.Location = new System.Drawing.Point(45, 373);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 36;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::Capa.Presentacion.Properties.Resources.usuarios;
+            this.pictureBox1.Location = new System.Drawing.Point(45, 309);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Image = global::Capa.Presentacion.Properties.Resources.ChatGPT_Image_25_may_2026__00_25_35;
+            this.pictureBox5.Location = new System.Drawing.Point(34, 29);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(73, 64);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 39;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = global::Capa.Presentacion.Properties.Resources.respaldo;
+            this.pictureBox12.Location = new System.Drawing.Point(45, 946);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 67;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = global::Capa.Presentacion.Properties.Resources.lapiz_de_usuario__1_;
+            this.pictureBox11.Location = new System.Drawing.Point(45, 891);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 66;
+            this.pictureBox11.TabStop = false;
             // 
             // FormCargosAdicionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 819);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.dgvCargos);
-            this.Controls.Add(this.txtMonto);
-            this.Controls.Add(this.btnBuscarDetalle);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtEstadoAlquiler);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.cbTipoCargo);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.txtVehiculo);
-            this.Controls.Add(this.txtIdDetalle);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "FormCargosAdicionales";
             this.Text = "FormCargosAdicionales";
             this.Load += new System.EventHandler(this.FormCargosAdicionales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -625,8 +930,28 @@
         public System.Windows.Forms.TextBox txtVehiculo;
         public System.Windows.Forms.TextBox txtCliente;
         public System.Windows.Forms.TextBox txtEstadoAlquiler;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label Vehiculo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }

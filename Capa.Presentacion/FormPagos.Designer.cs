@@ -48,6 +48,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dtFechaPago = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblBalancePendiente = new System.Windows.Forms.Label();
             this.lblTotalPagado = new System.Windows.Forms.Label();
@@ -79,8 +81,9 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -88,6 +91,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.panel3.SuspendLayout();
@@ -98,6 +103,9 @@
             this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -105,6 +113,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.SuspendLayout();
             // 
             // label14
@@ -145,7 +155,7 @@
             this.btnBuscarAlquiler.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscarAlquiler.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarAlquiler.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarAlquiler.Location = new System.Drawing.Point(25, 214);
+            this.btnBuscarAlquiler.Location = new System.Drawing.Point(35, 214);
             this.btnBuscarAlquiler.Name = "btnBuscarAlquiler";
             this.btnBuscarAlquiler.Size = new System.Drawing.Size(233, 51);
             this.btnBuscarAlquiler.TabIndex = 2;
@@ -343,6 +353,22 @@
             this.panel5.TabIndex = 39;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(314, 232);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.ReadOnly = true;
+            this.txtEstado.Size = new System.Drawing.Size(223, 22);
+            this.txtEstado.TabIndex = 32;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(45, 301);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(223, 22);
+            this.txtCliente.TabIndex = 31;
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -503,7 +529,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.pictureBox12);
+            this.panel1.Controls.Add(this.pictureBox11);
+            this.panel1.Controls.Add(this.pictureBox10);
             this.panel1.Controls.Add(this.lblAdicionales);
+            this.panel1.Controls.Add(this.pictureBox9);
+            this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.lblEntrega);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lblBackups);
@@ -747,21 +778,38 @@
             this.lblClientes.Text = "Clientes";
             this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
             // 
-            // txtCliente
+            // pictureBox10
             // 
-            this.txtCliente.Location = new System.Drawing.Point(58, 304);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(100, 22);
-            this.txtCliente.TabIndex = 31;
+            this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox10.Image = global::Capa.Presentacion.Properties.Resources.tacometro_alt_mas_rapido;
+            this.pictureBox10.Location = new System.Drawing.Point(45, 715);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 55;
+            this.pictureBox10.TabStop = false;
             // 
-            // txtEstado
+            // pictureBox9
             // 
-            this.txtEstado.Location = new System.Drawing.Point(314, 237);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.ReadOnly = true;
-            this.txtEstado.Size = new System.Drawing.Size(100, 22);
-            this.txtEstado.TabIndex = 32;
+            this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox9.Image = global::Capa.Presentacion.Properties.Resources.cajas;
+            this.pictureBox9.Location = new System.Drawing.Point(45, 650);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 54;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::Capa.Presentacion.Properties.Resources.archivo_factura_dolar;
+            this.pictureBox8.Location = new System.Drawing.Point(45, 511);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 53;
+            this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -841,6 +889,28 @@
             this.pictureBox5.TabIndex = 39;
             this.pictureBox5.TabStop = false;
             // 
+            // pictureBox12
+            // 
+            this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox12.Image = global::Capa.Presentacion.Properties.Resources.respaldo;
+            this.pictureBox12.Location = new System.Drawing.Point(45, 946);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.TabIndex = 59;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox11.Image = global::Capa.Presentacion.Properties.Resources.lapiz_de_usuario__1_;
+            this.pictureBox11.Location = new System.Drawing.Point(45, 891);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 58;
+            this.pictureBox11.TabStop = false;
+            // 
             // FormPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -874,6 +944,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -881,6 +954,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -946,5 +1021,10 @@
         public System.Windows.Forms.Label lblBalancePendiente;
         public System.Windows.Forms.Label lblTotalPagado;
         public System.Windows.Forms.Label lblTotalAlquiler;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
     }
 }

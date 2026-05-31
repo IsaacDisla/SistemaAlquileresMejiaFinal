@@ -32,8 +32,8 @@
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlquileres)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,18 +88,6 @@
             this.panel1.Size = new System.Drawing.Size(1934, 119);
             this.panel1.TabIndex = 3;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label6.Font = new System.Drawing.Font("Cambria", 25.8F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(19, 19);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(440, 51);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "LISTA DE ALQUILERES";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -112,9 +100,21 @@
             this.label1.TabIndex = 41;
             this.label1.Text = "BUSCAR ALQUILER";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Cambria", 25.8F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(19, 19);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(440, 51);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "LISTA DE ALQUILERES";
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label6);
             this.panel2.ForeColor = System.Drawing.Color.White;
