@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Capa.Presentacion
 {
-    public partial class FormReportes : Form
+    public partial class FormFacturaAlquiler : Form
     {
-        public FormReportes()
+        public FormFacturaAlquiler()
         {
             InitializeComponent();
-        }
-
-        private void btnReporteFactura_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

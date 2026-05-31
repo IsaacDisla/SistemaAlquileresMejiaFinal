@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +73,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Alquiler_VehiculosMJDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Alquiler_VehiculosMJDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alquiler_VehiculosMJDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="ConexionSistemaAlquilerVehiculos.cs" />
     <Compile Include="FormAlquileres.cs">
@@ -111,6 +134,12 @@
     <Compile Include="FormEntregaVehiculo.Designer.cs">
       <DependentUpon>FormEntregaVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFacturaAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFacturaAlquiler.Designer.cs">
+      <DependentUpon>FormFacturaAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +182,12 @@
     <Compile Include="FormVehiculos.Designer.cs">
       <DependentUpon>FormVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFacturaAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFacturaAlquiler.Designer.cs">
+      <DependentUpon>FrmFacturaAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +202,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormAlquileres.resx">
       <DependentUpon>FormAlquileres.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +230,9 @@
     <EmbeddedResource Include="FormEntregaVehiculo.resx">
       <DependentUpon>FormEntregaVehiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormFacturaAlquiler.resx">
+      <DependentUpon>FormFacturaAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +254,9 @@
     <EmbeddedResource Include="FormVehiculos.resx">
       <DependentUpon>FormVehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFacturaAlquiler.resx">
+      <DependentUpon>FrmFacturaAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +273,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="VehiculosMasAlquilados.rdlc" />
     <None Include="Alquiler_VehiculosMJDataSet.xsc">
       <DependentUpon>Alquiler_VehiculosMJDataSet.xsd</DependentUpon>
@@ -254,6 +297,18 @@
     <None Include="Alquiler_VehiculosMJDataSet1.xss">
       <DependentUpon>Alquiler_VehiculosMJDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="Alquiler_VehiculosMJDataSet2.xsc">
+      <DependentUpon>Alquiler_VehiculosMJDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alquiler_VehiculosMJDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet2.xss">
+      <DependentUpon>Alquiler_VehiculosMJDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -316,6 +371,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\paneles-de-yeso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

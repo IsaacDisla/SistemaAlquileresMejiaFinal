@@ -100,6 +100,7 @@
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.dgvAlquileres = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnFactura = new System.Windows.Forms.Button();
             label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -960,6 +961,7 @@
             this.dgvAlquileres.RowTemplate.Height = 24;
             this.dgvAlquileres.Size = new System.Drawing.Size(1085, 337);
             this.dgvAlquileres.TabIndex = 48;
+            this.dgvAlquileres.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlquileres_CellContentDoubleClick);
             // 
             // button1
             // 
@@ -970,11 +972,22 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // btnFactura
+            // 
+            this.btnFactura.Location = new System.Drawing.Point(854, 149);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Size = new System.Drawing.Size(182, 23);
+            this.btnFactura.TabIndex = 60;
+            this.btnFactura.Text = "Generar report";
+            this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
+            // 
             // FormAlquileres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.txtBuscar);
@@ -1094,5 +1107,6 @@
         private System.Windows.Forms.Button btnQuitarVehiculo;
         private System.Windows.Forms.Button btnAgregarVehiculo;
         private System.Windows.Forms.TextBox txtIdVehiculo;
+        private System.Windows.Forms.Button btnFactura;
     }
 }
