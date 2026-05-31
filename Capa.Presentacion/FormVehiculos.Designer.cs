@@ -86,6 +86,7 @@
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.panel3.SuspendLayout();
@@ -401,6 +402,8 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.txtBuscar);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Location = new System.Drawing.Point(-1, -1);
             this.panel5.Name = "panel5";
@@ -779,11 +782,25 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(515, 131);
+            this.txtBuscar.Font = new System.Drawing.Font("Cambria", 12F);
+            this.txtBuscar.Location = new System.Drawing.Point(968, 21);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(368, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(368, 31);
             this.txtBuscar.TabIndex = 47;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Cambria", 15F);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(709, 16);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(229, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Reporte";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // FormVehiculos
             // 
@@ -791,7 +808,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
-            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -824,7 +840,6 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -887,5 +902,6 @@
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Button button1;
     }
 }

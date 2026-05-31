@@ -60,6 +60,10 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +75,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label14
@@ -88,45 +94,52 @@
             // dgvFactura
             // 
             this.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFactura.Location = new System.Drawing.Point(446, 137);
+            this.dgvFactura.Location = new System.Drawing.Point(446, 235);
             this.dgvFactura.Name = "dgvFactura";
             this.dgvFactura.RowHeadersWidth = 51;
             this.dgvFactura.RowTemplate.Height = 24;
-            this.dgvFactura.Size = new System.Drawing.Size(977, 863);
+            this.dgvFactura.Size = new System.Drawing.Size(1436, 765);
             this.dgvFactura.TabIndex = 0;
             // 
             // txtIdAlquiler
             // 
-            this.txtIdAlquiler.Location = new System.Drawing.Point(436, 73);
+            this.txtIdAlquiler.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdAlquiler.Location = new System.Drawing.Point(372, 26);
             this.txtIdAlquiler.Name = "txtIdAlquiler";
-            this.txtIdAlquiler.Size = new System.Drawing.Size(100, 22);
+            this.txtIdAlquiler.Size = new System.Drawing.Size(275, 31);
             this.txtIdAlquiler.TabIndex = 1;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(542, 72);
+            this.btnBuscar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(693, 17);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(250, 48);
             this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "button1";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnMostrarTodo
             // 
-            this.btnMostrarTodo.Location = new System.Drawing.Point(623, 72);
+            this.btnMostrarTodo.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnMostrarTodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMostrarTodo.ForeColor = System.Drawing.Color.White;
+            this.btnMostrarTodo.Location = new System.Drawing.Point(1153, 19);
             this.btnMostrarTodo.Name = "btnMostrarTodo";
-            this.btnMostrarTodo.Size = new System.Drawing.Size(75, 23);
+            this.btnMostrarTodo.Size = new System.Drawing.Size(250, 48);
             this.btnMostrarTodo.TabIndex = 3;
-            this.btnMostrarTodo.Text = "button1";
-            this.btnMostrarTodo.UseVisualStyleBackColor = true;
+            this.btnMostrarTodo.Text = "MOSTRAR TODO";
+            this.btnMostrarTodo.UseVisualStyleBackColor = false;
             this.btnMostrarTodo.Click += new System.EventHandler(this.btnMostrarTodo_Click);
             // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(868, 38);
+            this.lblRol.Location = new System.Drawing.Point(1344, 29);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(90, 33);
             this.lblRol.TabIndex = 25;
@@ -136,7 +149,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(717, 38);
+            this.lblUsuario.Location = new System.Drawing.Point(1193, 29);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(90, 33);
             this.lblUsuario.TabIndex = 24;
@@ -467,17 +480,64 @@
             this.lblClientes.Text = "Clientes";
             this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.lblRol);
+            this.panel3.Controls.Add(this.lblUsuario);
+            this.panel3.Location = new System.Drawing.Point(431, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1658, 120);
+            this.panel3.TabIndex = 43;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label22.Font = new System.Drawing.Font("Cambria", 25F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(32, 35);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(201, 49);
+            this.label22.TabIndex = 39;
+            this.label22.Text = "FACTURA";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.btnMostrarTodo);
+            this.panel4.Controls.Add(this.txtIdAlquiler);
+            this.panel4.Controls.Add(this.btnBuscar);
+            this.panel4.Location = new System.Drawing.Point(446, 153);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1436, 83);
+            this.panel4.TabIndex = 44;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label6.Font = new System.Drawing.Font("Cambria", 20.8F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(21, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(321, 41);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Facturas del sistema";
+            // 
             // Menu_FacturaAlquiler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1435, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblRol);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.btnMostrarTodo);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtIdAlquiler);
             this.Controls.Add(this.dgvFactura);
             this.Name = "Menu_FacturaAlquiler";
             this.Text = "Menu_FacturaAlquiler";
@@ -494,8 +554,11 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -532,5 +595,9 @@
         private System.Windows.Forms.Label lblPagos;
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label6;
     }
 }

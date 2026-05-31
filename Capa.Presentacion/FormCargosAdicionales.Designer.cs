@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Label label15;
+            System.Windows.Forms.Label label14;
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAdicionales = new System.Windows.Forms.Label();
             this.lblEntrega = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.lblBackups = new System.Windows.Forms.Label();
             this.lblRoles = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -42,32 +42,36 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.lblAlquileres = new System.Windows.Forms.Label();
             this.lblUsuarios = new System.Windows.Forms.Label();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtIdDetalle = new System.Windows.Forms.TextBox();
-            this.txtVehiculo = new System.Windows.Forms.TextBox();
-            this.txtCliente = new System.Windows.Forms.TextBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.cbTipoCargo = new System.Windows.Forms.ComboBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtEstadoAlquiler = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnBuscarDetalle = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.txtMonto = new System.Windows.Forms.TextBox();
-            this.dgvCargos = new System.Windows.Forms.DataGridView();
-            label15 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblDetalleID = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblMonto = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dgvHistorial = new System.Windows.Forms.DataGridView();
+            this.btnSeleccionarDetalle = new System.Windows.Forms.Button();
+            label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -77,27 +81,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            label15.Font = new System.Drawing.Font("Cambria", 10.8F);
-            label15.ForeColor = System.Drawing.Color.DodgerBlue;
-            label15.Location = new System.Drawing.Point(128, 65);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(182, 21);
-            label15.TabIndex = 40;
-            label15.Text = "Y ALQUILA UN COCHE";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.lblAdicionales);
             this.panel1.Controls.Add(this.lblEntrega);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lblBackups);
             this.panel1.Controls.Add(this.lblRoles);
             this.panel1.Controls.Add(this.label23);
@@ -107,9 +101,9 @@
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.lblAlquileres);
             this.panel1.Controls.Add(this.lblUsuarios);
@@ -120,8 +114,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 819);
-            this.panel1.TabIndex = 46;
+            this.panel1.Size = new System.Drawing.Size(431, 1055);
+            this.panel1.TabIndex = 44;
             // 
             // lblAdicionales
             // 
@@ -147,17 +141,17 @@
             this.lblEntrega.TabIndex = 45;
             this.lblEntrega.Text = "Entregas";
             // 
-            // label11
+            // label9
             // 
-            this.label11.AutoSize = true;
-            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label11.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label11.ForeColor = System.Drawing.SystemColors.Window;
-            this.label11.Location = new System.Drawing.Point(106, 515);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 36);
-            this.label11.TabIndex = 44;
-            this.label11.Text = "Factura";
+            this.label9.AutoSize = true;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label9.ForeColor = System.Drawing.SystemColors.Window;
+            this.label9.Location = new System.Drawing.Point(106, 515);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 36);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Factura";
             // 
             // lblBackups
             // 
@@ -261,17 +255,29 @@
             this.pictureBox1.TabIndex = 35;
             this.pictureBox1.TabStop = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label11.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label11.ForeColor = System.Drawing.Color.Silver;
+            this.label11.Location = new System.Drawing.Point(29, 254);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(133, 36);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "GESTION";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label12.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(29, 254);
+            this.label12.Location = new System.Drawing.Point(29, 772);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(133, 36);
-            this.label12.TabIndex = 34;
-            this.label12.Text = "GESTION";
+            this.label12.Size = new System.Drawing.Size(256, 36);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "ADMINISTRACIÓN";
             // 
             // label13
             // 
@@ -279,31 +285,19 @@
             this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label13.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.label13.ForeColor = System.Drawing.Color.Silver;
-            this.label13.Location = new System.Drawing.Point(29, 772);
+            this.label13.Location = new System.Drawing.Point(29, 135);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(256, 36);
-            this.label13.TabIndex = 33;
-            this.label13.Text = "ADMINISTRACIÓN";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label14.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label14.ForeColor = System.Drawing.Color.Silver;
-            this.label14.Location = new System.Drawing.Point(29, 135);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(158, 36);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "PRINCIPAL";
+            this.label13.Size = new System.Drawing.Size(158, 36);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "PRINCIPAL";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(label15);
-            this.panel2.Controls.Add(this.label25);
+            this.panel2.Controls.Add(label14);
+            this.panel2.Controls.Add(this.label15);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -322,17 +316,29 @@
             this.pictureBox5.TabIndex = 39;
             this.pictureBox5.TabStop = false;
             // 
-            // label25
+            // label14
             // 
-            this.label25.AutoSize = true;
-            this.label25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label25.Font = new System.Drawing.Font("Cambria", 17.8F);
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(126, 29);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(166, 36);
-            this.label25.TabIndex = 39;
-            this.label25.Text = "Mejia Taller";
+            label14.AutoSize = true;
+            label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            label14.Font = new System.Drawing.Font("Cambria", 10.8F);
+            label14.ForeColor = System.Drawing.Color.DodgerBlue;
+            label14.Location = new System.Drawing.Point(128, 65);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(182, 21);
+            label14.TabIndex = 40;
+            label14.Text = "Y ALQUILA UN COCHE";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label15.Font = new System.Drawing.Font("Cambria", 17.8F);
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(126, 29);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(166, 36);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Mejia Taller";
             // 
             // lblAlquileres
             // 
@@ -406,139 +412,187 @@
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
             // 
-            // textBox1
+            // panel3
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 47;
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.lblRol);
+            this.panel3.Controls.Add(this.lblUsuario);
+            this.panel3.Location = new System.Drawing.Point(430, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1658, 120);
+            this.panel3.TabIndex = 43;
             // 
-            // txtIdDetalle
+            // label8
             // 
-            this.txtIdDetalle.Location = new System.Drawing.Point(465, 20);
-            this.txtIdDetalle.Name = "txtIdDetalle";
-            this.txtIdDetalle.ReadOnly = true;
-            this.txtIdDetalle.Size = new System.Drawing.Size(190, 22);
-            this.txtIdDetalle.TabIndex = 48;
+            this.label8.AutoSize = true;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Font = new System.Drawing.Font("Cambria", 14.8F);
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(36, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 30);
+            this.label8.TabIndex = 42;
             // 
-            // txtVehiculo
+            // label22
             // 
-            this.txtVehiculo.Location = new System.Drawing.Point(462, 56);
-            this.txtVehiculo.Name = "txtVehiculo";
-            this.txtVehiculo.ReadOnly = true;
-            this.txtVehiculo.Size = new System.Drawing.Size(193, 22);
-            this.txtVehiculo.TabIndex = 49;
+            this.label22.AutoSize = true;
+            this.label22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label22.Font = new System.Drawing.Font("Cambria", 25F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(32, 20);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(589, 49);
+            this.label22.TabIndex = 39;
+            this.label22.Text = "Gestión de Cargos adicionales";
             // 
-            // txtCliente
+            // lblRol
             // 
-            this.txtCliente.Location = new System.Drawing.Point(461, 92);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(194, 22);
-            this.txtCliente.TabIndex = 50;
-            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Cambria", 16.8F);
+            this.lblRol.Location = new System.Drawing.Point(1356, 36);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(90, 33);
+            this.lblRol.TabIndex = 23;
+            this.lblRol.Text = "label1";
             // 
-            // dtpFecha
+            // lblUsuario
             // 
-            this.dtpFecha.Location = new System.Drawing.Point(462, 136);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(274, 22);
-            this.dtpFecha.TabIndex = 51;
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Cambria", 16.8F);
+            this.lblUsuario.Location = new System.Drawing.Point(1206, 36);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(90, 33);
+            this.lblUsuario.TabIndex = 22;
+            this.lblUsuario.Text = "label1";
             // 
-            // cbTipoCargo
+            // panel4
             // 
-            this.cbTipoCargo.FormattingEnabled = true;
-            this.cbTipoCargo.Location = new System.Drawing.Point(463, 171);
-            this.cbTipoCargo.Name = "cbTipoCargo";
-            this.cbTipoCargo.Size = new System.Drawing.Size(216, 24);
-            this.cbTipoCargo.TabIndex = 52;
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Location = new System.Drawing.Point(462, 238);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(298, 89);
-            this.txtDescripcion.TabIndex = 53;
-            // 
-            // txtEstadoAlquiler
-            // 
-            this.txtEstadoAlquiler.Location = new System.Drawing.Point(465, 210);
-            this.txtEstadoAlquiler.Name = "txtEstadoAlquiler";
-            this.txtEstadoAlquiler.ReadOnly = true;
-            this.txtEstadoAlquiler.Size = new System.Drawing.Size(214, 22);
-            this.txtEstadoAlquiler.TabIndex = 54;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(479, 369);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 55;
-            this.btnGuardar.Text = "button1";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(589, 373);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 56;
-            this.btnNuevo.Text = "button2";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // btnBuscarDetalle
-            // 
-            this.btnBuscarDetalle.Location = new System.Drawing.Point(685, 19);
-            this.btnBuscarDetalle.Name = "btnBuscarDetalle";
-            this.btnBuscarDetalle.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarDetalle.TabIndex = 57;
-            this.btnBuscarDetalle.Text = "button3";
-            this.btnBuscarDetalle.UseVisualStyleBackColor = true;
-            this.btnBuscarDetalle.Click += new System.EventHandler(this.btnBuscarDetalle_Click);
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnSeleccionarDetalle);
+            this.panel4.Controls.Add(this.dtpFecha);
+            this.panel4.Controls.Add(this.btnGuardar);
+            this.panel4.Controls.Add(this.lblTotal);
+            this.panel4.Controls.Add(this.lblFecha);
+            this.panel4.Controls.Add(this.lblMonto);
+            this.panel4.Controls.Add(this.lblDescripcion);
+            this.panel4.Controls.Add(this.lblDetalleID);
+            this.panel4.Controls.Add(this.txtDescripcion);
+            this.panel4.Controls.Add(this.txtMonto);
+            this.panel4.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel4.Location = new System.Drawing.Point(483, 192);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(662, 445);
+            this.panel4.TabIndex = 45;
             // 
             // txtMonto
             // 
-            this.txtMonto.Location = new System.Drawing.Point(461, 341);
+            this.txtMonto.Location = new System.Drawing.Point(134, 253);
             this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(275, 22);
-            this.txtMonto.TabIndex = 58;
-            this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
+            this.txtMonto.Size = new System.Drawing.Size(100, 34);
+            this.txtMonto.TabIndex = 0;
             // 
-            // dgvCargos
+            // txtDescripcion
             // 
-            this.dgvCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCargos.Location = new System.Drawing.Point(486, 430);
-            this.dgvCargos.Name = "dgvCargos";
-            this.dgvCargos.RowHeadersWidth = 51;
-            this.dgvCargos.RowTemplate.Height = 24;
-            this.dgvCargos.Size = new System.Drawing.Size(600, 222);
-            this.dgvCargos.TabIndex = 59;
+            this.txtDescripcion.Location = new System.Drawing.Point(143, 65);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(100, 34);
+            this.txtDescripcion.TabIndex = 1;
+            // 
+            // lblDetalleID
+            // 
+            this.lblDetalleID.AutoSize = true;
+            this.lblDetalleID.Location = new System.Drawing.Point(43, 61);
+            this.lblDetalleID.Name = "lblDetalleID";
+            this.lblDetalleID.Size = new System.Drawing.Size(72, 27);
+            this.lblDetalleID.TabIndex = 2;
+            this.lblDetalleID.Text = "label1";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(43, 140);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(72, 27);
+            this.lblDescripcion.TabIndex = 3;
+            this.lblDescripcion.Text = "label2";
+            // 
+            // lblMonto
+            // 
+            this.lblMonto.AutoSize = true;
+            this.lblMonto.Location = new System.Drawing.Point(43, 223);
+            this.lblMonto.Name = "lblMonto";
+            this.lblMonto.Size = new System.Drawing.Size(72, 27);
+            this.lblMonto.TabIndex = 4;
+            this.lblMonto.Text = "label3";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(43, 313);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(72, 27);
+            this.lblFecha.TabIndex = 5;
+            this.lblFecha.Text = "label4";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(22, 400);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(72, 27);
+            this.lblTotal.TabIndex = 6;
+            this.lblTotal.Text = "label5";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(382, 128);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(130, 39);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "button1";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(315, 205);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(134, 34);
+            this.dtpFecha.TabIndex = 8;
+            // 
+            // dgvHistorial
+            // 
+            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistorial.Location = new System.Drawing.Point(725, 496);
+            this.dgvHistorial.Name = "dgvHistorial";
+            this.dgvHistorial.RowHeadersWidth = 51;
+            this.dgvHistorial.RowTemplate.Height = 24;
+            this.dgvHistorial.Size = new System.Drawing.Size(289, 37);
+            this.dgvHistorial.TabIndex = 46;
+            // 
+            // btnSeleccionarDetalle
+            // 
+            this.btnSeleccionarDetalle.Location = new System.Drawing.Point(298, 29);
+            this.btnSeleccionarDetalle.Name = "btnSeleccionarDetalle";
+            this.btnSeleccionarDetalle.Size = new System.Drawing.Size(130, 39);
+            this.btnSeleccionarDetalle.TabIndex = 9;
+            this.btnSeleccionarDetalle.Text = "button1";
+            this.btnSeleccionarDetalle.UseVisualStyleBackColor = true;
+            this.btnSeleccionarDetalle.Click += new System.EventHandler(this.btnSeleccionarDetalle_Click);
             // 
             // FormCargosAdicionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 819);
-            this.Controls.Add(this.dgvCargos);
-            this.Controls.Add(this.txtMonto);
-            this.Controls.Add(this.btnBuscarDetalle);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.txtEstadoAlquiler);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.cbTipoCargo);
-            this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.txtVehiculo);
-            this.Controls.Add(this.txtIdDetalle);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.dgvHistorial);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Name = "FormCargosAdicionales";
             this.Text = "FormCargosAdicionales";
-            this.Load += new System.EventHandler(this.FormCargosAdicionales_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -550,9 +604,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -561,7 +618,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblAdicionales;
         private System.Windows.Forms.Label lblEntrega;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblBackups;
         private System.Windows.Forms.Label lblRoles;
         private System.Windows.Forms.Label label23;
@@ -571,30 +628,34 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblAlquileres;
         private System.Windows.Forms.Label lblUsuarios;
         private System.Windows.Forms.Label lblCerrarSesion;
         private System.Windows.Forms.Label lblPagos;
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.ComboBox cbTipoCargo;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.Label lblMonto;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblDetalleID;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnBuscarDetalle;
         private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.DataGridView dgvCargos;
-        public System.Windows.Forms.TextBox txtIdDetalle;
-        public System.Windows.Forms.TextBox txtVehiculo;
-        public System.Windows.Forms.TextBox txtCliente;
-        public System.Windows.Forms.TextBox txtEstadoAlquiler;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridView dgvHistorial;
+        private System.Windows.Forms.Button btnSeleccionarDetalle;
     }
 }

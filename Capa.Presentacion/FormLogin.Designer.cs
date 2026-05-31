@@ -81,7 +81,6 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(435, 50);
             this.txtUsuario.TabIndex = 2;
-            this.txtUsuario.Text = "Usuario";
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
             this.txtUsuario.Leave += new System.EventHandler(this.txtUsuario_Leave);
@@ -96,7 +95,6 @@
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(435, 47);
             this.txtClave.TabIndex = 3;
-            this.txtClave.Text = "Contraseña";
             this.txtClave.TextChanged += new System.EventHandler(this.txtClave_TextChanged);
             this.txtClave.Enter += new System.EventHandler(this.txtClave_Enter);
             this.txtClave.Leave += new System.EventHandler(this.txtClave_Leave);
@@ -250,7 +248,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F);
             this.panel3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(623, 284);
+            this.panel3.Location = new System.Drawing.Point(623, 289);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 10);
             this.panel3.TabIndex = 9;
@@ -261,7 +259,7 @@
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F);
             this.panel4.ForeColor = System.Drawing.Color.Transparent;
-            this.panel4.Location = new System.Drawing.Point(623, 420);
+            this.panel4.Location = new System.Drawing.Point(623, 425);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(455, 10);
             this.panel4.TabIndex = 10;

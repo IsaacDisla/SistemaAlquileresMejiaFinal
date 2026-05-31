@@ -122,5 +122,10 @@ namespace Capa.Presentacion
         {
 
         }
+        private void btnSeleccionarDetalle_Click(object sender, EventArgs e)
+      
+        
+        {
+        }
     }
 }

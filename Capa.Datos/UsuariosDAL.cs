@@ -6,7 +6,7 @@ namespace Capa.Datos
 {
     public class UsuariosDAL
     {
-        private string conexion = "Server=.;Database=Alquiler_VehiculosMJ;Trusted_Connection=True;";
+        private string conexion = "Server=.;Database=Alquiler_VehiculosMj;Trusted_Connection=True;";
 
         public DataTable ListarUsuarios()
         {

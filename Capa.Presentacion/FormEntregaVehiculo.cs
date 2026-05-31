@@ -16,19 +16,12 @@ namespace Capa.Presentacion
     {
         EntregaVehiculoBLL bll = new EntregaVehiculoBLL();
         EntregaVehiculo entregaSeleccionada = new EntregaVehiculo();
-
-        DateTime fechaEsperada;
-
-        decimal precioDia;
         public FormEntregaVehiculo()
         {
             InitializeComponent();
 
             chkAplicaRetraso.CheckedChanged += chkAplicaRetraso_CheckedChanged_1;
             chkTieneDanos.CheckedChanged += chkTieneDanos_CheckedChanged_1;
-
-            this.WindowState = FormWindowState.Maximized;
-
         }
 
         private void txtObservaciones_TextChanged(object sender, EventArgs e)
@@ -55,9 +48,6 @@ namespace Capa.Presentacion
             cbEstadoEntrada.Items.Add("Dañado");
 
             ListarEntregas();
-
-            lblUsuario.Text = Sesion.Nombre;
-            lblRol.Text = Sesion.Rol;
         }
 
         private void ListarEntregas()
@@ -149,17 +139,19 @@ namespace Capa.Presentacion
                     entrega.Dias_Retraso = 0;
                 }
 
+                // GUARDAR
+
                 bll.Insertar(entrega);
 
                 MessageBox.Show("Entrega guardada correctamente");
 
-                // LIMPIAR FORM
+                // LIMPIAR
+
                 Nuevo();
 
-                // REFRESCAR DATAGRID
-                // Esto es lo importante para que el entregado desaparezca
-                ListarEntregas();
+                // RECARGAR GRID
 
+                ListarEntregas();
             }
             catch (Exception ex)
             {
@@ -241,22 +233,7 @@ namespace Capa.Presentacion
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                txtIdDetalle.Text =
-                    frm.IdDetalleSeleccionado.ToString();
-
-                fechaEsperada =
-                    frm.FechaEntregaEsperada;
-
-                precioDia =
-                    frm.PrecioDia;
-
-                lblVehiculo.Text =
-                    frm.Vehiculo;
-
-                lblFechaEsperada.Text =
-                    fechaEsperada.ToShortDateString();
-
-                CalcularRetraso();
+                txtIdDetalle.Text = frm.IdDetalleSeleccionado.ToString();
             }
         }
 
@@ -300,34 +277,9 @@ namespace Capa.Presentacion
                 }
             }
         }
+    
 
-        private void CalcularRetraso()
-        {
-            if (fechaEsperada == DateTime.MinValue)
-            {
-                return;
-            }
-
-            int dias =
-                (dtFechaEntrega.Value.Date - fechaEsperada.Date).Days;
-
-            if (dias > 0)
-            {
-                chkAplicaRetraso.Checked = true;
-
-                numDiasRetraso.Value =
-                    Math.Min(dias, numDiasRetraso.Maximum);
-            }
-            else
-            {
-                chkAplicaRetraso.Checked = false;
-
-                numDiasRetraso.Value = 0;
-            }
-        }
-
-
-        private void Nuevo()
+            private void Nuevo()
         {
             txtIdDetalle.Clear();
             txtKilometrajeEntrada.Clear();
@@ -375,97 +327,14 @@ namespace Capa.Presentacion
         }
         private void btnBuscarDetalle_Click(object sender, EventArgs e)
         {
-            FormBuscarDetalle frm = new FormBuscarDetalle();
 
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                txtIdDetalle.Text = frm.IdDetalleSeleccionado.ToString();
-            }
         }
 
         private void label22_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        private void AbrirFormulario(Form formulario)
-        {
-            formulario.Show();
-            this.Hide();
-        }
-
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FrmMenuPrincipal());
-        }
-
-        private void lblClientes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormClientes());
-        }
-
-        private void lblVehiculos_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormVehiculos());
-        }
-
-        private void lblAlquileres_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormAlquileres());
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new Menu_FacturaAlquiler());
-        }
-
-        private void lblPagos_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormPagos());
-        }
-
-        private void lblEntrega_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormEntregaVehiculo());
-        }
-
-        private void lblAdicionales_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormCargosAdicionales());
-        }
-
-        private void lblUsuarios_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormUsuarios());
-        }
-
-        private void lblRoles_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new FormRoles());
-        }
-
-        private void lblBackups_Click(object sender, EventArgs e)
-        {
-            FormBackup frm = new FormBackup();
-
-            frm.StartPosition = FormStartPosition.CenterScreen;
-
-            frm.ShowDialog();
-        }
-
-        private void dtFechaEntrega_ValueChanged(object sender, EventArgs e)
-        {
-            CalcularRetraso();
-
-        }
     }
-}
 
+}
 
