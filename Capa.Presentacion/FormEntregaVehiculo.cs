@@ -465,6 +465,11 @@ namespace Capa.Presentacion
             CalcularRetraso();
 
         }
+
+        private void txtIdDetalle_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
