@@ -36,7 +36,6 @@
             this.btnReporteCargos = new System.Windows.Forms.Button();
             this.btnReporteEntregas = new System.Windows.Forms.Button();
             this.btnReportePendientes = new System.Windows.Forms.Button();
-            this.btnReporteFactura = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -111,22 +110,11 @@
             this.btnReportePendientes.Text = "Pendientes de Pago";
             this.btnReportePendientes.UseVisualStyleBackColor = true;
             // 
-            // btnReporteFactura
-            // 
-            this.btnReporteFactura.Location = new System.Drawing.Point(161, 453);
-            this.btnReporteFactura.Name = "btnReporteFactura";
-            this.btnReporteFactura.Size = new System.Drawing.Size(257, 23);
-            this.btnReporteFactura.TabIndex = 10;
-            this.btnReporteFactura.Text = "Factura de Alquiler";
-            this.btnReporteFactura.UseVisualStyleBackColor = true;
-            this.btnReporteFactura.Click += new System.EventHandler(this.btnReporteFactura_Click);
-            // 
             // FormReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 602);
-            this.Controls.Add(this.btnReporteFactura);
             this.Controls.Add(this.btnReportePendientes);
             this.Controls.Add(this.btnReporteEntregas);
             this.Controls.Add(this.btnReporteCargos);
@@ -152,6 +140,5 @@
         private System.Windows.Forms.Button btnReporteCargos;
         private System.Windows.Forms.Button btnReporteEntregas;
         private System.Windows.Forms.Button btnReportePendientes;
-        private System.Windows.Forms.Button btnReporteFactura;
     }
 }

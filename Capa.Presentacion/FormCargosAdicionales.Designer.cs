@@ -67,6 +67,9 @@
             this.btnBuscarDetalle = new System.Windows.Forms.Button();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.dgvCargos = new System.Windows.Forms.DataGridView();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -517,11 +520,37 @@
             this.dgvCargos.Size = new System.Drawing.Size(600, 222);
             this.dgvCargos.TabIndex = 59;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(775, 210);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(298, 89);
+            this.textBox2.TabIndex = 60;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(799, 149);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(274, 22);
+            this.dateTimePicker1.TabIndex = 61;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(766, 364);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.TabIndex = 62;
+            // 
             // FormCargosAdicionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 819);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dgvCargos);
             this.Controls.Add(this.txtMonto);
             this.Controls.Add(this.btnBuscarDetalle);
@@ -596,5 +625,8 @@
         public System.Windows.Forms.TextBox txtVehiculo;
         public System.Windows.Forms.TextBox txtCliente;
         public System.Windows.Forms.TextBox txtEstadoAlquiler;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
