@@ -119,6 +119,7 @@
             this.btnReporteFactura.TabIndex = 10;
             this.btnReporteFactura.Text = "Factura de Alquiler";
             this.btnReporteFactura.UseVisualStyleBackColor = true;
+            this.btnReporteFactura.Click += new System.EventHandler(this.btnReporteFactura_Click);
             // 
             // FormReportes
             // 

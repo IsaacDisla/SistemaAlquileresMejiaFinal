@@ -371,5 +371,33 @@ namespace Capa.Presentacion
             frm.ShowDialog();
 
         }
+
+        private void dgvAlquileres_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idAlquiler = Convert.ToInt32(
+      dgvAlquileres.CurrentRow.Cells["Id_Alquiler"].Value);
+
+            FrmFacturaAlquiler frm =
+                new FrmFacturaAlquiler(idAlquiler);
+
+            frm.ShowDialog();
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            if (dgvAlquileres.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un alquiler.");
+                return;
+            }
+
+            int idAlquiler = Convert.ToInt32(
+                dgvAlquileres.CurrentRow.Cells["Id_Alquiler"].Value);
+
+            FrmFacturaAlquiler frm =
+                new FrmFacturaAlquiler(idAlquiler);
+
+            frm.ShowDialog();
+        }
     }
 }
