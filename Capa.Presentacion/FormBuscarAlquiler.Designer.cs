@@ -43,11 +43,11 @@
             // dgvAlquileres
             // 
             this.dgvAlquileres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlquileres.Location = new System.Drawing.Point(115, 259);
+            this.dgvAlquileres.Location = new System.Drawing.Point(115, 318);
             this.dgvAlquileres.Name = "dgvAlquileres";
             this.dgvAlquileres.RowHeadersWidth = 51;
             this.dgvAlquileres.RowTemplate.Height = 24;
-            this.dgvAlquileres.Size = new System.Drawing.Size(1722, 622);
+            this.dgvAlquileres.Size = new System.Drawing.Size(1590, 563);
             this.dgvAlquileres.TabIndex = 0;
             this.dgvAlquileres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlquileres_CellContentClick);
             // 
@@ -57,9 +57,9 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSeleccionar.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(115, 919);
+            this.btnSeleccionar.Location = new System.Drawing.Point(115, 140);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(456, 102);
+            this.btnSeleccionar.Size = new System.Drawing.Size(277, 67);
             this.btnSeleccionar.TabIndex = 1;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -71,9 +71,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(611, 919);
+            this.btnCancelar.Location = new System.Drawing.Point(409, 140);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(456, 102);
+            this.btnCancelar.Size = new System.Drawing.Size(277, 67);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -118,9 +118,9 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label6);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(115, 166);
+            this.panel2.Location = new System.Drawing.Point(115, 227);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1726, 95);
+            this.panel2.Size = new System.Drawing.Size(1590, 95);
             this.panel2.TabIndex = 41;
             // 
             // FormBuscarAlquiler
@@ -129,9 +129,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvAlquileres);
             this.Name = "FormBuscarAlquiler";
             this.Text = "frmBuscarAlquiler";

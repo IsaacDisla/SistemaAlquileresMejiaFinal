@@ -25,13 +25,104 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
+        private void EstiloGridRoles()
+        {
+            dgvRoles.BorderStyle = BorderStyle.None;
+            dgvRoles.BackgroundColor = Color.White;
+
+            dgvRoles.EnableHeadersVisualStyles = false;
+
+            dgvRoles.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvRoles.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvRoles.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvRoles.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvRoles.ColumnHeadersHeight = 45;
+
+            dgvRoles.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvRoles.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvRoles.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvRoles.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvRoles.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvRoles.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvRoles.GridColor =
+                Color.LightGray;
+
+            dgvRoles.RowTemplate.Height = 35;
+
+            dgvRoles.RowHeadersVisible = false;
+
+            dgvRoles.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvRoles.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvRoles.MultiSelect = false;
+
+            dgvRoles.AllowUserToAddRows = false;
+
+            dgvRoles.AllowUserToDeleteRows = false;
+
+            dgvRoles.AllowUserToResizeRows = false;
+
+            dgvRoles.ReadOnly = true;
+        }
 
         private void FormRoles_Load(object sender, EventArgs e)
         {
+            EstiloGridRoles();
+
             ListarRoles();
+
+            dgvRoles.Columns["Id_Rol"].Visible = false;
 
             lblUsuario.Text = Sesion.Nombre;
             lblRol.Text = Sesion.Rol;
+
+            AplicarPermisos();
         }
 
         private void ListarRoles()
@@ -188,6 +279,27 @@ namespace Capa.Presentacion
 
             frm.ShowDialog();
 
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
         }
     }
 }

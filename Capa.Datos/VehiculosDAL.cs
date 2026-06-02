@@ -115,5 +115,22 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void EliminarVehiculo(int idVehiculo)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd =
+                    new SqlCommand("sp_EliminarVehiculo", cn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue(
+                    "@Id_Vehiculo", idVehiculo);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

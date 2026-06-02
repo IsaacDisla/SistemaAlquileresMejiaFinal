@@ -69,5 +69,74 @@ namespace Capa.Presentacion
             }
             this.Close();
         }
+
+        private void EstiloGridDetalles()
+        {
+            dgvDetalles.BorderStyle = BorderStyle.None;
+            dgvDetalles.BackgroundColor = Color.White;
+
+            dgvDetalles.EnableHeadersVisualStyles = false;
+
+            dgvDetalles.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvDetalles.ColumnHeadersHeight = 45;
+
+            dgvDetalles.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvDetalles.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvDetalles.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvDetalles.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvDetalles.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvDetalles.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvDetalles.GridColor =
+                Color.LightGray;
+
+            dgvDetalles.RowTemplate.Height = 35;
+
+            dgvDetalles.RowHeadersVisible = false;
+
+            dgvDetalles.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvDetalles.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvDetalles.MultiSelect = false;
+
+            dgvDetalles.AllowUserToAddRows = false;
+
+            dgvDetalles.AllowUserToDeleteRows = false;
+
+            dgvDetalles.AllowUserToResizeRows = false;
+
+            dgvDetalles.ReadOnly = true;
+        }
+
+        private void dgvDetalles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EstiloGridDetalles();
+            CargarDetalles();
+        }
     }
 }

@@ -84,5 +84,19 @@ namespace Capa.Datos
                 return dt;
             }
         }
+
+        public void EliminarCliente(int idCliente)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("sp_EliminarCliente", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id_Cliente", idCliente);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

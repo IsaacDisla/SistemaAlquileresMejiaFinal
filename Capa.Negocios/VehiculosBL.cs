@@ -37,6 +37,10 @@ namespace Capa.Negocios
             dal.ActualizarEstadoVehiculo(idVehiculo, estado);
         }
 
+        public void Eliminar(int idVehiculo)
+        {
+            dal.EliminarVehiculo(idVehiculo);
+        }
         public DataTable Buscar(string buscar)
         {
             return dal.BuscarVehiculos(buscar);

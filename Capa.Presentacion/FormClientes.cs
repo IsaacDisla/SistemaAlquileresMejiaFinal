@@ -27,8 +27,96 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
+        private void EstiloGridClientes()
+        {
+            dgvClientes.BorderStyle = BorderStyle.None;
+            dgvClientes.BackgroundColor = Color.White;
+
+            dgvClientes.EnableHeadersVisualStyles = false;
+
+            dgvClientes.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvClientes.ColumnHeadersHeight = 45;
+
+            dgvClientes.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvClientes.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvClientes.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvClientes.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvClientes.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvClientes.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvClientes.GridColor =
+                Color.LightGray;
+
+            dgvClientes.RowTemplate.Height = 35;
+
+            dgvClientes.RowHeadersVisible = false;
+
+            dgvClientes.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvClientes.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvClientes.MultiSelect = false;
+
+            dgvClientes.AllowUserToAddRows = false;
+
+            dgvClientes.AllowUserToDeleteRows = false;
+
+            dgvClientes.AllowUserToResizeRows = false;
+
+            dgvClientes.ReadOnly = true;
+        }
+
         private void FormClientes_Load(object sender, EventArgs e)
         {
+            EstiloGridClientes();
+
             ListarClientes();
 
             dgvClientes.Columns["Estado"].Visible = false;
@@ -36,6 +124,11 @@ namespace Capa.Presentacion
             lblUsuario.Text = Sesion.Nombre;
 
             lblRol.Text = Sesion.Rol;
+
+            AplicarPermisos();
+
+            dgvClientes.Columns["Id_Cliente"].Visible = false;
+            dgvClientes.Columns["Estado"].Visible = false;
         }
 
         private void ListarClientes()
@@ -208,6 +301,118 @@ namespace Capa.Presentacion
         {
             AbrirFormulario(new FormRoles());
         }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void lblAlquileres_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (clienteSeleccionado.Id_Cliente == 0)
+            {
+                MessageBox.Show("Seleccione un cliente.");
+                return;
+            }
+
+            DialogResult r = MessageBox.Show(
+                "¿Desea eliminar este cliente?",
+                "Confirmar",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (r == DialogResult.Yes)
+            {
+                bl.Eliminar(clienteSeleccionado.Id_Cliente);
+
+                MessageBox.Show("Cliente eliminado correctamente.");
+
+                Nuevo();
+                ListarClientes();
+            }
+        }
+        }
     }
-}
 

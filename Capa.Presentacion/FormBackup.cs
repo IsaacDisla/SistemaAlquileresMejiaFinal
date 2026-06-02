@@ -19,11 +19,80 @@ namespace Capa.Presentacion
         public FormBackup()
         {
             InitializeComponent();
+        
+        }
+
+        private void EstiloGridHistorial()
+        {
+            dgvHistorial.BorderStyle = BorderStyle.None;
+            dgvHistorial.BackgroundColor = Color.White;
+
+            dgvHistorial.EnableHeadersVisualStyles = false;
+
+            dgvHistorial.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvHistorial.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvHistorial.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvHistorial.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvHistorial.ColumnHeadersHeight = 45;
+
+            dgvHistorial.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvHistorial.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvHistorial.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvHistorial.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvHistorial.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvHistorial.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvHistorial.GridColor =
+                Color.LightGray;
+
+            dgvHistorial.RowTemplate.Height = 35;
+
+            dgvHistorial.RowHeadersVisible = false;
+
+            dgvHistorial.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvHistorial.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvHistorial.MultiSelect = false;
+
+            dgvHistorial.AllowUserToAddRows = false;
+
+            dgvHistorial.AllowUserToDeleteRows = false;
+
+            dgvHistorial.AllowUserToResizeRows = false;
+
+            dgvHistorial.ReadOnly = true;
         }
 
         private void FormBackup_Load(object sender, EventArgs e)
         {
+            EstiloGridHistorial();
             CargarHistorial();
+
+            dgvHistorial.Columns["Archivo"].Width = 250;
+            dgvHistorial.Columns["Fecha"].Width = 180;
+            dgvHistorial.Columns["Tamano"].Width = 120;
         }
 
         private void CargarHistorial()
@@ -123,6 +192,11 @@ namespace Capa.Presentacion
             {
                 MessageBox.Show("Error al restaurar backup: " + ex.Message);
             }
+        }
+
+        private void dgvHistorial_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

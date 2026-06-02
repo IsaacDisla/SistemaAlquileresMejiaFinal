@@ -24,6 +24,28 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
 
         private void Menu_FacturaAlquiler_Load(object sender, EventArgs e)
         {
@@ -35,6 +57,8 @@ namespace Capa.Presentacion
             ColorearBalance();
 
             CargarFacturas();
+
+            AplicarPermisos();
 
 
         }

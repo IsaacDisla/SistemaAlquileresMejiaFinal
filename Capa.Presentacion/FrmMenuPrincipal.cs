@@ -25,6 +25,29 @@ namespace Capa.Presentacion
             AbrirFormulario(new Menu_FacturaAlquiler());
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
         private void AbrirFormulario(Form formulario)
         {
             formulario.Show();
@@ -54,7 +77,8 @@ namespace Capa.Presentacion
 
             CargarDashboard();
 
-           /*AplicarPermisos();*/
+            AplicarPermisos();
+
 
         }
 
@@ -177,6 +201,32 @@ namespace Capa.Presentacion
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormReportes());
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
         }
     }
 }

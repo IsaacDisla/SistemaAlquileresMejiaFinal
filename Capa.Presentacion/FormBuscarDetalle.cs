@@ -1,6 +1,7 @@
 ﻿using Capa.Negocios;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Capa.Presentacion
@@ -20,11 +21,52 @@ namespace Capa.Presentacion
         public string Vehiculo { get; set; }
 
 
+
         public FormBuscarDetalle()
         {
             InitializeComponent();
             dgvDetalles.CellClick += dgvDetalles_CellClick;
 
+        }
+
+        private void EstiloGridDetalles()
+        {
+            dgvDetalles.BorderStyle = BorderStyle.None;
+            dgvDetalles.BackgroundColor = Color.White;
+
+            dgvDetalles.EnableHeadersVisualStyles = false;
+
+            dgvDetalles.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvDetalles.ColumnHeadersHeight = 45;
+
+            dgvDetalles.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvDetalles.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvDetalles.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvDetalles.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvDetalles.RowTemplate.Height = 35;
+
+            dgvDetalles.RowHeadersVisible = false;
+
+            dgvDetalles.GridColor = Color.LightGray;
         }
 
         private void FormBuscarDetalle_Load(object sender, EventArgs e)
@@ -49,9 +91,25 @@ namespace Capa.Presentacion
             DataGridViewButtonColumn btnSeleccionar = new DataGridViewButtonColumn();
             btnSeleccionar.Name = "Seleccionar";
             btnSeleccionar.HeaderText = "ACCIÓN";
-            btnSeleccionar.Text = "Elegir";
+            btnSeleccionar.Text = "✅ Seleccionar";
             btnSeleccionar.UseColumnTextForButtonValue = true;
             dgvDetalles.Columns.Add(btnSeleccionar);
+
+            btnSeleccionar.DefaultCellStyle.BackColor =
+    Color.FromArgb(0, 0, 102);
+
+            btnSeleccionar.DefaultCellStyle.ForeColor =
+                Color.White;
+
+            btnSeleccionar.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            btnSeleccionar.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            btnSeleccionar.FlatStyle = FlatStyle.Flat;
+
+            EstiloGridDetalles();
 
         }
 
@@ -85,8 +143,12 @@ namespace Capa.Presentacion
                     dgvDetalles.Rows[e.RowIndex]
                     .Cells["Vehiculo"].Value.ToString();
 
+
+
                 this.DialogResult = DialogResult.OK;
                 this.Close();
+
+               
             }
         }
 

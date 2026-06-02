@@ -75,9 +75,10 @@
             // lblUltimoBackup
             // 
             this.lblUltimoBackup.AutoSize = true;
+            this.lblUltimoBackup.BackColor = System.Drawing.Color.Transparent;
             this.lblUltimoBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F);
-            this.lblUltimoBackup.ForeColor = System.Drawing.Color.White;
-            this.lblUltimoBackup.Location = new System.Drawing.Point(313, 32);
+            this.lblUltimoBackup.ForeColor = System.Drawing.Color.Black;
+            this.lblUltimoBackup.Location = new System.Drawing.Point(39, 85);
             this.lblUltimoBackup.Name = "lblUltimoBackup";
             this.lblUltimoBackup.Size = new System.Drawing.Size(64, 22);
             this.lblUltimoBackup.TabIndex = 2;
@@ -92,6 +93,7 @@
             this.dgvHistorial.RowTemplate.Height = 24;
             this.dgvHistorial.Size = new System.Drawing.Size(730, 438);
             this.dgvHistorial.TabIndex = 3;
+            this.dgvHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHistorial_CellContentClick);
             // 
             // lblRol
             // 
@@ -147,7 +149,6 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnBackup);
-            this.panel2.Controls.Add(this.lblUltimoBackup);
             this.panel2.Controls.Add(this.btnRestaurar);
             this.panel2.Location = new System.Drawing.Point(43, 119);
             this.panel2.Name = "panel2";
@@ -173,6 +174,7 @@
             this.ClientSize = new System.Drawing.Size(806, 678);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.lblUltimoBackup);
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.dgvHistorial);

@@ -24,19 +24,109 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
+        private void EstiloGridPagos()
+        {
+            dgvPagos.BorderStyle = BorderStyle.None;
+            dgvPagos.BackgroundColor = Color.White;
+
+            dgvPagos.EnableHeadersVisualStyles = false;
+
+            dgvPagos.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvPagos.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvPagos.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvPagos.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvPagos.ColumnHeadersHeight = 45;
+
+            dgvPagos.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvPagos.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvPagos.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvPagos.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvPagos.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvPagos.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvPagos.GridColor =
+                Color.LightGray;
+
+            dgvPagos.RowTemplate.Height = 35;
+
+            dgvPagos.RowHeadersVisible = false;
+
+            dgvPagos.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvPagos.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvPagos.MultiSelect = false;
+
+            dgvPagos.AllowUserToAddRows = false;
+
+            dgvPagos.AllowUserToDeleteRows = false;
+
+            dgvPagos.AllowUserToResizeRows = false;
+
+            dgvPagos.ReadOnly = true;
+        }
         private void FormPagos_Load(object sender, EventArgs e)
         {
+            EstiloGridPagos();
+
+
             cbMetodoPago.Items.Add("Efectivo");
             cbMetodoPago.Items.Add("Transferencia");
             cbMetodoPago.Items.Add("Tarjeta");
 
             ListarPagos();
 
-
+            dgvPagos.Columns["Id_Pago"].Visible = false;
+            dgvPagos.Columns["Id_Alquiler"].Visible = false;
 
             lblUsuario.Text = Sesion.Nombre;
-
             lblRol.Text = Sesion.Rol;
+
+            AplicarPermisos();
         }
 
         private void ListarPagos()
@@ -331,6 +421,71 @@ namespace Capa.Presentacion
         private void lblBalancePendiente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblAlquileres_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
         }
     }
 }

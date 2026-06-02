@@ -34,10 +34,177 @@ namespace Capa.Presentacion
 
         }
 
-        private void CargarAlquileres()
+        private void EstiloGridPrincipal()
         {
-            dgvAlquileres.DataSource = alquilerBL.Listar();
+            dgvAlquileres.BorderStyle = BorderStyle.None;
+            dgvAlquileres.BackgroundColor = Color.White;
 
+            dgvAlquileres.EnableHeadersVisualStyles = false;
+
+            dgvAlquileres.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvAlquileres.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvAlquileres.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvAlquileres.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvAlquileres.ColumnHeadersHeight = 45;
+
+            dgvAlquileres.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvAlquileres.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvAlquileres.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvAlquileres.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvAlquileres.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvAlquileres.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvAlquileres.GridColor =
+                Color.LightGray;
+
+            dgvAlquileres.RowTemplate.Height = 35;
+
+            dgvAlquileres.RowHeadersVisible = false;
+
+            dgvAlquileres.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvAlquileres.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvAlquileres.MultiSelect = false;
+
+            dgvAlquileres.AllowUserToAddRows = false;
+
+            dgvAlquileres.AllowUserToDeleteRows = false;
+
+            dgvAlquileres.AllowUserToResizeRows = false;
+        }
+
+
+        private void EstiloGridDetalles()
+        {
+            dgvDetalles.BorderStyle = BorderStyle.None;
+            dgvDetalles.BackgroundColor = Color.White;
+
+            dgvDetalles.EnableHeadersVisualStyles = false;
+
+            dgvDetalles.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvDetalles.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvDetalles.ColumnHeadersHeight = 45;
+
+            dgvDetalles.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvDetalles.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvDetalles.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvDetalles.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvDetalles.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvDetalles.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvDetalles.GridColor =
+                Color.LightGray;
+
+            dgvDetalles.RowTemplate.Height = 35;
+
+            dgvDetalles.RowHeadersVisible = false;
+
+            dgvDetalles.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.None;
+
+            dgvDetalles.ScrollBars =
+                ScrollBars.Both;
+
+            dgvDetalles.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvDetalles.MultiSelect = false;
+
+            dgvDetalles.AllowUserToAddRows = false;
+
+            dgvDetalles.AllowUserToDeleteRows = false;
+
+            dgvDetalles.AllowUserToResizeRows = false;
+        }
+        private void CargarDetalleAlquiler(int idAlquiler)
+        {
+            try
+            {
+                dgvDetalles.DataSource =
+                    detalleBL.ObtenerDetallePorAlquiler(idAlquiler);
+
+                dgvDetalles.Columns["Id_Vehiculo"].Visible = false;
+
+                dgvDetalles.Columns["Vehiculo"].Width = 250;
+                dgvDetalles.Columns["Fecha_Entrega"].Width = 120;
+                dgvDetalles.Columns["Precio_Dia"].Width = 100;
+                dgvDetalles.Columns["Dias"].Width = 70;
+                dgvDetalles.Columns["Subtotal"].Width = 100;
+                dgvDetalles.Columns["Kilometraje"].Width = 120;
+                dgvDetalles.Columns["Combustible"].Width = 120;
+                dgvDetalles.Columns["Estado_Salida"].Width = 180;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al cargar detalle: " + ex.Message);
+            }
+        }
+
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
         }
 
         private void FormAlquileres_Load(object sender, EventArgs e)
@@ -65,9 +232,14 @@ namespace Capa.Presentacion
             cbCliente.DropDownStyle =
                 ComboBoxStyle.DropDown;
 
+            EstiloGridPrincipal();
+
+            EstiloGridDetalles();
+
             CargarAlquileres();
 
- 
+            AplicarPermisos();
+
 
         }
 
@@ -90,53 +262,54 @@ namespace Capa.Presentacion
 
         private void btnAgregarVehiculo_Click(object sender, EventArgs e)
         {
-            foreach (DataRow fila in detalles.Rows)
+            try
             {
-                if (fila["Id_Vehiculo"].ToString() == txtIdVehiculo.Text)
+                foreach (DataRow fila in detalles.Rows)
                 {
-                    MessageBox.Show("Este vehículo ya fue agregado.");
-                    return;
+                    if (fila["Id_Vehiculo"].ToString() ==
+                        txtIdVehiculo.Text)
+                    {
+                        MessageBox.Show(
+                            "Este vehículo ya fue agregado.");
+                        return;
+                    }
                 }
+
+                decimal precio =
+                    Convert.ToDecimal(txtPrecioDia.Text);
+
+                int dias =
+                    Convert.ToInt32(txtDias.Text);
+
+                decimal subtotal =
+                    precio * dias;
+
+                txtSubtotal.Text =
+                    subtotal.ToString();
+
+                detalles.Rows.Add(
+                    txtIdVehiculo.Text,
+                    txtVehiculo.Text,
+                    dtpFechaEntrega.Value.ToShortDateString(),
+                    txtPrecioDia.Text,
+                    txtDias.Text,
+                    subtotal,
+                    txtKilometrajeSalida.Text,
+                    cbCombustible.Text,
+                    cbEstadoSalida.Text
+                );
+
+                LimpiarDetalle();
             }
-
-            decimal precio = Convert.ToDecimal(txtPrecioDia.Text);
-            int dias = Convert.ToInt32(txtDias.Text);
-
-            decimal subtotal = precio * dias;
-
-            txtSubtotal.Text = subtotal.ToString();
-
-            detalles.Rows.Add(
-                txtIdVehiculo.Text,
-                txtVehiculo.Text,
-                dtpFechaEntrega.Value.ToShortDateString(),
-                txtPrecioDia.Text,
-                txtDias.Text,
-                subtotal,
-                txtKilometrajeSalida.Text,
-                cbCombustible.Text,
-                cbEstadoSalida.Text
-            );
-
-            LimpiarDetalle();
-        }
-
-        private void CargarClientes()
-        {
-            cbCliente.DataSource = clienteBL.Listar();
-
-            cbCliente.DisplayMember = "Nombre";
-
-            cbCliente.ValueMember = "Id_Cliente";
-
-            cbCliente.SelectedIndex = -1;
-
-            if (cbCliente.Items.Count > 0)
+            catch (Exception ex)
             {
-                cbCliente.SelectedIndex =
-                    cbCliente.Items.Count - 1;
+                MessageBox.Show(
+                    "Error al agregar vehículo: " +
+                    ex.Message);
             }
+
         }
+
 
         private void LimpiarDetalle()
         {
@@ -153,7 +326,10 @@ namespace Capa.Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (detalles.Rows.Count == 0)
+            try
+            {
+
+                if (detalles.Rows.Count == 0)
             {
                 MessageBox.Show("Debe agregar vehículos.");
                 return;
@@ -216,7 +392,14 @@ namespace Capa.Presentacion
             CargarAlquileres();
 
             btnNuevoAlquiler.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al guardar alquiler: " +
+                    ex.Message);
 
+            }
         }
 
         private void btnQuitarVehiculo_Click(object sender, EventArgs e)
@@ -242,6 +425,7 @@ namespace Capa.Presentacion
             txtSubtotal.Clear();
         }
 
+
         private void CalcularFechaEntrega()
         {
             int dias = Convert.ToInt32(txtDias.Value);
@@ -265,26 +449,34 @@ namespace Capa.Presentacion
 
         private void btnSeleccionarVehiculo_Click(object sender, EventArgs e)
         {
-            FormSeleccionarVehiculo frm =
-                   new FormSeleccionarVehiculo();
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            try
             {
-                txtIdVehiculo.Text =
-                    frm.IdVehiculo.ToString();
+                FormSeleccionarVehiculo frm =
+                    new FormSeleccionarVehiculo();
 
-                txtVehiculo.Text =
-                    frm.Vehiculo;
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    txtIdVehiculo.Text =
+                        frm.IdVehiculo.ToString();
 
-                txtPrecioDia.Text =
-                    frm.PrecioDia.ToString();
+                    txtVehiculo.Text =
+                        frm.Vehiculo;
 
-                CalcularSubtotal();
+                    txtPrecioDia.Text =
+                        frm.PrecioDia.ToString();
 
-                CalcularFechaEntrega();
+                    CalcularSubtotal();
+                    CalcularFechaEntrega();
 
-                txtKilometrajeSalida.Text =
-                    frm.Kilometraje.ToString();
+                    txtKilometrajeSalida.Text =
+                        frm.Kilometraje.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al seleccionar vehículo: " +
+                    ex.Message);
             }
         }
 
@@ -303,6 +495,28 @@ namespace Capa.Presentacion
             CalcularFechaEntrega();
 
             CalcularSubtotal();
+        }
+
+
+        private void CargarAlquileres()
+        {
+            try
+            {
+                dgvAlquileres.DataSource = alquilerBL.Listar();
+
+                // Ocultar IDs
+                dgvAlquileres.Columns["Id_Alquiler"].Visible = false;
+                dgvAlquileres.Columns["Id_Cliente"].Visible = false;
+
+                // Tamaños de columnas
+                dgvAlquileres.Columns["Cliente"].FillWeight = 180;
+                dgvAlquileres.Columns["Usuario"].FillWeight = 120;
+                dgvAlquileres.Columns["Estado_Alquiler"].FillWeight = 90;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar alquileres: " + ex.Message);
+            }
         }
 
         private void AbrirFormulario(Form formulario)
@@ -372,37 +586,187 @@ namespace Capa.Presentacion
 
         }
 
+
+
+        
         private void dgvAlquileres_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int idAlquiler = Convert.ToInt32(
-      dgvAlquileres.CurrentRow.Cells["Id_Alquiler"].Value);
+            try
+            {
+                if (dgvAlquileres.CurrentRow == null)
+                    return;
 
-            FrmFacturaAlquiler frm =
-                new FrmFacturaAlquiler(idAlquiler);
+                int idAlquiler = Convert.ToInt32(
+                    dgvAlquileres.CurrentRow.Cells["Id_Alquiler"].Value);
 
-            frm.ShowDialog();
+                CargarDetalleAlquiler(idAlquiler);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar detalle: " + ex.Message);
+            }
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            if (dgvAlquileres.CurrentRow == null)
+            try
             {
-                MessageBox.Show("Seleccione un alquiler.");
-                return;
+                if (dgvAlquileres.CurrentRow == null)
+                {
+                    MessageBox.Show("Seleccione un alquiler.");
+                    return;
+                }
+
+                int idAlquiler = Convert.ToInt32(
+                    dgvAlquileres.CurrentRow.Cells["Id_Alquiler"].Value);
+
+                FrmFacturaAlquiler frm =
+                    new FrmFacturaAlquiler(idAlquiler);
+
+                frm.ShowDialog();
             }
-
-            int idAlquiler = Convert.ToInt32(
-                dgvAlquileres.CurrentRow.Cells["Id_Alquiler"].Value);
-
-            FrmFacturaAlquiler frm =
-                new FrmFacturaAlquiler(idAlquiler);
-
-            frm.ShowDialog();
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al generar reporte: " + ex.Message);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvAlquileres_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label23_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+
+        }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "¿Deseas cerrar sesión?",
+                 "Cerrar Sesión",
+                 MessageBoxButtons.YesNo,
+                 MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
+        }
+
+        private void CargarClientes()
+        {
+            try
+            {
+                cbCliente.DataSource = clienteBL.Listar();
+
+                cbCliente.DisplayMember = "Cliente"; // o "Nombre" si aún no has creado Cliente
+                cbCliente.ValueMember = "Id_Cliente";
+
+                if (cbCliente.Items.Count > 0)
+                {
+                    cbCliente.SelectedIndex =
+                        cbCliente.Items.Count - 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al cargar clientes: " +
+                    ex.Message);
+            }
+        }
+
+        private void lblCerrarSesion_Click_1(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
         }
     }
 }

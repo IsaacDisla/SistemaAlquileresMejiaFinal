@@ -45,6 +45,47 @@ namespace Capa.Datos
             }
         }
 
+        public DataTable ObtenerDetallePorAlquiler(int idAlquiler)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(conexion))
+                {
+                    string query = @"
+            SELECT
+                d.Id_Vehiculo,
+                v.Marca + ' ' + v.Modelo AS Vehiculo,
+                d.Fecha_Entrega_Esperada AS Fecha_Entrega,
+                d.Precio_Dia,
+                d.Dias_Alquilados AS Dias,
+                d.Subtotal,
+                d.Kilometraje_Salida AS Kilometraje,
+                d.Combustible_Salida AS Combustible,
+                d.Estado_Salida
+            FROM Detalle_Alquileres d
+            INNER JOIN Vehiculos v
+                ON d.Id_Vehiculo = v.Id_Vehiculo
+            WHERE d.Id_Alquiler = @IdAlquiler";
+
+                    SqlDataAdapter da =
+                        new SqlDataAdapter(query, cn);
+
+                    da.SelectCommand.Parameters.AddWithValue(
+                        "@IdAlquiler", idAlquiler);
+
+                    da.Fill(dt);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+
+            return dt;
+        }
+
         public void ActualizarDetalleAlquiler(DetalleAlquileres detalle)
         {
             using (SqlConnection cn = new SqlConnection(conexion))
