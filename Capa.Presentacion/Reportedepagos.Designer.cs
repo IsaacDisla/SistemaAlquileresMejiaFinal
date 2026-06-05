@@ -1,6 +1,6 @@
 ﻿namespace Capa.Presentacion
 {
-    partial class FormFacturaAlquiler
+    partial class Reportedepagos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // FormFacturaAlquiler
+            // reportViewer1
+            // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa.Presentacion.Report3.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 42);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1165, 1001);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // Reportedepagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1411, 1055);
-            this.Name = "FormFacturaAlquiler";
-            this.Text = "FormFacturaAlquiler";
-            this.Load += new System.EventHandler(this.FormFacturaAlquiler_Load);
+            this.ClientSize = new System.Drawing.Size(1189, 1055);
+            this.Controls.Add(this.reportViewer1);
+            this.Name = "Reportedepagos";
+            this.Text = "Reportedepagos";
+            this.Load += new System.EventHandler(this.Reportedepagos_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

@@ -335,5 +335,11 @@ namespace Capa.Presentacion
                 this.Close();
             }
         }
+
+        private void lblClientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
     }
 }

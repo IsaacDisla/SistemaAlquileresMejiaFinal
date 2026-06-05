@@ -78,5 +78,19 @@ namespace Capa.Datos
                 return dt;
             }
         }
+
+        public void EliminarUsuario(int id)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("sp_EliminarUsuario", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id_Usuario", id);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

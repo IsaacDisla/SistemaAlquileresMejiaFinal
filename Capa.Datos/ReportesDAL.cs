@@ -33,5 +33,27 @@ namespace Capa.Datos
 
             return dt;
         }
+
+        public DataTable ReportePagosPendientes()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn =
+                new SqlConnection(conexion))
+            {
+                SqlCommand cmd =
+                    new SqlCommand("sp_ReportePagosPendientes", cn);
+
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
+
+                SqlDataAdapter da =
+                    new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
+            }
+
+            return dt;
+        }
     }
 }

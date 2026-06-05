@@ -73,6 +73,7 @@ namespace Capa.Presentacion
         {
             DataTable dt = bl.Listar();
             DataView dv = new DataView(dt);
+            this.WindowState = FormWindowState.Maximized;
 
             // FILTRAR SOLO ACTIVOS
             dv.RowFilter = "Estado = 'Alquilado'";
@@ -186,6 +187,12 @@ namespace Capa.Presentacion
                 this.Close();
             }
     }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
 

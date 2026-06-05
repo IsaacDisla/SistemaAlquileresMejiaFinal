@@ -768,5 +768,58 @@ namespace Capa.Presentacion
                 this.Close();
             }
         }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBuscar.Text == "Buscar" || string.IsNullOrWhiteSpace(txtBuscar.Text))
+                {
+                    CargarAlquileres();
+                    return;
+                }
+
+                dgvAlquileres.DataSource =
+                    alquilerBL.BuscarAlquileres(txtBuscar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar alquileres\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar";
+                txtBuscar.ForeColor = Color.Gray;
+
+                CargarAlquileres();
+            }
+        }
     }
 }

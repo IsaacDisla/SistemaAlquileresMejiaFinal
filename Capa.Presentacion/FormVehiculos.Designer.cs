@@ -480,11 +480,12 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(39, 770);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
+            this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
             // 
@@ -552,6 +553,7 @@
             this.lblAdicionales.Size = new System.Drawing.Size(259, 36);
             this.lblAdicionales.TabIndex = 46;
             this.lblAdicionales.Text = "Cargos Adicionales";
+            this.lblAdicionales.Click += new System.EventHandler(this.lblAdicionales_Click_1);
             // 
             // lblEntrega
             // 
@@ -564,6 +566,7 @@
             this.lblEntrega.Size = new System.Drawing.Size(129, 36);
             this.lblEntrega.TabIndex = 45;
             this.lblEntrega.Text = "Entregas";
+            this.lblEntrega.Click += new System.EventHandler(this.lblEntrega_Click_1);
             // 
             // label1
             // 
@@ -576,6 +579,7 @@
             this.label1.Size = new System.Drawing.Size(111, 36);
             this.label1.TabIndex = 44;
             this.label1.Text = "Factura";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // lblBackups
             // 
@@ -600,6 +604,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click_1);
             // 
             // label23
             // 
@@ -776,6 +781,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click_1);
             // 
             // lblPagos
             // 
@@ -788,6 +794,7 @@
             this.lblPagos.Size = new System.Drawing.Size(90, 36);
             this.lblPagos.TabIndex = 27;
             this.lblPagos.Text = "Pagos";
+            this.lblPagos.Click += new System.EventHandler(this.lblPagos_Click);
             // 
             // lblVehiculos
             // 
@@ -812,6 +819,7 @@
             this.lblClientes.Size = new System.Drawing.Size(118, 36);
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click_2);
             // 
             // btnNuevo
             // 

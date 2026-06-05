@@ -435,6 +435,57 @@ namespace Capa.Presentacion
                     MessageBoxIcon.Error);
             }
         }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblClientes_Click_2(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblPagos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
     }
     }
 

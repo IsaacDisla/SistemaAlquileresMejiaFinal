@@ -150,6 +150,10 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(298, 35);
             this.txtBuscar.TabIndex = 54;
+            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // btnNuevoAlquiler
             // 
@@ -715,11 +719,11 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(35, 766);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
             this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
@@ -1043,6 +1047,7 @@
             this.lblVehiculos.Size = new System.Drawing.Size(138, 36);
             this.lblVehiculos.TabIndex = 26;
             this.lblVehiculos.Text = "Vehiculos";
+            this.lblVehiculos.Click += new System.EventHandler(this.lblVehiculos_Click_1);
             // 
             // lblClientes
             // 

@@ -620,6 +620,7 @@ namespace Capa.Presentacion
 
         private void lblUsuarios_Click_1(object sender, EventArgs e)
         {
+            AbrirFormulario(new FormUsuarios());
 
         }
 
@@ -644,6 +645,23 @@ namespace Capa.Presentacion
 
         private void lblFechaEsperada_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
 
         }
     }

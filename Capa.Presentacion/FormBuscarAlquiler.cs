@@ -93,6 +93,8 @@ namespace Capa.Presentacion
 
             dgvAlquileres.Columns["Id_Cliente"].Visible = false;
             dgvAlquileres.Columns["Id_Usuario"].Visible = false;
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void dgvAlquileres_CellContentClick(object sender, DataGridViewCellEventArgs e)

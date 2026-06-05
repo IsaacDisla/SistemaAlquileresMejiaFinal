@@ -29,7 +29,7 @@ namespace Capa.Presentacion
 
         private void FormBuscarDetalless_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
 
             CargarDetalles();
 
@@ -137,6 +137,12 @@ namespace Capa.Presentacion
         {
             EstiloGridDetalles();
             CargarDetalles();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

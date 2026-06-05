@@ -18,14 +18,19 @@ namespace Capa.Negocios
             dal.InsertarUsuario(u);
         }
 
-        public void Actualizar(Usuarios u)
+        public void ActualizarUsuario(Usuarios usuario)
         {
-            dal.ActualizarUsuario(u);
+            dal.ActualizarUsuario(usuario);
         }
 
         public DataTable Login(string usuario, string clave)
         {
             return dal.Login(usuario, clave);
+        }
+
+        public void Eliminar(int id)
+        {
+            dal.EliminarUsuario(id);
         }
     }
 }

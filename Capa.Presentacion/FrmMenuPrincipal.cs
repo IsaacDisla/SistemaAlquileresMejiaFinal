@@ -79,6 +79,9 @@ namespace Capa.Presentacion
 
             AplicarPermisos();
 
+            timer1.Start();
+
+
 
         }
 
@@ -205,7 +208,11 @@ namespace Capa.Presentacion
 
         private void lblReportes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(new FormReportes());
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
         }
 
         private void lblCerrarSesion_Click(object sender, EventArgs e)
@@ -227,6 +234,21 @@ namespace Capa.Presentacion
 
                 this.Close();
             }
+        }
+
+        private void lblRoles_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblHora_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
     }
 }

@@ -31,6 +31,7 @@
             this.dgvDetalles = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
@@ -38,11 +39,11 @@
             // dgvDetalles
             // 
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalles.Location = new System.Drawing.Point(58, 110);
+            this.dgvDetalles.Location = new System.Drawing.Point(52, 176);
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.RowTemplate.Height = 24;
-            this.dgvDetalles.Size = new System.Drawing.Size(847, 451);
+            this.dgvDetalles.Size = new System.Drawing.Size(1377, 510);
             this.dgvDetalles.TabIndex = 0;
             this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
             this.dgvDetalles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellDoubleClick);
@@ -52,9 +53,9 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(58, 23);
+            this.panel7.Location = new System.Drawing.Point(52, 89);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(847, 88);
+            this.panel7.Size = new System.Drawing.Size(1377, 88);
             this.panel7.TabIndex = 43;
             // 
             // label1
@@ -69,11 +70,22 @@
             this.label1.TabIndex = 40;
             this.label1.Text = "Lista de Detalles";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(52, 12);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(167, 44);
+            this.btnCerrar.TabIndex = 46;
+            this.btnCerrar.Text = "Cerrar Formulario";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FormBuscarDetalless
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 617);
+            this.ClientSize = new System.Drawing.Size(1480, 728);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.dgvDetalles);
             this.Name = "FormBuscarDetalless";
@@ -91,5 +103,6 @@
         private System.Windows.Forms.DataGridView dgvDetalles;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

@@ -42,6 +42,7 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.panel5.SuspendLayout();
@@ -129,11 +129,11 @@
             // dgvClientes
             // 
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(1018, 247);
+            this.dgvClientes.Location = new System.Drawing.Point(955, 247);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(1028, 690);
+            this.dgvClientes.Size = new System.Drawing.Size(1091, 690);
             this.dgvClientes.TabIndex = 0;
             this.dgvClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellContentClick);
             // 
@@ -148,7 +148,7 @@
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(298, 106);
+            this.txtApellido.Location = new System.Drawing.Point(272, 102);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(195, 34);
             this.txtApellido.TabIndex = 2;
@@ -156,7 +156,7 @@
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(298, 216);
+            this.txtCedula.Location = new System.Drawing.Point(272, 216);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(195, 34);
             this.txtCedula.TabIndex = 3;
@@ -180,7 +180,7 @@
             // txtNombreGarante
             // 
             this.txtNombreGarante.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreGarante.Location = new System.Drawing.Point(298, 335);
+            this.txtNombreGarante.Location = new System.Drawing.Point(272, 335);
             this.txtNombreGarante.Name = "txtNombreGarante";
             this.txtNombreGarante.Size = new System.Drawing.Size(178, 34);
             this.txtNombreGarante.TabIndex = 6;
@@ -200,7 +200,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(16, 24);
+            this.btnGuardar.Location = new System.Drawing.Point(5, 24);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 68);
             this.btnGuardar.TabIndex = 9;
@@ -214,9 +214,9 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnActualizar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(384, 24);
+            this.btnActualizar.Location = new System.Drawing.Point(332, 24);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(173, 68);
+            this.btnActualizar.Size = new System.Drawing.Size(149, 68);
             this.btnActualizar.TabIndex = 10;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -228,7 +228,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(400, 488);
+            this.btnNuevo.Location = new System.Drawing.Point(334, 488);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(147, 68);
             this.btnNuevo.TabIndex = 11;
@@ -258,7 +258,7 @@
             this.panel5.Controls.Add(this.txtLicencia);
             this.panel5.Location = new System.Drawing.Point(450, 247);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(562, 686);
+            this.panel5.Size = new System.Drawing.Size(499, 686);
             this.panel5.TabIndex = 42;
             // 
             // panel6
@@ -271,6 +271,20 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(569, 124);
             this.panel6.TabIndex = 16;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(169, 24);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(157, 68);
+            this.btnEliminar.TabIndex = 45;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label10
             // 
@@ -289,7 +303,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(293, 294);
+            this.label9.Location = new System.Drawing.Point(267, 291);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(173, 27);
             this.label9.TabIndex = 14;
@@ -311,7 +325,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(293, 172);
+            this.label7.Location = new System.Drawing.Point(267, 172);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 27);
             this.label7.TabIndex = 12;
@@ -333,7 +347,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(293, 54);
+            this.label4.Location = new System.Drawing.Point(267, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 27);
             this.label4.TabIndex = 5;
@@ -357,7 +371,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(450, 156);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(562, 218);
+            this.panel4.Size = new System.Drawing.Size(499, 218);
             this.panel4.TabIndex = 41;
             // 
             // label6
@@ -379,20 +393,22 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.txtBuscar);
             this.panel7.Controls.Add(this.label1);
-            this.panel7.Location = new System.Drawing.Point(1018, 156);
+            this.panel7.Location = new System.Drawing.Point(955, 156);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1028, 98);
+            this.panel7.Size = new System.Drawing.Size(1091, 98);
             this.panel7.TabIndex = 42;
             // 
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.txtBuscar.Location = new System.Drawing.Point(561, 30);
+            this.txtBuscar.Location = new System.Drawing.Point(660, 30);
             this.txtBuscar.Multiline = true;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(309, 34);
             this.txtBuscar.TabIndex = 43;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            this.txtBuscar.Enter += new System.EventHandler(this.txtBuscar_Enter);
+            this.txtBuscar.Leave += new System.EventHandler(this.txtBuscar_Leave);
             // 
             // label1
             // 
@@ -520,11 +536,11 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(35, 768);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
             this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
@@ -822,6 +838,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click_1);
             // 
             // lblPagos
             // 
@@ -861,20 +878,6 @@
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
             this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click_1);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(195, 24);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(177, 68);
-            this.btnEliminar.TabIndex = 45;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // FormClientes
             // 

@@ -51,6 +51,7 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +84,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Alquiler_VehiculosMJDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Alquiler_VehiculosMJDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alquiler_VehiculosMJDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Alquiler_VehiculosMJDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alquiler_VehiculosMJDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Alquiler_VehiculosMJDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alquiler_VehiculosMJDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Alquiler_VehiculosMJDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alquiler_VehiculosMJDataSet7.xsd</DependentUpon>
     </Compile>
     <Compile Include="ConexionSistemaAlquilerVehiculos.cs" />
     <Compile Include="FormAlquileres.cs">
@@ -163,6 +184,12 @@
     <Compile Include="FormReportes.Designer.cs">
       <DependentUpon>FormReportes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReporteVehiculos1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteVehiculos1.Designer.cs">
+      <DependentUpon>FormReporteVehiculos1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +234,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportedepagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportedepagos.Designer.cs">
+      <DependentUpon>Reportedepagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FormAlquileres.resx">
       <DependentUpon>FormAlquileres.cs</DependentUpon>
@@ -247,6 +280,9 @@
     <EmbeddedResource Include="FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteVehiculos1.resx">
+      <DependentUpon>FormReporteVehiculos1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRoles.resx">
       <DependentUpon>FormRoles.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +316,10 @@
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Reportedepagos.resx">
+      <DependentUpon>Reportedepagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VehiculosMasAlquilados.rdlc" />
     <None Include="Alquiler_VehiculosMJDataSet.xsc">
       <DependentUpon>Alquiler_VehiculosMJDataSet.xsd</DependentUpon>
@@ -324,6 +364,50 @@
     </None>
     <None Include="Alquiler_VehiculosMJDataSet3.xss">
       <DependentUpon>Alquiler_VehiculosMJDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet4.xsc">
+      <DependentUpon>Alquiler_VehiculosMJDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alquiler_VehiculosMJDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet4.xss">
+      <DependentUpon>Alquiler_VehiculosMJDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet5.xsc">
+      <DependentUpon>Alquiler_VehiculosMJDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alquiler_VehiculosMJDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet5.xss">
+      <DependentUpon>Alquiler_VehiculosMJDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet6.xsc">
+      <DependentUpon>Alquiler_VehiculosMJDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alquiler_VehiculosMJDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet6.xss">
+      <DependentUpon>Alquiler_VehiculosMJDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet7.xsc">
+      <DependentUpon>Alquiler_VehiculosMJDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alquiler_VehiculosMJDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet7.xss">
+      <DependentUpon>Alquiler_VehiculosMJDataSet7.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -560,6 +560,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(431, 1055);
             this.panel2.TabIndex = 66;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // lblReportes
             // 
@@ -567,11 +568,11 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(39, 768);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
             this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
@@ -691,6 +692,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click_1);
             // 
             // label23
             // 
@@ -894,6 +896,7 @@
             this.lblVehiculos.Size = new System.Drawing.Size(138, 36);
             this.lblVehiculos.TabIndex = 26;
             this.lblVehiculos.Text = "Vehiculos";
+            this.lblVehiculos.Click += new System.EventHandler(this.lblVehiculos_Click_1);
             // 
             // lblClientes
             // 

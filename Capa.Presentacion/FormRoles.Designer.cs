@@ -36,6 +36,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             this.panel3.SuspendLayout();
@@ -194,6 +194,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1658, 120);
             this.panel3.TabIndex = 42;
+            // 
+            // lblCerrarSesion
+            // 
+            this.lblCerrarSesion.AutoSize = true;
+            this.lblCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblCerrarSesion.Location = new System.Drawing.Point(1280, 42);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(201, 36);
+            this.lblCerrarSesion.TabIndex = 45;
+            this.lblCerrarSesion.Text = "Cerrar Sesion";
+            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
             // 
             // label16
             // 
@@ -340,11 +354,12 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(35, 768);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
+            this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
             // 
@@ -436,6 +451,7 @@
             this.label9.Size = new System.Drawing.Size(111, 36);
             this.label9.TabIndex = 44;
             this.label9.Text = "Factura";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // lblBackups
             // 
@@ -448,6 +464,7 @@
             this.lblBackups.Size = new System.Drawing.Size(124, 36);
             this.lblBackups.TabIndex = 43;
             this.lblBackups.Text = "Backups";
+            this.lblBackups.Click += new System.EventHandler(this.lblBackups_Click_1);
             // 
             // lblRoles
             // 
@@ -460,6 +477,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click_1);
             // 
             // label23
             // 
@@ -635,6 +653,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click_1);
             // 
             // lblPagos
             // 
@@ -671,20 +690,7 @@
             this.lblClientes.Size = new System.Drawing.Size(118, 36);
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
-            // 
-            // lblCerrarSesion
-            // 
-            this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(1280, 42);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(201, 36);
-            this.lblCerrarSesion.TabIndex = 45;
-            this.lblCerrarSesion.Text = "Cerrar Sesion";
-            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click_1);
             // 
             // FormRoles
             // 

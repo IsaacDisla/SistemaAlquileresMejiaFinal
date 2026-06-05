@@ -257,5 +257,76 @@ namespace Capa.Presentacion
             frm.ShowDialog();
 
         }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+
+        }
+
+        private void lblAlquileres_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void label23_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace Capa.Presentacion
         {
             InitializeComponent();
         }
+
+        private void FormFacturaAlquiler_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

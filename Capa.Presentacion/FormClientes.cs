@@ -115,20 +115,29 @@ namespace Capa.Presentacion
 
         private void FormClientes_Load(object sender, EventArgs e)
         {
-            EstiloGridClientes();
+            try
+            {
+                EstiloGridClientes();
+                ListarClientes();
 
-            ListarClientes();
+                dgvClientes.Columns["Estado"].Visible = false;
+                dgvClientes.Columns["Id_Cliente"].Visible = false;
 
-            dgvClientes.Columns["Estado"].Visible = false;
+                lblUsuario.Text = Sesion.Nombre;
+                lblRol.Text = Sesion.Rol;
 
-            lblUsuario.Text = Sesion.Nombre;
+                AplicarPermisos();
 
-            lblRol.Text = Sesion.Rol;
-
-            AplicarPermisos();
-
-            dgvClientes.Columns["Id_Cliente"].Visible = false;
-            dgvClientes.Columns["Estado"].Visible = false;
+                txtBuscar.Text = "Buscar";
+                txtBuscar.ForeColor = Color.Gray;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el formulario\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void ListarClientes()
@@ -158,26 +167,33 @@ namespace Capa.Presentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (clienteSeleccionado.Id_Cliente == 0)
+            try
             {
-                MessageBox.Show("Seleccione un cliente");
-                return;
+                Clientes c = new Clientes
+                {
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Cedula = txtCedula.Text,
+                    Telefono = txtTelefono.Text,
+                    Licencia = txtLicencia.Text,
+                    Nombre_Garante = txtNombreGarante.Text,
+                    Telefono_Garante = txtTelefonoGarante.Text
+                };
+
+                bl.Insertar(c);
+
+                MessageBox.Show("Cliente guardado correctamente");
+
+                Nuevo();
+                ListarClientes();
             }
-
-            clienteSeleccionado.Nombre = txtNombre.Text;
-            clienteSeleccionado.Apellido = txtApellido.Text;
-            clienteSeleccionado.Cedula = txtCedula.Text;
-            clienteSeleccionado.Telefono = txtTelefono.Text;
-            clienteSeleccionado.Licencia = txtLicencia.Text;
-            clienteSeleccionado.Nombre_Garante = txtNombreGarante.Text;
-            clienteSeleccionado.Telefono_Garante = txtTelefonoGarante.Text;
-
-            bl.Actualizar(clienteSeleccionado);
-
-            MessageBox.Show("Cliente actualizado correctamente");
-
-            Nuevo();
-            ListarClientes();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar cliente\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -235,7 +251,24 @@ namespace Capa.Presentacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            dgvClientes.DataSource = bl.Buscar(txtBuscar.Text);
+            try
+            {
+                if (txtBuscar.Text == "Buscar" || string.IsNullOrWhiteSpace(txtBuscar.Text))
+                {
+                    ListarClientes();
+                    return;
+                }
+
+                dgvClientes.DataSource = bl.Buscar(txtBuscar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar clientes\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
         }
 
         private void AbrirFormulario(Form formulario)
@@ -391,28 +424,68 @@ namespace Capa.Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (clienteSeleccionado.Id_Cliente == 0)
+            try
             {
-                MessageBox.Show("Seleccione un cliente.");
-                return;
+                if (clienteSeleccionado.Id_Cliente == 0)
+                {
+                    MessageBox.Show("Seleccione un cliente.");
+                    return;
+                }
+
+                DialogResult r = MessageBox.Show(
+                    "¿Desea eliminar este cliente?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (r == DialogResult.Yes)
+                {
+                    bl.Eliminar(clienteSeleccionado.Id_Cliente);
+
+                    clienteSeleccionado = new Clientes();
+
+                    txtBuscar.Text = "Buscar";
+                    txtBuscar.ForeColor = Color.Gray;
+
+                    ListarClientes();
+
+                    MessageBox.Show("Cliente eliminado correctamente.");
+                }
             }
-
-            DialogResult r = MessageBox.Show(
-                "¿Desea eliminar este cliente?",
-                "Confirmar",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (r == DialogResult.Yes)
+            catch (Exception ex)
             {
-                bl.Eliminar(clienteSeleccionado.Id_Cliente);
+                MessageBox.Show("Error al eliminar cliente\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
 
-                MessageBox.Show("Cliente eliminado correctamente.");
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
 
-                Nuevo();
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar";
+                txtBuscar.ForeColor = Color.Gray;
+
                 ListarClientes();
             }
         }
-        }
+    }
     }
 

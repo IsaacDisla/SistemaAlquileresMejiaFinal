@@ -25,7 +25,7 @@ namespace Capa.Negocios
             dal.ActualizarAlquiler(a);
         }
 
-        public DataTable Buscar(string buscar)
+        public DataTable BuscarAlquileres(string buscar)
         {
             return dal.BuscarAlquileres(buscar);
         }

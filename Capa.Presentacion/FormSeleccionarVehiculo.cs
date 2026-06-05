@@ -106,6 +106,8 @@ namespace Capa.Presentacion
 
             dgvVehiculos.Columns["Seleccionar"].DefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleCenter;
+
+            this.WindowState = FormWindowState.Maximized;
         }
         private void AgregarBotonSeleccionar()
         {

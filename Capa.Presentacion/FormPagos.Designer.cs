@@ -182,6 +182,7 @@
             this.txtMontoPagado.Name = "txtMontoPagado";
             this.txtMontoPagado.Size = new System.Drawing.Size(242, 34);
             this.txtMontoPagado.TabIndex = 5;
+            this.txtMontoPagado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMontoPagado_KeyPress);
             // 
             // btnGuardar
             // 
@@ -425,7 +426,7 @@
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(25, 31);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(512, 155);
+            this.panel6.Size = new System.Drawing.Size(516, 155);
             this.panel6.TabIndex = 26;
             // 
             // lblBalancePendiente
@@ -436,9 +437,9 @@
             this.lblBalancePendiente.ForeColor = System.Drawing.Color.Orange;
             this.lblBalancePendiente.Location = new System.Drawing.Point(379, 91);
             this.lblBalancePendiente.Name = "lblBalancePendiente";
-            this.lblBalancePendiente.Size = new System.Drawing.Size(65, 30);
+            this.lblBalancePendiente.Size = new System.Drawing.Size(60, 30);
             this.lblBalancePendiente.TabIndex = 46;
-            this.lblBalancePendiente.Text = "label";
+            this.lblBalancePendiente.Text = "0.00";
             this.lblBalancePendiente.Click += new System.EventHandler(this.lblBalancePendiente_Click);
             // 
             // lblTotalPagado
@@ -447,11 +448,11 @@
             this.lblTotalPagado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTotalPagado.Font = new System.Drawing.Font("Cambria", 14.8F);
             this.lblTotalPagado.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lblTotalPagado.Location = new System.Drawing.Point(195, 91);
+            this.lblTotalPagado.Location = new System.Drawing.Point(190, 91);
             this.lblTotalPagado.Name = "lblTotalPagado";
-            this.lblTotalPagado.Size = new System.Drawing.Size(65, 30);
+            this.lblTotalPagado.Size = new System.Drawing.Size(60, 30);
             this.lblTotalPagado.TabIndex = 45;
-            this.lblTotalPagado.Text = "label";
+            this.lblTotalPagado.Text = "0.00";
             this.lblTotalPagado.Click += new System.EventHandler(this.lblTotalPagado_Click);
             // 
             // lblTotalAlquiler
@@ -462,9 +463,9 @@
             this.lblTotalAlquiler.ForeColor = System.Drawing.Color.White;
             this.lblTotalAlquiler.Location = new System.Drawing.Point(14, 91);
             this.lblTotalAlquiler.Name = "lblTotalAlquiler";
-            this.lblTotalAlquiler.Size = new System.Drawing.Size(65, 30);
+            this.lblTotalAlquiler.Size = new System.Drawing.Size(60, 30);
             this.lblTotalAlquiler.TabIndex = 42;
-            this.lblTotalAlquiler.Text = "label";
+            this.lblTotalAlquiler.Text = "0.00";
             this.lblTotalAlquiler.Click += new System.EventHandler(this.lblTotalAlquiler_Click);
             // 
             // label19
@@ -475,9 +476,9 @@
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(380, 60);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(46, 20);
+            this.label19.Size = new System.Drawing.Size(106, 20);
             this.label19.TabIndex = 44;
-            this.label19.Text = "Total";
+            this.label19.Text = "Total a pagar:";
             // 
             // label18
             // 
@@ -485,11 +486,11 @@
             this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label18.Font = new System.Drawing.Font("Cambria", 9.8F);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(196, 60);
+            this.label18.Location = new System.Drawing.Point(191, 60);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(46, 20);
+            this.label18.Size = new System.Drawing.Size(106, 20);
             this.label18.TabIndex = 43;
-            this.label18.Text = "Total";
+            this.label18.Text = "Total Pagado:";
             // 
             // label10
             // 
@@ -510,7 +511,7 @@
             this.panel7.Controls.Add(this.label5);
             this.panel7.Location = new System.Drawing.Point(-1, -1);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(512, 54);
+            this.panel7.Size = new System.Drawing.Size(516, 54);
             this.panel7.TabIndex = 27;
             // 
             // label5
@@ -611,11 +612,11 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(35, 769);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
             this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
@@ -710,6 +711,7 @@
             this.label9.Size = new System.Drawing.Size(111, 36);
             this.label9.TabIndex = 44;
             this.label9.Text = "Factura";
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
             // 
             // lblBackups
             // 
@@ -734,6 +736,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click_1);
             // 
             // label23
             // 

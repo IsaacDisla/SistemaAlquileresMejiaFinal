@@ -47,7 +47,7 @@
             this.dgvAlquileres.Name = "dgvAlquileres";
             this.dgvAlquileres.RowHeadersWidth = 51;
             this.dgvAlquileres.RowTemplate.Height = 24;
-            this.dgvAlquileres.Size = new System.Drawing.Size(1590, 563);
+            this.dgvAlquileres.Size = new System.Drawing.Size(1752, 563);
             this.dgvAlquileres.TabIndex = 0;
             this.dgvAlquileres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlquileres_CellContentClick);
             // 
@@ -120,7 +120,7 @@
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(115, 227);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1590, 95);
+            this.panel2.Size = new System.Drawing.Size(1752, 95);
             this.panel2.TabIndex = 41;
             // 
             // FormBuscarAlquiler

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label14;
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -95,6 +96,8 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -169,6 +172,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblHora);
             this.panel1.Controls.Add(this.lblCerrarSesion);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
@@ -592,6 +596,7 @@
             this.lblRoles.Size = new System.Drawing.Size(85, 36);
             this.lblRoles.TabIndex = 42;
             this.lblRoles.Text = "Roles";
+            this.lblRoles.Click += new System.EventHandler(this.lblRoles_Click);
             // 
             // label23
             // 
@@ -802,7 +807,7 @@
             this.lblClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblClientes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblClientes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblClientes.Location = new System.Drawing.Point(96, 275);
+            this.lblClientes.Location = new System.Drawing.Point(106, 275);
             this.lblClientes.Name = "lblClientes";
             this.lblClientes.Size = new System.Drawing.Size(118, 36);
             this.lblClientes.TabIndex = 25;
@@ -913,6 +918,21 @@
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 56;
             this.pictureBox17.TabStop = false;
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(521, 47);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(133, 40);
+            this.lblHora.TabIndex = 46;
+            this.lblHora.Text = "label10";
+            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // FrmMenuPrincipal
             // 
@@ -1050,5 +1070,7 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.Label lblReportes;
         private System.Windows.Forms.Label lblCerrarSesion;
+        private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

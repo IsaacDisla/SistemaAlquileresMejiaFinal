@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalles)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -41,11 +42,11 @@
             // dgvDetalles
             // 
             this.dgvDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalles.Location = new System.Drawing.Point(115, 259);
+            this.dgvDetalles.Location = new System.Drawing.Point(39, 259);
             this.dgvDetalles.Name = "dgvDetalles";
             this.dgvDetalles.RowHeadersWidth = 51;
             this.dgvDetalles.RowTemplate.Height = 24;
-            this.dgvDetalles.Size = new System.Drawing.Size(1467, 457);
+            this.dgvDetalles.Size = new System.Drawing.Size(1846, 660);
             this.dgvDetalles.TabIndex = 0;
             this.dgvDetalles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellClick);
             this.dgvDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalles_CellContentClick);
@@ -54,10 +55,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1657, 119);
+            this.panel1.Size = new System.Drawing.Size(2045, 119);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -66,7 +68,7 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label1.Font = new System.Drawing.Font("Cambria", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(386, 30);
+            this.label1.Location = new System.Drawing.Point(466, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(811, 70);
             this.label1.TabIndex = 41;
@@ -78,9 +80,9 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label6);
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(115, 166);
+            this.panel2.Location = new System.Drawing.Point(39, 166);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1467, 95);
+            this.panel2.Size = new System.Drawing.Size(1846, 95);
             this.panel2.TabIndex = 42;
             // 
             // label6
@@ -95,11 +97,21 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "LISTA DE DETALLE";
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(38, 40);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(167, 44);
+            this.btnCerrar.TabIndex = 45;
+            this.btnCerrar.Text = "Cerrar Formulario";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // FormBuscarDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1649, 774);
+            this.ClientSize = new System.Drawing.Size(1924, 931);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvDetalles);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

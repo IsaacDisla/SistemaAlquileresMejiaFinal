@@ -127,6 +127,8 @@ namespace Capa.Presentacion
             lblRol.Text = Sesion.Rol;
 
             AplicarPermisos();
+
+            txtMontoPagado.KeyPress += txtMontoPagado_KeyPress;
         }
 
         private void ListarPagos()
@@ -144,6 +146,9 @@ namespace Capa.Presentacion
         {
             try
             {
+                if (!Validar())
+                    return;
+
                 Pagos p = new Pagos();
 
                 p.Id_Alquiler =
@@ -159,16 +164,25 @@ namespace Capa.Presentacion
                     Convert.ToDecimal(txtMontoPagado.Text);
 
                 bl.Insertar(p);
+
                 ActualizarBalance();
 
-                MessageBox.Show("Pago guardado correctamente");
+                MessageBox.Show(
+                    "Pago guardado correctamente",
+                    "Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 Nuevo();
                 ListarPagos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                    "Error al guardar: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -178,9 +192,12 @@ namespace Capa.Presentacion
             {
                 if (pagoSeleccionado.Id_Pago == 0)
                 {
-                    MessageBox.Show("Seleccione un pago");
+                    MessageBox.Show("Seleccione un pago.");
                     return;
                 }
+
+                if (!Validar())
+                    return;
 
                 pagoSeleccionado.Id_Alquiler =
                     Convert.ToInt32(txtIdAlquiler.Text);
@@ -196,14 +213,22 @@ namespace Capa.Presentacion
 
                 bl.Actualizar(pagoSeleccionado);
 
-                MessageBox.Show("Pago actualizado correctamente");
+                MessageBox.Show(
+                    "Pago actualizado correctamente",
+                    "Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 Nuevo();
                 ListarPagos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                    "Error al actualizar: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -238,13 +263,73 @@ namespace Capa.Presentacion
         private void Nuevo()
         {
             txtIdAlquiler.Clear();
+            txtCliente.Clear();
+            txtEstado.Clear();
             txtMontoPagado.Clear();
 
             cbMetodoPago.SelectedIndex = -1;
 
             dtFechaPago.Value = DateTime.Now;
 
+            lblTotalAlquiler.Text = "0.00";
+            lblTotalPagado.Text = "0.00";
+            lblBalancePendiente.Text = "0.00";
+
             pagoSeleccionado = new Pagos();
+
+            txtIdAlquiler.Focus();
+        }
+
+        private bool Validar()
+        {
+            if (string.IsNullOrWhiteSpace(txtIdAlquiler.Text))
+            {
+                MessageBox.Show("Debe seleccionar un alquiler.");
+                btnBuscarAlquiler.Focus();
+                return false;
+            }
+
+            if (cbMetodoPago.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un método de pago.");
+                cbMetodoPago.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMontoPagado.Text))
+            {
+                MessageBox.Show("Ingrese el monto pagado.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            decimal monto;
+
+            if (!decimal.TryParse(txtMontoPagado.Text, out monto))
+            {
+                MessageBox.Show("El monto ingresado no es válido.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            if (monto <= 0)
+            {
+                MessageBox.Show("El monto debe ser mayor que cero.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            decimal balance =
+                Convert.ToDecimal(lblBalancePendiente.Text);
+
+            if (monto > balance)
+            {
+                MessageBox.Show("El monto no puede ser mayor que el balance pendiente.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void btnBuscarAlquiler_Click(object sender, EventArgs e)
@@ -425,7 +510,7 @@ namespace Capa.Presentacion
 
         private void lblEntrega_Click_1(object sender, EventArgs e)
         {
-
+            AbrirFormulario(new FormEntregaVehiculo());
         }
 
         private void lblAdicionales_Click_1(object sender, EventArgs e)
@@ -487,5 +572,26 @@ namespace Capa.Presentacion
                 this.Close();
             }
         }
-    }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+        }
+
+        private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                  !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        }
 }
+

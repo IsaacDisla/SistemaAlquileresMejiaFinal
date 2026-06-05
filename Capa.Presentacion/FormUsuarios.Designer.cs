@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbRol = new System.Windows.Forms.ComboBox();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -44,15 +43,16 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Estado = new System.Windows.Forms.Label();
+            this.btnCambiarClave = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblReportes = new System.Windows.Forms.Label();
@@ -84,7 +84,6 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -122,25 +121,26 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(47, 96);
+            this.txtNombre.Location = new System.Drawing.Point(23, 55);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(446, 34);
+            this.txtNombre.Size = new System.Drawing.Size(453, 34);
             this.txtNombre.TabIndex = 1;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(47, 216);
+            this.txtUsuario.Location = new System.Drawing.Point(23, 164);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(446, 34);
+            this.txtUsuario.Size = new System.Drawing.Size(453, 34);
             this.txtUsuario.TabIndex = 2;
             // 
             // txtClave
             // 
             this.txtClave.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(47, 330);
+            this.txtClave.Location = new System.Drawing.Point(23, 258);
             this.txtClave.Name = "txtClave";
-            this.txtClave.Size = new System.Drawing.Size(179, 34);
+            this.txtClave.Size = new System.Drawing.Size(334, 34);
             this.txtClave.TabIndex = 3;
             // 
             // label1
@@ -148,7 +148,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(42, 54);
+            this.label1.Location = new System.Drawing.Point(18, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 27);
             this.label1.TabIndex = 4;
@@ -159,7 +159,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(43, 164);
+            this.label2.Location = new System.Drawing.Point(22, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 27);
             this.label2.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(42, 289);
+            this.label3.Location = new System.Drawing.Point(22, 218);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 27);
             this.label3.TabIndex = 6;
@@ -180,29 +180,20 @@
             // 
             this.cbRol.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRol.FormattingEnabled = true;
-            this.cbRol.Location = new System.Drawing.Point(279, 329);
+            this.cbRol.Location = new System.Drawing.Point(27, 346);
             this.cbRol.Name = "cbRol";
-            this.cbRol.Size = new System.Drawing.Size(214, 35);
+            this.cbRol.Size = new System.Drawing.Size(449, 35);
             this.cbRol.TabIndex = 7;
             this.cbRol.SelectedIndexChanged += new System.EventHandler(this.cbRol_SelectedIndexChanged);
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Location = new System.Drawing.Point(48, 435);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(214, 35);
-            this.cbEstado.TabIndex = 8;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1049, 278);
+            this.dataGridView1.Location = new System.Drawing.Point(1027, 278);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(849, 621);
+            this.dataGridView1.Size = new System.Drawing.Size(871, 765);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -218,6 +209,7 @@
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "NUEVO";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnGuardar
             // 
@@ -225,16 +217,18 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(48, 524);
+            this.btnGuardar.Location = new System.Drawing.Point(41, 420);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(210, 56);
             this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnActualizar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Location = new System.Drawing.Point(295, 520);
             this.btnActualizar.Name = "btnActualizar";
@@ -242,13 +236,14 @@
             this.btnActualizar.TabIndex = 12;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Cambria", 16.8F);
             this.lblRol.ForeColor = System.Drawing.Color.Black;
-            this.lblRol.Location = new System.Drawing.Point(1166, 36);
+            this.lblRol.Location = new System.Drawing.Point(1132, 37);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(90, 33);
             this.lblRol.TabIndex = 23;
@@ -259,7 +254,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Cambria", 16.8F);
             this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuario.Location = new System.Drawing.Point(1036, 36);
+            this.lblUsuario.Location = new System.Drawing.Point(883, 36);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(90, 33);
             this.lblUsuario.TabIndex = 22;
@@ -278,6 +273,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1658, 120);
             this.panel3.TabIndex = 36;
+            // 
+            // lblCerrarSesion
+            // 
+            this.lblCerrarSesion.AutoSize = true;
+            this.lblCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Menu;
+            this.lblCerrarSesion.Location = new System.Drawing.Point(1356, 34);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(201, 36);
+            this.lblCerrarSesion.TabIndex = 45;
+            this.lblCerrarSesion.Text = "Cerrar Sesion";
+            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
             // 
             // label16
             // 
@@ -310,7 +319,7 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Location = new System.Drawing.Point(460, 191);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(562, 102);
+            this.panel4.Size = new System.Drawing.Size(530, 102);
             this.panel4.TabIndex = 37;
             // 
             // label6
@@ -329,7 +338,8 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.Estado);
+            this.panel5.Controls.Add(this.btnCambiarClave);
+            this.panel5.Controls.Add(this.btnEliminar);
             this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.txtNombre);
             this.panel5.Controls.Add(this.label1);
@@ -341,30 +351,46 @@
             this.panel5.Controls.Add(this.txtClave);
             this.panel5.Controls.Add(this.btnGuardar);
             this.panel5.Controls.Add(this.cbRol);
-            this.panel5.Controls.Add(this.cbEstado);
             this.panel5.Location = new System.Drawing.Point(460, 282);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(562, 617);
+            this.panel5.Size = new System.Drawing.Size(530, 617);
             this.panel5.TabIndex = 38;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // Estado
+            // btnCambiarClave
             // 
-            this.Estado.AutoSize = true;
-            this.Estado.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Estado.ForeColor = System.Drawing.Color.Black;
-            this.Estado.Location = new System.Drawing.Point(43, 398);
-            this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(79, 27);
-            this.Estado.TabIndex = 25;
-            this.Estado.Text = "Estado";
+            this.btnCambiarClave.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCambiarClave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCambiarClave.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarClave.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarClave.Location = new System.Drawing.Point(363, 253);
+            this.btnCambiarClave.Name = "btnCambiarClave";
+            this.btnCambiarClave.Size = new System.Drawing.Size(151, 43);
+            this.btnCambiarClave.TabIndex = 46;
+            this.btnCambiarClave.Text = "CAMBIAR";
+            this.btnCambiarClave.UseVisualStyleBackColor = false;
+            this.btnCambiarClave.Click += new System.EventHandler(this.btnCambiarClave_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(41, 518);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(210, 56);
+            this.btnEliminar.TabIndex = 45;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(274, 289);
+            this.label7.Location = new System.Drawing.Point(22, 306);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 27);
             this.label7.TabIndex = 8;
@@ -374,21 +400,11 @@
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.txtBuscar);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(1049, 191);
+            this.panel6.Location = new System.Drawing.Point(1027, 191);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(849, 91);
+            this.panel6.Size = new System.Drawing.Size(871, 91);
             this.panel6.TabIndex = 41;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(474, 25);
-            this.txtBuscar.Multiline = true;
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(353, 39);
-            this.txtBuscar.TabIndex = 43;
             // 
             // label4
             // 
@@ -444,11 +460,12 @@
             this.lblReportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblReportes.Font = new System.Drawing.Font("Cambria", 17.8F);
             this.lblReportes.ForeColor = System.Drawing.SystemColors.Window;
-            this.lblReportes.Location = new System.Drawing.Point(106, 768);
+            this.lblReportes.Location = new System.Drawing.Point(39, 769);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(131, 36);
+            this.lblReportes.Size = new System.Drawing.Size(195, 36);
             this.lblReportes.TabIndex = 70;
-            this.lblReportes.Text = "Reportes";
+            this.lblReportes.Text = "📈    Reportes";
+            this.lblReportes.Click += new System.EventHandler(this.lblReportes_Click);
             // 
             // pictureBox12
             // 
@@ -540,6 +557,7 @@
             this.label9.Size = new System.Drawing.Size(111, 36);
             this.label9.TabIndex = 44;
             this.label9.Text = "Factura";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // lblBackups
             // 
@@ -740,6 +758,7 @@
             this.lblUsuarios.Size = new System.Drawing.Size(128, 36);
             this.lblUsuarios.TabIndex = 29;
             this.lblUsuarios.Text = "Usuarios";
+            this.lblUsuarios.Click += new System.EventHandler(this.lblUsuarios_Click_1);
             // 
             // lblPagos
             // 
@@ -776,20 +795,7 @@
             this.lblClientes.Size = new System.Drawing.Size(118, 36);
             this.lblClientes.TabIndex = 25;
             this.lblClientes.Text = "Clientes";
-            // 
-            // lblCerrarSesion
-            // 
-            this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(1280, 36);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(201, 36);
-            this.lblCerrarSesion.TabIndex = 45;
-            this.lblCerrarSesion.Text = "Cerrar Sesion";
-            this.lblCerrarSesion.Click += new System.EventHandler(this.lblCerrarSesion_Click);
+            this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click_1);
             // 
             // FormUsuarios
             // 
@@ -845,7 +851,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbRol;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnGuardar;
@@ -857,12 +862,10 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label Estado;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblReportes;
         private System.Windows.Forms.PictureBox pictureBox12;
@@ -894,5 +897,7 @@
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.Label lblCerrarSesion;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnCambiarClave;
     }
 }

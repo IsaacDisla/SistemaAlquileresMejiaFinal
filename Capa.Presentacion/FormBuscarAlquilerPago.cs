@@ -38,8 +38,7 @@ namespace Capa.Presentacion
 
         private void dgvAlquileres_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvAlquileres.DataSource =
-  bl.ListarAlquileresPendientesPago();
+
         }
 
         private void dgvAlquileres_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -129,6 +128,15 @@ namespace Capa.Presentacion
 
         private void dgvAlquileres_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dgvAlquileres.Rows[e.RowIndex].Cells["Id_Alquiler"].Value == null)
+                return;
+
+            IdAlquilerSeleccionado =
+                Convert.ToInt32(
+                dgvAlquileres.Rows[e.RowIndex].Cells["Id_Alquiler"].Value);
             if (e.RowIndex >= 0)
             {
                 IdAlquilerSeleccionado =
@@ -156,6 +164,12 @@ namespace Capa.Presentacion
                 DialogResult = DialogResult.OK;
                 Close();
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

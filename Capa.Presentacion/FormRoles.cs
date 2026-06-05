@@ -301,5 +301,46 @@ namespace Capa.Presentacion
                 this.Close();
             }
         }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+        }
     }
 }
