@@ -24,19 +24,111 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
+        private void EstiloGridPagos()
+        {
+            dgvPagos.BorderStyle = BorderStyle.None;
+            dgvPagos.BackgroundColor = Color.White;
+
+            dgvPagos.EnableHeadersVisualStyles = false;
+
+            dgvPagos.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvPagos.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvPagos.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvPagos.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvPagos.ColumnHeadersHeight = 45;
+
+            dgvPagos.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvPagos.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvPagos.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvPagos.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvPagos.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvPagos.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvPagos.GridColor =
+                Color.LightGray;
+
+            dgvPagos.RowTemplate.Height = 35;
+
+            dgvPagos.RowHeadersVisible = false;
+
+            dgvPagos.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvPagos.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvPagos.MultiSelect = false;
+
+            dgvPagos.AllowUserToAddRows = false;
+
+            dgvPagos.AllowUserToDeleteRows = false;
+
+            dgvPagos.AllowUserToResizeRows = false;
+
+            dgvPagos.ReadOnly = true;
+        }
         private void FormPagos_Load(object sender, EventArgs e)
         {
+            EstiloGridPagos();
+
+
             cbMetodoPago.Items.Add("Efectivo");
             cbMetodoPago.Items.Add("Transferencia");
             cbMetodoPago.Items.Add("Tarjeta");
 
             ListarPagos();
 
-
+            dgvPagos.Columns["Id_Pago"].Visible = false;
+            dgvPagos.Columns["Id_Alquiler"].Visible = false;
 
             lblUsuario.Text = Sesion.Nombre;
-
             lblRol.Text = Sesion.Rol;
+
+            AplicarPermisos();
+
+            txtMontoPagado.KeyPress += txtMontoPagado_KeyPress;
         }
 
         private void ListarPagos()
@@ -54,6 +146,9 @@ namespace Capa.Presentacion
         {
             try
             {
+                if (!Validar())
+                    return;
+
                 Pagos p = new Pagos();
 
                 p.Id_Alquiler =
@@ -69,16 +164,25 @@ namespace Capa.Presentacion
                     Convert.ToDecimal(txtMontoPagado.Text);
 
                 bl.Insertar(p);
+
                 ActualizarBalance();
 
-                MessageBox.Show("Pago guardado correctamente");
+                MessageBox.Show(
+                    "Pago guardado correctamente",
+                    "Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 Nuevo();
                 ListarPagos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                    "Error al guardar: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -88,9 +192,12 @@ namespace Capa.Presentacion
             {
                 if (pagoSeleccionado.Id_Pago == 0)
                 {
-                    MessageBox.Show("Seleccione un pago");
+                    MessageBox.Show("Seleccione un pago.");
                     return;
                 }
+
+                if (!Validar())
+                    return;
 
                 pagoSeleccionado.Id_Alquiler =
                     Convert.ToInt32(txtIdAlquiler.Text);
@@ -106,14 +213,22 @@ namespace Capa.Presentacion
 
                 bl.Actualizar(pagoSeleccionado);
 
-                MessageBox.Show("Pago actualizado correctamente");
+                MessageBox.Show(
+                    "Pago actualizado correctamente",
+                    "Sistema",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
                 Nuevo();
                 ListarPagos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(
+                    "Error al actualizar: " + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -148,13 +263,73 @@ namespace Capa.Presentacion
         private void Nuevo()
         {
             txtIdAlquiler.Clear();
+            txtCliente.Clear();
+            txtEstado.Clear();
             txtMontoPagado.Clear();
 
             cbMetodoPago.SelectedIndex = -1;
 
             dtFechaPago.Value = DateTime.Now;
 
+            lblTotalAlquiler.Text = "0.00";
+            lblTotalPagado.Text = "0.00";
+            lblBalancePendiente.Text = "0.00";
+
             pagoSeleccionado = new Pagos();
+
+            txtIdAlquiler.Focus();
+        }
+
+        private bool Validar()
+        {
+            if (string.IsNullOrWhiteSpace(txtIdAlquiler.Text))
+            {
+                MessageBox.Show("Debe seleccionar un alquiler.");
+                btnBuscarAlquiler.Focus();
+                return false;
+            }
+
+            if (cbMetodoPago.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un método de pago.");
+                cbMetodoPago.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMontoPagado.Text))
+            {
+                MessageBox.Show("Ingrese el monto pagado.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            decimal monto;
+
+            if (!decimal.TryParse(txtMontoPagado.Text, out monto))
+            {
+                MessageBox.Show("El monto ingresado no es válido.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            if (monto <= 0)
+            {
+                MessageBox.Show("El monto debe ser mayor que cero.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            decimal balance =
+                Convert.ToDecimal(lblBalancePendiente.Text);
+
+            if (monto > balance)
+            {
+                MessageBox.Show("El monto no puede ser mayor que el balance pendiente.");
+                txtMontoPagado.Focus();
+                return false;
+            }
+
+            return true;
         }
 
         private void btnBuscarAlquiler_Click(object sender, EventArgs e)
@@ -332,5 +507,91 @@ namespace Capa.Presentacion
         {
 
         }
-    }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblAlquileres_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+        }
+
+        private void txtMontoPagado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                  !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        }
 }
+

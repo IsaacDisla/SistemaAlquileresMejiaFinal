@@ -16,6 +16,7 @@ namespace Capa.Presentacion
     {
         EntregaVehiculoBLL bll = new EntregaVehiculoBLL();
         EntregaVehiculo entregaSeleccionada = new EntregaVehiculo();
+        private int idDetalleSeleccionado;
 
         DateTime fechaEsperada;
 
@@ -36,8 +37,96 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
+        private void EstiloGridEntregas()
+        {
+            dgvEntregas.BorderStyle = BorderStyle.None;
+            dgvEntregas.BackgroundColor = Color.White;
+
+            dgvEntregas.EnableHeadersVisualStyles = false;
+
+            dgvEntregas.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvEntregas.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvEntregas.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvEntregas.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvEntregas.ColumnHeadersHeight = 45;
+
+            dgvEntregas.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvEntregas.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvEntregas.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvEntregas.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvEntregas.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvEntregas.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvEntregas.GridColor =
+                Color.LightGray;
+
+            dgvEntregas.RowTemplate.Height = 35;
+
+            dgvEntregas.RowHeadersVisible = false;
+
+            dgvEntregas.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvEntregas.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvEntregas.MultiSelect = false;
+
+            dgvEntregas.AllowUserToAddRows = false;
+
+            dgvEntregas.AllowUserToDeleteRows = false;
+
+            dgvEntregas.AllowUserToResizeRows = false;
+
+            dgvEntregas.ReadOnly = true;
+        }
+
         private void FormEntregaVehiculo_Load(object sender, EventArgs e)
         {
+            EstiloGridEntregas();
+
             numDiasRetraso.Enabled = false;
             numDiasRetraso.Value = 0;
 
@@ -56,8 +145,13 @@ namespace Capa.Presentacion
 
             ListarEntregas();
 
+            dgvEntregas.Columns["Id_Entrega"].Visible = false;
+            dgvEntregas.Columns["Id_Detalle"].Visible = false;
+
             lblUsuario.Text = Sesion.Nombre;
             lblRol.Text = Sesion.Rol;
+
+            AplicarPermisos();
         }
 
         private void ListarEntregas()
@@ -109,8 +203,7 @@ namespace Capa.Presentacion
 
                 EntregaVehiculo entrega = new EntregaVehiculo();
 
-                entrega.Id_Detalle =
-                    Convert.ToInt32(txtIdDetalle.Text);
+                entrega.Id_Detalle = idDetalleSeleccionado;
 
                 entrega.Fecha_Entrega_Real =
                     dtFechaEntrega.Value;
@@ -380,6 +473,16 @@ namespace Capa.Presentacion
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 txtIdDetalle.Text = frm.IdDetalleSeleccionado.ToString();
+
+                idDetalleSeleccionado = frm.IdDetalleSeleccionado;
+
+                fechaEsperada = frm.FechaEntregaEsperada;
+
+                lblVehiculo.Text = frm.Vehiculo;
+
+                lblFechaEsperada.Text = fechaEsperada.ToShortDateString();
+
+                CalcularRetraso();
             }
         }
 
@@ -468,6 +571,97 @@ namespace Capa.Presentacion
 
         private void txtIdDetalle_TextChanged_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblAlquileres_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void label23_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FrmMenuPrincipal());
+        }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblVehiculo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFechaEsperada_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
 
         }
     }

@@ -19,6 +19,10 @@ namespace Capa.Negocios
         }
 
 
+        public DataTable ObtenerDetallePorAlquiler(int idAlquiler)
+        {
+            return dal.ObtenerDetallePorAlquiler(idAlquiler);
+        }
         public void Actualizar(DetalleAlquileres d)
         {
             dal.ActualizarDetalleAlquiler(d);

@@ -21,38 +21,52 @@ namespace Capa.Presentacion
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            txtClave.UseSystemPasswordChar = true;
+
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            DataTable dt =
-             bl.Login(txtUsuario.Text, txtClave.Text);
-
-            if (dt.Rows.Count > 0)
+            try
             {
-                Sesion.IdUsuario =
-                Convert.ToInt32(dt.Rows[0]["Id_Usuario"]);
+                DataTable dt = bl.Login(txtUsuario.Text, txtClave.Text);
 
-                Sesion.Nombre =
-                dt.Rows[0]["Nombre"].ToString();
+                if (dt.Rows.Count > 0)
+                {
+                    Sesion.IdUsuario =
+                        Convert.ToInt32(dt.Rows[0]["Id_Usuario"]);
 
-                Sesion.Usuario =
-                dt.Rows[0]["Usuario"].ToString();
+                    Sesion.Nombre =
+                        dt.Rows[0]["Nombre"].ToString();
 
-                Sesion.Rol =
-                dt.Rows[0]["Nombre_Rol"].ToString();
+                    Sesion.Usuario =
+                        dt.Rows[0]["Usuario"].ToString();
 
+                    Sesion.Rol =
+                        dt.Rows[0]["Nombre_Rol"].ToString();
 
-                FrmMenuPrincipal frm =
-                new FrmMenuPrincipal();
+                    FrmMenuPrincipal frm = new FrmMenuPrincipal();
 
-                frm.Show();
+                    frm.Show();
 
-                this.Hide();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Usuario o contraseña incorrectos",
+                        "Inicio de Sesión",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos");
+                MessageBox.Show(
+                    "Ocurrió un error al iniciar sesión:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -121,8 +135,9 @@ namespace Capa.Presentacion
             {
                 txtClave.Text = "";
                 txtClave.ForeColor = Color.Black;
-                txtClave.UseSystemPasswordChar = true;
             }
+
+            txtClave.PasswordChar = '*';
         }
 
         private void txtClave_Leave(object sender, EventArgs e)
@@ -131,7 +146,7 @@ namespace Capa.Presentacion
             {
                 txtClave.Text = "Ingrese su contraseña";
                 txtClave.ForeColor = Color.Gray;
-                txtClave.UseSystemPasswordChar = false;
+                txtClave.PasswordChar = '\0';
             }
         }
 
@@ -173,6 +188,31 @@ namespace Capa.Presentacion
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "¿Deseas salir del sistema?",
+                    "Salir",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Error al cerrar la aplicación:\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

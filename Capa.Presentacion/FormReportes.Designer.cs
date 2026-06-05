@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.btnReporteVehiculos = new System.Windows.Forms.Button();
-            this.btnReporteAlquileres = new System.Windows.Forms.Button();
-            this.btnReporteClientes = new System.Windows.Forms.Button();
-            this.btnReportePagos = new System.Windows.Forms.Button();
-            this.btnReporteCargos = new System.Windows.Forms.Button();
             this.btnReporteEntregas = new System.Windows.Forms.Button();
             this.btnReportePendientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -49,64 +46,13 @@
             this.btnReporteVehiculos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReporteVehiculos.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteVehiculos.ForeColor = System.Drawing.Color.White;
-            this.btnReporteVehiculos.Location = new System.Drawing.Point(164, 241);
+            this.btnReporteVehiculos.Location = new System.Drawing.Point(163, 247);
             this.btnReporteVehiculos.Name = "btnReporteVehiculos";
             this.btnReporteVehiculos.Size = new System.Drawing.Size(623, 69);
             this.btnReporteVehiculos.TabIndex = 3;
-            this.btnReporteVehiculos.Text = "Vehículos Más Alquilados";
+            this.btnReporteVehiculos.Text = "Reporte Analitico de Vehiculos";
             this.btnReporteVehiculos.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteAlquileres
-            // 
-            this.btnReporteAlquileres.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReporteAlquileres.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReporteAlquileres.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteAlquileres.ForeColor = System.Drawing.Color.White;
-            this.btnReporteAlquileres.Location = new System.Drawing.Point(164, 316);
-            this.btnReporteAlquileres.Name = "btnReporteAlquileres";
-            this.btnReporteAlquileres.Size = new System.Drawing.Size(623, 69);
-            this.btnReporteAlquileres.TabIndex = 4;
-            this.btnReporteAlquileres.Text = "Alquileres Realizados";
-            this.btnReporteAlquileres.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteClientes
-            // 
-            this.btnReporteClientes.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReporteClientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReporteClientes.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteClientes.ForeColor = System.Drawing.Color.White;
-            this.btnReporteClientes.Location = new System.Drawing.Point(164, 690);
-            this.btnReporteClientes.Name = "btnReporteClientes";
-            this.btnReporteClientes.Size = new System.Drawing.Size(623, 69);
-            this.btnReporteClientes.TabIndex = 5;
-            this.btnReporteClientes.Text = "Historial de Cliente";
-            this.btnReporteClientes.UseVisualStyleBackColor = false;
-            // 
-            // btnReportePagos
-            // 
-            this.btnReportePagos.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReportePagos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReportePagos.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportePagos.ForeColor = System.Drawing.Color.White;
-            this.btnReportePagos.Location = new System.Drawing.Point(163, 391);
-            this.btnReportePagos.Name = "btnReportePagos";
-            this.btnReportePagos.Size = new System.Drawing.Size(623, 69);
-            this.btnReportePagos.TabIndex = 6;
-            this.btnReportePagos.Text = "Pagos";
-            this.btnReportePagos.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteCargos
-            // 
-            this.btnReporteCargos.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReporteCargos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReporteCargos.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteCargos.ForeColor = System.Drawing.Color.White;
-            this.btnReporteCargos.Location = new System.Drawing.Point(164, 466);
-            this.btnReporteCargos.Name = "btnReporteCargos";
-            this.btnReporteCargos.Size = new System.Drawing.Size(622, 68);
-            this.btnReporteCargos.TabIndex = 7;
-            this.btnReporteCargos.Text = "Cargos Adicionales";
-            this.btnReporteCargos.UseVisualStyleBackColor = false;
+            this.btnReporteVehiculos.Click += new System.EventHandler(this.btnReporteVehiculos_Click);
             // 
             // btnReporteEntregas
             // 
@@ -114,7 +60,7 @@
             this.btnReporteEntregas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReporteEntregas.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporteEntregas.ForeColor = System.Drawing.Color.White;
-            this.btnReporteEntregas.Location = new System.Drawing.Point(164, 540);
+            this.btnReporteEntregas.Location = new System.Drawing.Point(164, 325);
             this.btnReporteEntregas.Name = "btnReporteEntregas";
             this.btnReporteEntregas.Size = new System.Drawing.Size(622, 69);
             this.btnReporteEntregas.TabIndex = 8;
@@ -127,12 +73,13 @@
             this.btnReportePendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReportePendientes.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportePendientes.ForeColor = System.Drawing.Color.White;
-            this.btnReportePendientes.Location = new System.Drawing.Point(164, 615);
+            this.btnReportePendientes.Location = new System.Drawing.Point(164, 400);
             this.btnReportePendientes.Name = "btnReportePendientes";
             this.btnReportePendientes.Size = new System.Drawing.Size(622, 69);
             this.btnReportePendientes.TabIndex = 9;
             this.btnReportePendientes.Text = "Pendientes de Pago";
             this.btnReportePendientes.UseVisualStyleBackColor = false;
+            this.btnReportePendientes.Click += new System.EventHandler(this.btnReportePendientes_Click);
             // 
             // label1
             // 
@@ -149,11 +96,22 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-37, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(988, 112);
             this.panel1.TabIndex = 10;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Location = new System.Drawing.Point(48, 32);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(127, 46);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel2
             // 
@@ -180,18 +138,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 805);
+            this.ClientSize = new System.Drawing.Size(951, 506);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnReportePendientes);
             this.Controls.Add(this.btnReporteEntregas);
-            this.Controls.Add(this.btnReporteCargos);
-            this.Controls.Add(this.btnReportePagos);
-            this.Controls.Add(this.btnReporteClientes);
-            this.Controls.Add(this.btnReporteAlquileres);
             this.Controls.Add(this.btnReporteVehiculos);
             this.Name = "FormReportes";
             this.Text = "FormReportes";
+            this.Load += new System.EventHandler(this.FormReportes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -202,15 +157,12 @@
 
         #endregion
         private System.Windows.Forms.Button btnReporteVehiculos;
-        private System.Windows.Forms.Button btnReporteAlquileres;
-        private System.Windows.Forms.Button btnReporteClientes;
-        private System.Windows.Forms.Button btnReportePagos;
-        private System.Windows.Forms.Button btnReporteCargos;
         private System.Windows.Forms.Button btnReporteEntregas;
         private System.Windows.Forms.Button btnReportePendientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

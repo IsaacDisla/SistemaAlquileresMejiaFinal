@@ -12,5 +12,10 @@ namespace Capa.Negocios
         {
             return reportesDAL.FacturaAlquiler(idAlquiler);
         }
+
+        public DataTable ReportePagosPendientes()
+        {
+            return reportesDAL.ReportePagosPendientes();
+        }
     }
 }

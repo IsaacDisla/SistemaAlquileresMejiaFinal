@@ -21,5 +21,28 @@ namespace Capa.Presentacion
         {
 
         }
+
+        private void btnReporteVehiculos_Click(object sender, EventArgs e)
+        {
+            FormReporteVehiculos1 frm = new FormReporteVehiculos1();
+            frm.ShowDialog(); // o frm.Show();
+        }
+
+        private void FormReportes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void btnReportePendientes_Click(object sender, EventArgs e)
+        {
+            Reportedepagos frm = new Reportedepagos();
+            frm.ShowDialog(); // o frm.Show();
+        }
     }
 }

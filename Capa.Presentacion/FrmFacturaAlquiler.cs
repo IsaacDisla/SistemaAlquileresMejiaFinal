@@ -27,18 +27,21 @@ namespace Capa.Presentacion
 
 
             DataTable dt =
-               reporteBL.ReporteFacturaAlquiler(idAlquiler);
+     reporteBL.ReporteFacturaAlquiler(idAlquiler);
 
             ReportDataSource rds =
                 new ReportDataSource("DataSet1", dt);
 
             reportViewer1.LocalReport.DataSources.Clear();
-
             reportViewer1.LocalReport.DataSources.Add(rds);
 
-            reportViewer1.RefreshReport();
+            reportViewer1.SetDisplayMode(
+                Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
 
-            this.reportViewer1.RefreshReport();
+            reportViewer1.ZoomMode =
+                Microsoft.Reporting.WinForms.ZoomMode.FullPage;
+
+            reportViewer1.RefreshReport();
 
         }
     }

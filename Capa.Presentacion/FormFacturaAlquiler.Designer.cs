@@ -34,9 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1131, 1055);
+            this.ClientSize = new System.Drawing.Size(1411, 1055);
             this.Name = "FormFacturaAlquiler";
             this.Text = "FormFacturaAlquiler";
+            this.Load += new System.EventHandler(this.FormFacturaAlquiler_Load);
             this.ResumeLayout(false);
 
         }

@@ -29,5 +29,10 @@ namespace Capa.Negocios
             return dal.BuscarClientes(buscar);
         }
 
+        public void Eliminar(int idCliente)
+        {
+            dal.EliminarCliente(idCliente);
+        }
+
     }
 }

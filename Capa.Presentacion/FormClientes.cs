@@ -27,15 +27,117 @@ namespace Capa.Presentacion
 
         }
 
+        private void AplicarPermisos()
+        {
+            if (Sesion.Rol == "Administrador")
+            {
+                return;
+            }
+
+            if (Sesion.Rol == "Gerente")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+            }
+
+            if (Sesion.Rol == "Empleado")
+            {
+                lblUsuarios.Visible = false;
+                lblRoles.Visible = false;
+                lblBackups.Visible = false;
+                lblReportes.Visible = false;
+            }
+        }
+
+        private void EstiloGridClientes()
+        {
+            dgvClientes.BorderStyle = BorderStyle.None;
+            dgvClientes.BackgroundColor = Color.White;
+
+            dgvClientes.EnableHeadersVisualStyles = false;
+
+            dgvClientes.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvClientes.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvClientes.ColumnHeadersHeight = 45;
+
+            dgvClientes.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvClientes.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvClientes.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvClientes.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvClientes.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvClientes.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvClientes.GridColor =
+                Color.LightGray;
+
+            dgvClientes.RowTemplate.Height = 35;
+
+            dgvClientes.RowHeadersVisible = false;
+
+            dgvClientes.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvClientes.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvClientes.MultiSelect = false;
+
+            dgvClientes.AllowUserToAddRows = false;
+
+            dgvClientes.AllowUserToDeleteRows = false;
+
+            dgvClientes.AllowUserToResizeRows = false;
+
+            dgvClientes.ReadOnly = true;
+        }
+
         private void FormClientes_Load(object sender, EventArgs e)
         {
-            ListarClientes();
+            try
+            {
+                EstiloGridClientes();
+                ListarClientes();
 
-            dgvClientes.Columns["Estado"].Visible = false;
+                dgvClientes.Columns["Estado"].Visible = false;
+                dgvClientes.Columns["Id_Cliente"].Visible = false;
 
-            lblUsuario.Text = Sesion.Nombre;
+                lblUsuario.Text = Sesion.Nombre;
+                lblRol.Text = Sesion.Rol;
 
-            lblRol.Text = Sesion.Rol;
+                AplicarPermisos();
+
+                txtBuscar.Text = "Buscar";
+                txtBuscar.ForeColor = Color.Gray;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el formulario\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void ListarClientes()
@@ -65,26 +167,33 @@ namespace Capa.Presentacion
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (clienteSeleccionado.Id_Cliente == 0)
+            try
             {
-                MessageBox.Show("Seleccione un cliente");
-                return;
+                Clientes c = new Clientes
+                {
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Cedula = txtCedula.Text,
+                    Telefono = txtTelefono.Text,
+                    Licencia = txtLicencia.Text,
+                    Nombre_Garante = txtNombreGarante.Text,
+                    Telefono_Garante = txtTelefonoGarante.Text
+                };
+
+                bl.Insertar(c);
+
+                MessageBox.Show("Cliente guardado correctamente");
+
+                Nuevo();
+                ListarClientes();
             }
-
-            clienteSeleccionado.Nombre = txtNombre.Text;
-            clienteSeleccionado.Apellido = txtApellido.Text;
-            clienteSeleccionado.Cedula = txtCedula.Text;
-            clienteSeleccionado.Telefono = txtTelefono.Text;
-            clienteSeleccionado.Licencia = txtLicencia.Text;
-            clienteSeleccionado.Nombre_Garante = txtNombreGarante.Text;
-            clienteSeleccionado.Telefono_Garante = txtTelefonoGarante.Text;
-
-            bl.Actualizar(clienteSeleccionado);
-
-            MessageBox.Show("Cliente actualizado correctamente");
-
-            Nuevo();
-            ListarClientes();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar cliente\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void dgvClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -142,7 +251,24 @@ namespace Capa.Presentacion
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            dgvClientes.DataSource = bl.Buscar(txtBuscar.Text);
+            try
+            {
+                if (txtBuscar.Text == "Buscar" || string.IsNullOrWhiteSpace(txtBuscar.Text))
+                {
+                    ListarClientes();
+                    return;
+                }
+
+                dgvClientes.DataSource = bl.Buscar(txtBuscar.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar clientes\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
         }
 
         private void AbrirFormulario(Form formulario)
@@ -208,6 +334,158 @@ namespace Capa.Presentacion
         {
             AbrirFormulario(new FormRoles());
         }
+
+        private void lblClientes_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormClientes());
+
+        }
+
+        private void lblVehiculos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormVehiculos());
+
+        }
+
+        private void lblAlquileres_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormAlquileres());
+
+        }
+
+        private void lblEntrega_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormEntregaVehiculo());
+
+        }
+
+        private void lblAdicionales_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormCargosAdicionales());
+
+        }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new Menu_FacturaAlquiler());
+
+        }
+
+        private void lblRoles_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormRoles());
+
+        }
+
+        private void lblBackups_Click_1(object sender, EventArgs e)
+        {
+            FormBackup frm = new FormBackup();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblReportes_Click(object sender, EventArgs e)
+        {
+            FormReportes frm = new FormReportes();
+
+            frm.StartPosition = FormStartPosition.CenterScreen;
+
+            frm.ShowDialog();
+        }
+
+        private void lblCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+      "¿Deseas cerrar sesión?",
+      "Cerrar Sesión",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                Sesion.IdUsuario = 0;
+                Sesion.Nombre = "";
+                Sesion.Rol = "";
+
+                FormLogin login = new FormLogin();
+                login.Show();
+
+                this.Close();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (clienteSeleccionado.Id_Cliente == 0)
+                {
+                    MessageBox.Show("Seleccione un cliente.");
+                    return;
+                }
+
+                DialogResult r = MessageBox.Show(
+                    "¿Desea eliminar este cliente?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (r == DialogResult.Yes)
+                {
+                    bl.Eliminar(clienteSeleccionado.Id_Cliente);
+
+                    clienteSeleccionado = new Clientes();
+
+                    txtBuscar.Text = "Buscar";
+                    txtBuscar.ForeColor = Color.Gray;
+
+                    ListarClientes();
+
+                    MessageBox.Show("Cliente eliminado correctamente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eliminar cliente\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void lblUsuarios_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormUsuarios());
+
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Buscar")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+            {
+                txtBuscar.Text = "Buscar";
+                txtBuscar.ForeColor = Color.Gray;
+
+                ListarClientes();
+            }
+        }
     }
-}
+    }
 

@@ -38,13 +38,75 @@ namespace Capa.Presentacion
 
         private void dgvAlquileres_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvAlquileres.DataSource =
-  bl.ListarAlquileresPendientesPago();
+
         }
 
         private void dgvAlquileres_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void EstiloGridAlquileres()
+        {
+            dgvAlquileres.BorderStyle = BorderStyle.None;
+            dgvAlquileres.BackgroundColor = Color.White;
+
+            dgvAlquileres.EnableHeadersVisualStyles = false;
+
+            dgvAlquileres.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dgvAlquileres.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.FromArgb(0, 0, 102);
+
+            dgvAlquileres.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dgvAlquileres.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI Semibold", 12, FontStyle.Bold);
+
+            dgvAlquileres.ColumnHeadersHeight = 45;
+
+            dgvAlquileres.DefaultCellStyle.BackColor =
+                Color.White;
+
+            dgvAlquileres.DefaultCellStyle.ForeColor =
+                Color.Black;
+
+            dgvAlquileres.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11);
+
+            dgvAlquileres.DefaultCellStyle.SelectionBackColor =
+                Color.FromArgb(65, 105, 225);
+
+            dgvAlquileres.DefaultCellStyle.SelectionForeColor =
+                Color.White;
+
+            dgvAlquileres.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(245, 245, 245);
+
+            dgvAlquileres.GridColor =
+                Color.LightGray;
+
+            dgvAlquileres.RowTemplate.Height = 35;
+
+            dgvAlquileres.RowHeadersVisible = false;
+
+            dgvAlquileres.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvAlquileres.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            dgvAlquileres.MultiSelect = false;
+
+            dgvAlquileres.AllowUserToAddRows = false;
+
+            dgvAlquileres.AllowUserToDeleteRows = false;
+
+            dgvAlquileres.AllowUserToResizeRows = false;
+
+            dgvAlquileres.ReadOnly = true;
         }
 
         private void FormBuscarAlquilerPago_Load(object sender, EventArgs e)
@@ -53,11 +115,28 @@ namespace Capa.Presentacion
             dgvAlquileres.DataSource =
       bl.ListarAlquileresPendientesPago();
 
-        
+            EstiloGridAlquileres();
+
+            dgvAlquileres.Columns["Id_Alquiler"].Width = 90;
+            dgvAlquileres.Columns["Cliente"].Width = 220;
+            dgvAlquileres.Columns["Total_Alquiler"].Width = 120;
+            dgvAlquileres.Columns["Total_Pagado"].Width = 120;
+            dgvAlquileres.Columns["Balance_Pendiente"].Width = 140;
+            dgvAlquileres.Columns["Estado_Alquiler"].Width = 120;
+
         }
 
         private void dgvAlquileres_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0)
+                return;
+
+            if (dgvAlquileres.Rows[e.RowIndex].Cells["Id_Alquiler"].Value == null)
+                return;
+
+            IdAlquilerSeleccionado =
+                Convert.ToInt32(
+                dgvAlquileres.Rows[e.RowIndex].Cells["Id_Alquiler"].Value);
             if (e.RowIndex >= 0)
             {
                 IdAlquilerSeleccionado =
@@ -85,6 +164,12 @@ namespace Capa.Presentacion
                 DialogResult = DialogResult.OK;
                 Close();
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

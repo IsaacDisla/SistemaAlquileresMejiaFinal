@@ -46,6 +46,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.8F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(610, 341);
+            this.label1.Location = new System.Drawing.Point(596, 322);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(206, 39);
             this.label1.TabIndex = 0;
@@ -65,7 +66,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.8F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(612, 203);
+            this.label2.Location = new System.Drawing.Point(592, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 39);
             this.label2.TabIndex = 1;
@@ -76,7 +77,7 @@
             this.txtUsuario.BackColor = System.Drawing.Color.White;
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(621, 245);
+            this.txtUsuario.Location = new System.Drawing.Point(601, 235);
             this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(435, 50);
@@ -91,7 +92,7 @@
             this.txtClave.BackColor = System.Drawing.Color.White;
             this.txtClave.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtClave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(621, 383);
+            this.txtClave.Location = new System.Drawing.Point(607, 364);
             this.txtClave.Multiline = true;
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(435, 47);
@@ -107,7 +108,7 @@
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(623, 508);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(611, 434);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(455, 66);
             this.btnIniciarSesion.TabIndex = 4;
@@ -119,7 +120,7 @@
             // 
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.btnSalir.Location = new System.Drawing.Point(622, 597);
+            this.btnSalir.Location = new System.Drawing.Point(611, 518);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(455, 67);
             this.btnSalir.TabIndex = 5;
@@ -217,7 +218,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(51)))));
             this.pictureBox1.Image = global::Capa.Presentacion.Properties.Resources._79740eb6_cc8b_4803_bd05_27aaf6e5ab91;
-            this.pictureBox1.Location = new System.Drawing.Point(0, -83);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(551, 893);
             this.pictureBox1.TabIndex = 0;
@@ -228,7 +229,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(613, 55);
+            this.label3.Location = new System.Drawing.Point(590, 43);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(296, 51);
             this.label3.TabIndex = 7;
@@ -239,7 +240,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label4.Location = new System.Drawing.Point(618, 117);
+            this.label4.Location = new System.Drawing.Point(594, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(460, 50);
             this.label4.TabIndex = 8;
@@ -250,7 +251,7 @@
             this.panel3.BackColor = System.Drawing.Color.DarkGray;
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F);
             this.panel3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel3.Location = new System.Drawing.Point(623, 284);
+            this.panel3.Location = new System.Drawing.Point(603, 274);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(454, 10);
             this.panel3.TabIndex = 9;
@@ -261,17 +262,32 @@
             this.panel4.BackColor = System.Drawing.Color.DarkGray;
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 1.8F);
             this.panel4.ForeColor = System.Drawing.Color.Transparent;
-            this.panel4.Location = new System.Drawing.Point(623, 420);
+            this.panel4.Location = new System.Drawing.Point(609, 401);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(455, 10);
             this.panel4.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.CausesValidation = false;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(611, 638);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(455, 53);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Cerrar Aplicacion";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1155, 700);
+            this.ClientSize = new System.Drawing.Size(1155, 703);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.label4);
@@ -315,6 +331,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button1;
     }
 }
 
