@@ -202,7 +202,7 @@
             this.lblCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCerrarSesion.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Menu;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(1280, 42);
+            this.lblCerrarSesion.Location = new System.Drawing.Point(1300, 42);
             this.lblCerrarSesion.Name = "lblCerrarSesion";
             this.lblCerrarSesion.Size = new System.Drawing.Size(201, 36);
             this.lblCerrarSesion.TabIndex = 45;
@@ -237,20 +237,20 @@
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.Location = new System.Drawing.Point(1016, 42);
+            this.lblRol.Font = new System.Drawing.Font("Cambria", 16F);
+            this.lblRol.Location = new System.Drawing.Point(1105, 42);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(72, 27);
+            this.lblRol.Size = new System.Drawing.Size(84, 32);
             this.lblRol.TabIndex = 23;
             this.lblRol.Text = "label1";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(1156, 42);
+            this.lblUsuario.Font = new System.Drawing.Font("Cambria", 16F);
+            this.lblUsuario.Location = new System.Drawing.Point(852, 42);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(72, 27);
+            this.lblUsuario.Size = new System.Drawing.Size(84, 32);
             this.lblUsuario.TabIndex = 22;
             this.lblUsuario.Text = "label1";
             // 

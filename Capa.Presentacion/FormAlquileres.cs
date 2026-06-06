@@ -207,6 +207,20 @@ namespace Capa.Presentacion
             }
         }
 
+        private void CargarClientes()
+        {
+            ClientesBL bl = new ClientesBL();
+
+            cbCliente.DataSource = bl.ListarClientesCombo();
+            cbCliente.DisplayMember = "NombreCompleto";
+            cbCliente.ValueMember = "Id_Cliente";
+
+            if (cbCliente.Items.Count > 0)
+            {
+                cbCliente.SelectedIndex = cbCliente.Items.Count - 1;
+            }
+        }
+
         private void FormAlquileres_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = Sesion.Nombre;
@@ -725,28 +739,7 @@ namespace Capa.Presentacion
             }
         }
 
-        private void CargarClientes()
-        {
-            try
-            {
-                cbCliente.DataSource = clienteBL.Listar();
 
-                cbCliente.DisplayMember = "Cliente"; // o "Nombre" si aún no has creado Cliente
-                cbCliente.ValueMember = "Id_Cliente";
-
-                if (cbCliente.Items.Count > 0)
-                {
-                    cbCliente.SelectedIndex =
-                        cbCliente.Items.Count - 1;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Error al cargar clientes: " +
-                    ex.Message);
-            }
-        }
 
         private void lblCerrarSesion_Click_1(object sender, EventArgs e)
         {
@@ -820,6 +813,11 @@ namespace Capa.Presentacion
 
                 CargarAlquileres();
             }
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

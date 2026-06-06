@@ -76,5 +76,22 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void ActualizarCargoAdicional(CargosAdicionales cargo)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("sp_ActualizarCargoAdicional", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id_Cargo", cargo.Id_Cargo);
+                cmd.Parameters.AddWithValue("@Fecha", cargo.Fecha);
+                cmd.Parameters.AddWithValue("@Descripcion", cargo.Descripcion);
+                cmd.Parameters.AddWithValue("@Monto", cargo.Monto);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

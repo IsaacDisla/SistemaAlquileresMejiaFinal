@@ -13,6 +13,10 @@ namespace Capa.Negocios
             return dal.ListarClientes();
         }
 
+        public DataTable ListarClientesCombo()
+        {
+            return dal.ListarClientesCombo();
+        }
 
         public void Insertar(Clientes c)
         {

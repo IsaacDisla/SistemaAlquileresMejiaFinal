@@ -141,10 +141,45 @@
                   <PaddingBottom>2pt</PaddingBottom>
                 </Style>
               </Textbox>
+              <Textbox Name="Textbox12">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Fecha de generación: " &amp; Format(Today(), "dd/MM/yyyy")</Value>
+                        <Style>
+                          <FontFamily>Cambria</FontFamily>
+                          <FontSize>12pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox9</rd:DefaultName>
+                <Top>0.96954cm</Top>
+                <Left>24.1803cm</Left>
+                <Height>1.21383cm</Height>
+                <Width>5.39983cm</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>White</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
             <Height>3.33587cm</Height>
-            <Width>22.99731cm</Width>
+            <Width>30.1093cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -156,27 +191,27 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.43297cm</Width>
+                  <Width>3.44733cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.85547cm</Width>
+                  <Width>5.43788cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>5.30969cm</Width>
+                  <Width>4.83774cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.55286cm</Width>
+                  <Width>5.21687cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.87036cm</Width>
+                  <Width>5.16153cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.19303cm</Width>
+                  <Width>5.16153cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.76933cm</Height>
+                  <Height>0.93866cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -189,7 +224,7 @@
                                 <TextRun>
                                   <Value>Id Alquiler</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -207,7 +242,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <BackgroundColor>#0f2d52</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -227,7 +262,7 @@
                                 <TextRun>
                                   <Value>Cliente</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -245,7 +280,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <BackgroundColor>#0f2d52</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -265,7 +300,7 @@
                                 <TextRun>
                                   <Value>Fecha Inicio</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -283,7 +318,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <BackgroundColor>#0f2d52</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -303,7 +338,7 @@
                                 <TextRun>
                                   <Value>Total Alquiler</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -321,7 +356,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <BackgroundColor>#0f2d52</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -341,7 +376,7 @@
                                 <TextRun>
                                   <Value>Total Pagado</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -359,7 +394,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <BackgroundColor>#0f2d52</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -379,7 +414,7 @@
                                 <TextRun>
                                   <Value>Pendiente</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>White</Color>
@@ -397,7 +432,7 @@
                               <Color>LightGrey</Color>
                               <Style>Solid</Style>
                             </Border>
-                            <BackgroundColor>SeaGreen</BackgroundColor>
+                            <BackgroundColor>#0f2d52</BackgroundColor>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -422,12 +457,14 @@
                                 <TextRun>
                                   <Value>=Fields!Id_Alquiler.Value</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Id_Alquiler</rd:DefaultName>
@@ -455,7 +492,7 @@
                                 <TextRun>
                                   <Value>=Fields!Cliente.Value</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
@@ -488,12 +525,14 @@
                                 <TextRun>
                                   <Value>=Fields!Fecha_Inicio.Value</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Fecha_Inicio</rd:DefaultName>
@@ -521,12 +560,14 @@
                                 <TextRun>
                                   <Value>=Fields!Total_Alquiler.Value</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Total_Alquiler</rd:DefaultName>
@@ -554,12 +595,14 @@
                                 <TextRun>
                                   <Value>=Fields!Total_Pagado.Value</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Total_Pagado</rd:DefaultName>
@@ -587,12 +630,14 @@
                                 <TextRun>
                                   <Value>=Fields!Pendiente.Value</Value>
                                   <Style>
-                                    <FontFamily>cambria</FontFamily>
+                                    <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>11pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Pendiente</rd:DefaultName>
@@ -636,8 +681,8 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>4.7117cm</Top>
             <Left>0.59242cm</Left>
-            <Height>1.962cm</Height>
-            <Width>22.21439cm</Width>
+            <Height>2.13133cm</Height>
+            <Width>29.26288cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -655,7 +700,7 @@
                     <Value>TABLA DE PAGOS PENDIENTES</Value>
                     <Style>
                       <FontFamily>cambria</FontFamily>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>16pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -666,8 +711,8 @@
             <rd:DefaultName>Textbox27</rd:DefaultName>
             <Top>3.7592cm</Top>
             <Left>0.59242cm</Left>
-            <Height>0.6cm</Height>
-            <Width>7.34678cm</Width>
+            <Height>0.77611cm</Height>
+            <Width>8.29928cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -680,52 +725,18 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>7.56667in</Height>
+        <Height>7.875in</Height>
         <Style />
       </Body>
-      <Width>9.05406in</Width>
+      <Width>11.85406in</Width>
       <Page>
         <PageFooter>
-          <Height>2.54cm</Height>
+          <Height>2.4765cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
             <Rectangle Name="Rectangle1">
               <ReportItems>
-                <Textbox Name="Textbox12">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>="Fecha de generación: " &amp; Format(Today(), "dd/MM/yyyy")</Value>
-                          <Style>
-                            <FontFamily>Cambria</FontFamily>
-                            <FontSize>12pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                            <Color>White</Color>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox9</rd:DefaultName>
-                  <Top>0.53678cm</Top>
-                  <Left>16.24753cm</Left>
-                  <Height>1.21383cm</Height>
-                  <Width>3.62183cm</Width>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
                 <Textbox Name="Textbox14">
                   <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
@@ -746,11 +757,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox12</rd:DefaultName>
-                  <Top>0.53678cm</Top>
-                  <Left>9.0932cm</Left>
+                  <Top>0.73641cm</Top>
+                  <Left>17.5387cm</Left>
                   <Height>0.6635cm</Height>
                   <Width>3.72766cm</Width>
-                  <ZIndex>1</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -780,11 +790,60 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox13</rd:DefaultName>
-                  <Top>1.20028cm</Top>
-                  <Left>8.5217cm</Left>
+                  <Top>1.39991cm</Top>
+                  <Left>17.5387cm</Left>
                   <Height>0.6cm</Height>
-                  <Width>4.99767cm</Width>
+                  <Width>7.66467cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Line Name="Line1">
+                  <Top>0.73641cm</Top>
+                  <Left>16.9272cm</Left>
+                  <Height>1.40733cm</Height>
+                  <Width>0cm</Width>
                   <ZIndex>2</ZIndex>
+                  <Style>
+                    <Border>
+                      <Color>White</Color>
+                      <Style>Solid</Style>
+                      <Width>3pt</Width>
+                    </Border>
+                  </Style>
+                </Line>
+                <Textbox Name="Textbox2">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>="Reporte generado por: " &amp; Parameters!UsuarioGenerador.Value</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>14pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                            <Color>White</Color>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox2</rd:DefaultName>
+                  <Top>0.73641cm</Top>
+                  <Left>4.7117cm</Left>
+                  <Height>1.02033cm</Height>
+                  <Width>11.11483cm</Width>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -797,9 +856,9 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.22108cm</Top>
-              <Height>2.09783cm</Height>
-              <Width>22.80681cm</Width>
+              <Top>0.03528cm</Top>
+              <Height>2.34713cm</Height>
+              <Width>30.1093cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -825,10 +884,23 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="UsuarioGenerador">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>UsuarioGenerador</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <EmbeddedImages>

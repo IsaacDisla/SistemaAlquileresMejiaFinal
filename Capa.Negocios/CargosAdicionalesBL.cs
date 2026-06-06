@@ -37,5 +37,10 @@ namespace Capa.Negocios
         {
             return dal.ListarDetallesEntregados();
         }
+
+        public void ActualizarCargoAdicional(CargosAdicionales cargo)
+        {
+            dal.ActualizarCargoAdicional(cargo);
+        }
     }
 }

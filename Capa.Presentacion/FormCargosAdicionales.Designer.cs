@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label15;
-            this.txtIdDetalle = new System.Windows.Forms.TextBox();
             this.txtVehiculo = new System.Windows.Forms.TextBox();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -40,7 +39,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnBuscarDetalle = new System.Windows.Forms.Button();
             this.txtMonto = new System.Windows.Forms.TextBox();
-            this.dgvCargos = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,6 +46,7 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Vehiculo = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -90,8 +88,8 @@
             this.lblPagos = new System.Windows.Forms.Label();
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
+            this.dgvCargos = new System.Windows.Forms.DataGridView();
             label15 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -110,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -123,17 +122,6 @@
             label15.Size = new System.Drawing.Size(182, 21);
             label15.TabIndex = 40;
             label15.Text = "Y ALQUILA UN COCHE";
-            // 
-            // txtIdDetalle
-            // 
-            this.txtIdDetalle.BackColor = System.Drawing.Color.White;
-            this.txtIdDetalle.Font = new System.Drawing.Font("Cambria", 12.2F);
-            this.txtIdDetalle.Location = new System.Drawing.Point(51, 47);
-            this.txtIdDetalle.Multiline = true;
-            this.txtIdDetalle.Name = "txtIdDetalle";
-            this.txtIdDetalle.ReadOnly = true;
-            this.txtIdDetalle.Size = new System.Drawing.Size(266, 36);
-            this.txtIdDetalle.TabIndex = 48;
             // 
             // txtVehiculo
             // 
@@ -149,17 +137,17 @@
             // 
             this.txtCliente.BackColor = System.Drawing.Color.White;
             this.txtCliente.Font = new System.Drawing.Font("Cambria", 12.2F);
-            this.txtCliente.Location = new System.Drawing.Point(471, 52);
+            this.txtCliente.Location = new System.Drawing.Point(55, 47);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.ReadOnly = true;
-            this.txtCliente.Size = new System.Drawing.Size(373, 31);
+            this.txtCliente.Size = new System.Drawing.Size(262, 31);
             this.txtCliente.TabIndex = 50;
             this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // dtpFecha
             // 
             this.dtpFecha.Font = new System.Drawing.Font("Cambria", 12.2F);
-            this.dtpFecha.Location = new System.Drawing.Point(53, 274);
+            this.dtpFecha.Location = new System.Drawing.Point(479, 48);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(376, 31);
             this.dtpFecha.TabIndex = 51;
@@ -169,9 +157,9 @@
             // 
             this.cbTipoCargo.Font = new System.Drawing.Font("Cambria", 12.2F);
             this.cbTipoCargo.FormattingEnabled = true;
-            this.cbTipoCargo.Location = new System.Drawing.Point(471, 116);
+            this.cbTipoCargo.Location = new System.Drawing.Point(56, 266);
             this.cbTipoCargo.Name = "cbTipoCargo";
-            this.cbTipoCargo.Size = new System.Drawing.Size(262, 31);
+            this.cbTipoCargo.Size = new System.Drawing.Size(373, 31);
             this.cbTipoCargo.TabIndex = 52;
             // 
             // txtDescripcion
@@ -187,10 +175,10 @@
             // 
             this.txtEstadoAlquiler.BackColor = System.Drawing.Color.White;
             this.txtEstadoAlquiler.Font = new System.Drawing.Font("Cambria", 12.2F);
-            this.txtEstadoAlquiler.Location = new System.Drawing.Point(471, 189);
+            this.txtEstadoAlquiler.Location = new System.Drawing.Point(479, 116);
             this.txtEstadoAlquiler.Name = "txtEstadoAlquiler";
             this.txtEstadoAlquiler.ReadOnly = true;
-            this.txtEstadoAlquiler.Size = new System.Drawing.Size(385, 31);
+            this.txtEstadoAlquiler.Size = new System.Drawing.Size(221, 31);
             this.txtEstadoAlquiler.TabIndex = 54;
             // 
             // btnGuardar
@@ -199,9 +187,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Cambria", 15.2F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(527, 236);
+            this.btnGuardar.Location = new System.Drawing.Point(479, 233);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(161, 69);
+            this.btnGuardar.Size = new System.Drawing.Size(221, 69);
             this.btnGuardar.TabIndex = 55;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -213,11 +201,11 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Cambria", 15.2F);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(706, 236);
+            this.btnNuevo.Location = new System.Drawing.Point(948, 236);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(167, 69);
+            this.btnNuevo.Size = new System.Drawing.Size(207, 69);
             this.btnNuevo.TabIndex = 56;
-            this.btnNuevo.Text = "Cancelar";
+            this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -238,22 +226,12 @@
             // txtMonto
             // 
             this.txtMonto.Font = new System.Drawing.Font("Cambria", 12.2F);
-            this.txtMonto.Location = new System.Drawing.Point(51, 189);
+            this.txtMonto.Location = new System.Drawing.Point(52, 198);
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(376, 31);
             this.txtMonto.TabIndex = 58;
             this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
-            // 
-            // dgvCargos
-            // 
-            this.dgvCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCargos.Location = new System.Drawing.Point(484, 634);
-            this.dgvCargos.Name = "dgvCargos";
-            this.dgvCargos.RowHeadersWidth = 51;
-            this.dgvCargos.RowTemplate.Height = 24;
-            this.dgvCargos.Size = new System.Drawing.Size(1329, 335);
-            this.dgvCargos.TabIndex = 59;
-            this.dgvCargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargos_CellContentClick);
+            this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // panel3
             // 
@@ -330,6 +308,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnActualizar);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
@@ -337,7 +316,6 @@
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.Vehiculo);
-            this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.txtMonto);
             this.panel4.Controls.Add(this.btnBuscarDetalle);
             this.panel4.Controls.Add(this.btnNuevo);
@@ -348,12 +326,25 @@
             this.panel4.Controls.Add(this.dtpFecha);
             this.panel4.Controls.Add(this.txtCliente);
             this.panel4.Controls.Add(this.txtVehiculo);
-            this.panel4.Controls.Add(this.txtIdDetalle);
             this.panel4.Location = new System.Drawing.Point(484, 234);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1329, 327);
             this.panel4.TabIndex = 64;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnActualizar.Font = new System.Drawing.Font("Cambria", 15.2F);
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(719, 236);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(207, 69);
+            this.btnActualizar.TabIndex = 71;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label16
             // 
@@ -369,7 +360,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Cambria", 13.8F);
-            this.label10.Location = new System.Drawing.Point(58, 241);
+            this.label10.Location = new System.Drawing.Point(484, 15);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 27);
             this.label10.TabIndex = 69;
@@ -379,7 +370,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Cambria", 13.8F);
-            this.label9.Location = new System.Drawing.Point(467, 161);
+            this.label9.Location = new System.Drawing.Point(484, 86);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(164, 27);
             this.label9.TabIndex = 68;
@@ -389,7 +380,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cambria", 13.8F);
-            this.label5.Location = new System.Drawing.Point(469, 86);
+            this.label5.Location = new System.Drawing.Point(54, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 27);
             this.label5.TabIndex = 67;
@@ -399,7 +390,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Cambria", 13.8F);
-            this.label8.Location = new System.Drawing.Point(467, 15);
+            this.label8.Location = new System.Drawing.Point(50, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(80, 27);
             this.label8.TabIndex = 66;
@@ -409,7 +400,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 13.8F);
-            this.label4.Location = new System.Drawing.Point(50, 159);
+            this.label4.Location = new System.Drawing.Point(54, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 27);
             this.label4.TabIndex = 65;
@@ -424,16 +415,6 @@
             this.Vehiculo.Size = new System.Drawing.Size(95, 27);
             this.Vehiculo.TabIndex = 64;
             this.Vehiculo.Text = "Vehiculo";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 13.8F);
-            this.label2.Location = new System.Drawing.Point(46, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 27);
-            this.label2.TabIndex = 63;
-            this.label2.Text = "Detalle";
             // 
             // panel5
             // 
@@ -862,22 +843,32 @@
             this.lblClientes.Text = "Clientes";
             this.lblClientes.Click += new System.EventHandler(this.lblClientes_Click);
             // 
+            // dgvCargos
+            // 
+            this.dgvCargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCargos.Location = new System.Drawing.Point(485, 639);
+            this.dgvCargos.Name = "dgvCargos";
+            this.dgvCargos.RowHeadersWidth = 51;
+            this.dgvCargos.RowTemplate.Height = 24;
+            this.dgvCargos.Size = new System.Drawing.Size(1328, 367);
+            this.dgvCargos.TabIndex = 68;
+            this.dgvCargos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargos_CellDoubleClick_2);
+            // 
             // FormCargosAdicionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.dgvCargos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.dgvCargos);
             this.Controls.Add(this.panel3);
             this.Name = "FormCargosAdicionales";
             this.Text = "FormCargosAdicionales";
             this.Load += new System.EventHandler(this.FormCargosAdicionales_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -902,6 +893,7 @@
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCargos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -914,8 +906,6 @@
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnBuscarDetalle;
         private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.DataGridView dgvCargos;
-        public System.Windows.Forms.TextBox txtIdDetalle;
         public System.Windows.Forms.TextBox txtVehiculo;
         public System.Windows.Forms.TextBox txtCliente;
         public System.Windows.Forms.TextBox txtEstadoAlquiler;
@@ -934,7 +924,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Vehiculo;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
@@ -968,5 +957,7 @@
         private System.Windows.Forms.Label lblVehiculos;
         private System.Windows.Forms.Label lblClientes;
         private System.Windows.Forms.Label lblCerrarSesion;
+        private System.Windows.Forms.Button btnActualizar;
+        private System.Windows.Forms.DataGridView dgvCargos;
     }
 }

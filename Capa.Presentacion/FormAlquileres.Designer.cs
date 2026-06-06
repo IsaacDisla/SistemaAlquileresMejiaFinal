@@ -557,21 +557,22 @@
             // 
             // cbCliente
             // 
-            this.cbCliente.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCliente.Font = new System.Drawing.Font("Cambria", 13F);
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(14, 93);
             this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(414, 31);
+            this.cbCliente.Size = new System.Drawing.Size(414, 34);
             this.cbCliente.TabIndex = 0;
+            this.cbCliente.SelectedIndexChanged += new System.EventHandler(this.cbCliente_SelectedIndexChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Cambria", 13F);
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(10, 61);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 23);
+            this.label9.Size = new System.Drawing.Size(86, 26);
             this.label9.TabIndex = 31;
             this.label9.Text = "Clientes";
             // 
@@ -649,7 +650,7 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Cambria", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(998, 39);
+            this.lblUsuario.Location = new System.Drawing.Point(963, 36);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(90, 33);
             this.lblUsuario.TabIndex = 1;

@@ -17,8 +17,9 @@ namespace Capa.Presentacion
     {
         CargosAdicionalesBL bl = new CargosAdicionalesBL();
 
+        private int idCargoSeleccionado = 0;
 
-
+        private int idDetalleSeleccionado = 0;
         public FormCargosAdicionales()
         {
             InitializeComponent();
@@ -115,6 +116,17 @@ namespace Capa.Presentacion
             dgvCargos.ReadOnly = true;
         }
 
+        public void CargarDetalle(int idDetalle,
+                           string cliente,
+                           string vehiculo,
+                           string estado)
+        {
+            idDetalleSeleccionado = idDetalle;
+
+            txtCliente.Text = cliente;
+            txtVehiculo.Text = vehiculo;
+            txtEstadoAlquiler.Text = estado;
+        }
         private void FormCargosAdicionales_Load(object sender, EventArgs e)
         {
             EstiloGridCargos();
@@ -144,7 +156,6 @@ namespace Capa.Presentacion
                 dgvCargos.Columns["Id_Detalle"].Visible = false;
             }
 
-            txtIdDetalle.ReadOnly = true;
             txtCliente.ReadOnly = true;
             txtVehiculo.ReadOnly = true;
             txtEstadoAlquiler.ReadOnly = true;
@@ -165,6 +176,7 @@ namespace Capa.Presentacion
             dgvCargos.DataSource = null;
             dgvCargos.DataSource =
                 bl.ListarCargosAdicionales();
+
         }
 
         private void btnBuscarDetalle_Click(object sender, EventArgs e)
@@ -185,37 +197,47 @@ namespace Capa.Presentacion
         {
             try
             {
-                CargosAdicionales cargo =
-                    new CargosAdicionales();
+                if (!ValidarCampos())
+                    return;
 
-                cargo.Id_Detalle =
-                    Convert.ToInt32(txtIdDetalle.Text);
+                CargosAdicionales cargo = new CargosAdicionales();
 
-                cargo.Fecha =
-                    dtpFecha.Value;
-
-                cargo.Descripcion =
-                    cbTipoCargo.Text + " - " +
-                    txtDescripcion.Text;
-
-                cargo.Monto =
-                    Convert.ToDecimal(txtMonto.Text);
+                cargo.Id_Detalle = idDetalleSeleccionado;
+                cargo.Fecha = dtpFecha.Value;
+                cargo.Descripcion = cbTipoCargo.Text + " - " +
+                                    txtDescripcion.Text.Trim();
+                cargo.Monto = Convert.ToDecimal(txtMonto.Text);
 
                 bl.InsertarCargoAdicional(cargo);
 
-                CargarCargos(); // <-- refresca el grid
+                CargarCargos();
 
-                MessageBox.Show("Cargo agregado correctamente");
+                MessageBox.Show("Cargo agregado correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                btnNuevo.PerformClick();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("El monto tiene un formato incorrecto.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Error al guardar el cargo.\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            txtIdDetalle.Clear();
+            idDetalleSeleccionado = 0;
             txtCliente.Clear();
             txtVehiculo.Clear();
             txtEstadoAlquiler.Clear();
@@ -340,6 +362,185 @@ namespace Capa.Presentacion
         {
             AbrirFormulario(new FormClientes());
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idCargoSeleccionado == 0)
+                {
+                    MessageBox.Show("Seleccione un cargo para actualizar.",
+                        "Validación",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!ValidarCampos())
+                    return;
+
+                CargosAdicionales cargo = new CargosAdicionales();
+
+                cargo.Id_Cargo = idCargoSeleccionado;
+                cargo.Id_Detalle = idDetalleSeleccionado;
+                cargo.Fecha = dtpFecha.Value;
+                cargo.Descripcion = cbTipoCargo.Text + " - " +
+                                    txtDescripcion.Text.Trim();
+                cargo.Monto = Convert.ToDecimal(txtMonto.Text);
+
+                bl.ActualizarCargoAdicional(cargo);
+
+                CargarCargos();
+
+                if (dgvCargos.Columns.Contains("Id_Cargo"))
+                    dgvCargos.Columns["Id_Cargo"].Visible = false;
+
+                if (dgvCargos.Columns.Contains("Id_Detalle"))
+                    dgvCargos.Columns["Id_Detalle"].Visible = false;
+
+                btnNuevo.PerformClick();
+
+                dgvCargos.ClearSelection();
+
+                MessageBox.Show("Cargo actualizado correctamente.",
+                    "Éxito",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("El monto tiene un formato incorrecto.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el cargo.\n\n" + ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvCargos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+        private void dgvCargos_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvCargos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvCargos_CellDoubleClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCargos.CurrentRow == null)
+                return;
+
+            idCargoSeleccionado = Convert.ToInt32(
+                dgvCargos.CurrentRow.Cells["Id_Cargo"].Value);
+
+            idDetalleSeleccionado = Convert.ToInt32(
+                dgvCargos.CurrentRow.Cells["Id_Detalle"].Value);
+
+            dtpFecha.Value = Convert.ToDateTime(
+                dgvCargos.CurrentRow.Cells["Fecha"].Value);
+
+            txtVehiculo.Text =
+                dgvCargos.CurrentRow.Cells["Vehiculo"].Value.ToString();
+
+            txtMonto.Text =
+                dgvCargos.CurrentRow.Cells["Monto"].Value.ToString();
+
+            txtDescripcion.Text =
+                dgvCargos.CurrentRow.Cells["Descripcion"].Value.ToString();
+        }
+
+        private bool ValidarCampos()
+        {
+            if (idDetalleSeleccionado == 0)
+            {
+                MessageBox.Show("Debe seleccionar un detalle de alquiler.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return false;
+            }
+
+            if (cbTipoCargo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un tipo de cargo.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                cbTipoCargo.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                MessageBox.Show("Ingrese una descripción.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtDescripcion.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtMonto.Text))
+            {
+                MessageBox.Show("Ingrese un monto.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtMonto.Focus();
+                return false;
+            }
+
+            decimal monto;
+            if (!decimal.TryParse(txtMonto.Text, out monto))
+            {
+                MessageBox.Show("El monto ingresado no es válido.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtMonto.Focus();
+                return false;
+            }
+
+            if (monto <= 0)
+            {
+                MessageBox.Show("El monto debe ser mayor que cero.",
+                    "Validación",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                txtMonto.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.' &&
+                ((TextBox)sender).Text.Contains("."))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

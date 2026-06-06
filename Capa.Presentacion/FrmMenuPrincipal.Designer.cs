@@ -33,6 +33,7 @@
             this.lblRol = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
             this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -96,7 +97,6 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.panel15 = new System.Windows.Forms.Panel();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -183,6 +183,17 @@
             this.panel1.Size = new System.Drawing.Size(1658, 121);
             this.panel1.TabIndex = 31;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.Location = new System.Drawing.Point(538, 33);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(133, 38);
+            this.lblHora.TabIndex = 46;
+            this.lblHora.Text = "label10";
+            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // lblCerrarSesion
             // 
@@ -918,17 +929,6 @@
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox17.TabIndex = 56;
             this.pictureBox17.TabStop = false;
-            // 
-            // lblHora
-            // 
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.Location = new System.Drawing.Point(521, 47);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(133, 40);
-            this.lblHora.TabIndex = 46;
-            this.lblHora.Text = "label10";
-            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // timer1
             // 

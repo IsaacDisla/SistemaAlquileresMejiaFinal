@@ -17,6 +17,8 @@ namespace Capa.Presentacion
         public FormReporteVehiculos1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
         private void FormReporteVehiculos1_Load(object sender, EventArgs e)

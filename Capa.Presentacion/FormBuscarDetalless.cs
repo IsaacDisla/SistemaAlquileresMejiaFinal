@@ -31,8 +31,8 @@ namespace Capa.Presentacion
         {
             this.WindowState = FormWindowState.Maximized;
 
-            CargarDetalles();
-
+            EstiloGridDetalles(); // Aplicar diseño primero
+            CargarDetalles();     // Luego cargar datos
         }
 
         private void CargarDetalles()
@@ -51,21 +51,10 @@ namespace Capa.Presentacion
 
             if (frm != null)
             {
-                frm.txtIdDetalle.Text =
-                    dgvDetalles.CurrentRow.Cells["Id_Detalle"]
-                    .Value.ToString();
-
-                frm.txtCliente.Text =
-                    dgvDetalles.CurrentRow.Cells["Cliente"]
-                    .Value.ToString();
-
-                frm.txtVehiculo.Text =
-                    dgvDetalles.CurrentRow.Cells["Vehiculo"]
-                    .Value.ToString();
-
-                frm.txtEstadoAlquiler.Text =
-                    dgvDetalles.CurrentRow.Cells["Estado_Alquiler"]
-                    .Value.ToString();
+                frm.CargarDetalle(Convert.ToInt32(dgvDetalles.CurrentRow.Cells["Id_Detalle"].Value),
+                dgvDetalles.CurrentRow.Cells["Cliente"].Value.ToString(),
+                dgvDetalles.CurrentRow.Cells["Vehiculo"].Value.ToString(),
+                 dgvDetalles.CurrentRow.Cells["Estado_Alquiler"].Value.ToString());
             }
             this.Close();
         }
