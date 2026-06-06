@@ -105,6 +105,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Alquiler_VehiculosMJDataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Alquiler_VehiculosMJDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alquiler_VehiculosMJDataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConexionSistemaAlquilerVehiculos.cs" />
     <Compile Include="FormAlquileres.cs">
       <SubType>Form</SubType>
@@ -165,6 +170,12 @@
     </Compile>
     <Compile Include="FormFacturaAlquiler.Designer.cs">
       <DependentUpon>FormFacturaAlquiler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIngresos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIngresos.Designer.cs">
+      <DependentUpon>FormIngresos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -271,6 +282,9 @@
     <EmbeddedResource Include="FormFacturaAlquiler.resx">
       <DependentUpon>FormFacturaAlquiler.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormIngresos.resx">
+      <DependentUpon>FormIngresos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +331,7 @@
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="Reportedepagos.resx">
       <DependentUpon>Reportedepagos.cs</DependentUpon>
     </EmbeddedResource>
@@ -408,6 +423,17 @@
     </None>
     <None Include="Alquiler_VehiculosMJDataSet7.xss">
       <DependentUpon>Alquiler_VehiculosMJDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet8.xsc">
+      <DependentUpon>Alquiler_VehiculosMJDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alquiler_VehiculosMJDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Alquiler_VehiculosMJDataSet8.xss">
+      <DependentUpon>Alquiler_VehiculosMJDataSet8.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

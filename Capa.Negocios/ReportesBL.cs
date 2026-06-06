@@ -17,5 +17,10 @@ namespace Capa.Negocios
         {
             return reportesDAL.ReportePagosPendientes();
         }
+
+        public DataTable ReporteIngresosPorMes()
+        {
+            return reportesDAL.ReporteIngresosPorMes();
+        }
     }
 }

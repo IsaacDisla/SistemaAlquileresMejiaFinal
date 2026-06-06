@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa.Entidades;
 
 namespace Capa.Presentacion
 {
@@ -20,6 +21,9 @@ namespace Capa.Presentacion
         {
             InitializeComponent();
             this.idAlquiler = idAlquiler;
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
         private void FrmFacturaAlquiler_Load(object sender, EventArgs e)
@@ -29,17 +33,21 @@ namespace Capa.Presentacion
             DataTable dt =
      reporteBL.ReporteFacturaAlquiler(idAlquiler);
 
+            ReportParameter usuario =
+    new ReportParameter(
+        "UsuarioGenerador",
+        Sesion.Nombre);
+
+            reportViewer1.LocalReport.SetParameters(usuario);
+
             ReportDataSource rds =
                 new ReportDataSource("DataSet1", dt);
 
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(rds);
 
-            reportViewer1.SetDisplayMode(
-                Microsoft.Reporting.WinForms.DisplayMode.PrintLayout);
-
-            reportViewer1.ZoomMode =
-                Microsoft.Reporting.WinForms.ZoomMode.FullPage;
+            reportViewer1.SetDisplayMode(DisplayMode.Normal);
+            reportViewer1.ZoomMode = ZoomMode.PageWidth;
 
             reportViewer1.RefreshReport();
 

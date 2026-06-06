@@ -22,5 +22,11 @@ namespace Capa.Negocios
         {
             dal.ActualizarRol(rol);
         }
+
+        public DataTable ReporteIngresosPorMes()
+        {
+            ReportesDAL obj = new ReportesDAL();
+            return obj.ReporteIngresosPorMes();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Capa.Presentacion
 {
-    partial class FrmFacturaAlquiler
+    partial class FormIngresos
     {
         /// <summary>
         /// Required designer variable.
@@ -33,22 +33,22 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa.Presentacion.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa.Presentacion.Report4.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(69, 87);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1077, 1053);
+            this.reportViewer1.Size = new System.Drawing.Size(620, 338);
             this.reportViewer1.TabIndex = 0;
             // 
-            // FrmFacturaAlquiler
+            // FormIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 1055);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FrmFacturaAlquiler";
-            this.Text = "FrmFacturaAlquiler";
-            this.Load += new System.EventHandler(this.FrmFacturaAlquiler_Load);
+            this.Name = "FormIngresos";
+            this.Text = "FormIngresos";
+            this.Load += new System.EventHandler(this.FormIngresos_Load);
             this.ResumeLayout(false);
 
         }

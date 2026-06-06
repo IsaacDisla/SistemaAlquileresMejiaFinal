@@ -49,6 +49,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.dtFechaPago = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnReportePendientes = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
@@ -135,11 +136,11 @@
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(1040, 249);
+            this.dgvPagos.Location = new System.Drawing.Point(1005, 249);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
             this.dgvPagos.RowTemplate.Height = 24;
-            this.dgvPagos.Size = new System.Drawing.Size(872, 710);
+            this.dgvPagos.Size = new System.Drawing.Size(1012, 773);
             this.dgvPagos.TabIndex = 0;
             this.dgvPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellContentClick);
             // 
@@ -352,6 +353,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnReportePendientes);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.txtEstado);
@@ -369,11 +371,25 @@
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.txtIdAlquiler);
             this.panel5.Controls.Add(this.txtMontoPagado);
-            this.panel5.Location = new System.Drawing.Point(460, 238);
+            this.panel5.Location = new System.Drawing.Point(437, 238);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(562, 721);
+            this.panel5.Size = new System.Drawing.Size(562, 733);
             this.panel5.TabIndex = 39;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // btnReportePendientes
+            // 
+            this.btnReportePendientes.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnReportePendientes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReportePendientes.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportePendientes.ForeColor = System.Drawing.Color.White;
+            this.btnReportePendientes.Location = new System.Drawing.Point(11, 647);
+            this.btnReportePendientes.Name = "btnReportePendientes";
+            this.btnReportePendientes.Size = new System.Drawing.Size(542, 69);
+            this.btnReportePendientes.TabIndex = 45;
+            this.btnReportePendientes.Text = "Pendientes de Pago";
+            this.btnReportePendientes.UseVisualStyleBackColor = false;
+            this.btnReportePendientes.Click += new System.EventHandler(this.btnReportePendientes_Click);
             // 
             // label16
             // 
@@ -531,7 +547,7 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.label17);
-            this.panel4.Location = new System.Drawing.Point(460, 147);
+            this.panel4.Location = new System.Drawing.Point(437, 147);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(562, 102);
             this.panel4.TabIndex = 38;
@@ -553,9 +569,9 @@
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Location = new System.Drawing.Point(1040, 147);
+            this.panel8.Location = new System.Drawing.Point(1005, 147);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(872, 102);
+            this.panel8.Size = new System.Drawing.Size(949, 102);
             this.panel8.TabIndex = 41;
             // 
             // label3
@@ -958,12 +974,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.Controls.Add(this.dgvPagos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dgvPagos);
             this.Name = "FormPagos";
             this.Text = "FormPagos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1070,5 +1086,6 @@
         private System.Windows.Forms.Label lblCerrarSesion;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnReportePendientes;
     }
 }

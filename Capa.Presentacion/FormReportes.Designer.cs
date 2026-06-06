@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnReporteVehiculos = new System.Windows.Forms.Button();
-            this.btnReporteEntregas = new System.Windows.Forms.Button();
+            this.btnIngresos = new System.Windows.Forms.Button();
             this.btnReportePendientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,18 +54,19 @@
             this.btnReporteVehiculos.UseVisualStyleBackColor = false;
             this.btnReporteVehiculos.Click += new System.EventHandler(this.btnReporteVehiculos_Click);
             // 
-            // btnReporteEntregas
+            // btnIngresos
             // 
-            this.btnReporteEntregas.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnReporteEntregas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnReporteEntregas.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporteEntregas.ForeColor = System.Drawing.Color.White;
-            this.btnReporteEntregas.Location = new System.Drawing.Point(164, 325);
-            this.btnReporteEntregas.Name = "btnReporteEntregas";
-            this.btnReporteEntregas.Size = new System.Drawing.Size(622, 69);
-            this.btnReporteEntregas.TabIndex = 8;
-            this.btnReporteEntregas.Text = "Entregas de Vehículos";
-            this.btnReporteEntregas.UseVisualStyleBackColor = false;
+            this.btnIngresos.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnIngresos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngresos.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresos.ForeColor = System.Drawing.Color.White;
+            this.btnIngresos.Location = new System.Drawing.Point(164, 325);
+            this.btnIngresos.Name = "btnIngresos";
+            this.btnIngresos.Size = new System.Drawing.Size(622, 69);
+            this.btnIngresos.TabIndex = 8;
+            this.btnIngresos.Text = "Reporte de Ingresos";
+            this.btnIngresos.UseVisualStyleBackColor = false;
+            this.btnIngresos.Click += new System.EventHandler(this.btnIngresos_Click);
             // 
             // btnReportePendientes
             // 
@@ -142,7 +143,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnReportePendientes);
-            this.Controls.Add(this.btnReporteEntregas);
+            this.Controls.Add(this.btnIngresos);
             this.Controls.Add(this.btnReporteVehiculos);
             this.Name = "FormReportes";
             this.Text = "FormReportes";
@@ -157,7 +158,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnReporteVehiculos;
-        private System.Windows.Forms.Button btnReporteEntregas;
+        private System.Windows.Forms.Button btnIngresos;
         private System.Windows.Forms.Button btnReportePendientes;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;

@@ -55,5 +55,27 @@ namespace Capa.Datos
 
             return dt;
         }
+
+        public DataTable ReporteIngresosPorMes()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn =
+                new SqlConnection(conexion))
+            {
+                SqlCommand cmd =
+                    new SqlCommand("sp_ReporteIngresosPorMes", cn);
+
+                cmd.CommandType =
+                    CommandType.StoredProcedure;
+
+                SqlDataAdapter da =
+                    new SqlDataAdapter(cmd);
+
+                da.Fill(dt);
+            }
+
+            return dt;
+        }
     }
 }

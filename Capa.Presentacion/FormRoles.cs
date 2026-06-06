@@ -284,7 +284,7 @@ namespace Capa.Presentacion
         private void lblCerrarSesion_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show(
-      "¿Deseas cerrar sesión?",
+ "¿Deseas cerrar sesión?",
       "Cerrar Sesión",
       MessageBoxButtons.YesNo,
       MessageBoxIcon.Question);

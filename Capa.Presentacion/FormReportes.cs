@@ -44,5 +44,11 @@ namespace Capa.Presentacion
             Reportedepagos frm = new Reportedepagos();
             frm.ShowDialog(); // o frm.Show();
         }
+
+        private void btnIngresos_Click(object sender, EventArgs e)
+        {
+            FormIngresos frm = new FormIngresos();
+            frm.ShowDialog(); // o frm.Show();
+        }
     }
 }

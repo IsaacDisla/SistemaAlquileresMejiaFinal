@@ -98,5 +98,21 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public DataTable ListarClientesCombo()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("sp_ListarClientesCombo", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+
+            return dt;
+        }
     }
 }

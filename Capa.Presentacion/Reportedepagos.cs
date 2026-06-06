@@ -24,22 +24,24 @@ namespace Capa.Presentacion
 
         private void Reportedepagos_Load(object sender, EventArgs e)
         {
-
             try
             {
                 ReportesBL reporteBL = new ReportesBL();
 
-                DataTable dt =
-                    reporteBL.ReportePagosPendientes();
+                DataTable dt = reporteBL.ReportePagosPendientes();
 
                 reportViewer1.LocalReport.DataSources.Clear();
 
                 ReportDataSource rds =
-                    new ReportDataSource(
-                        "DataSet1",
-                        dt);
+                    new ReportDataSource("DataSet1", dt);
 
                 reportViewer1.LocalReport.DataSources.Add(rds);
+
+                // Asignar parámetro
+                ReportParameter usuario =
+                    new ReportParameter("UsuarioGenerador", Sesion.Nombre);
+
+                reportViewer1.LocalReport.SetParameters(usuario);
 
                 reportViewer1.RefreshReport();
             }
@@ -51,7 +53,7 @@ namespace Capa.Presentacion
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-        }
     }
+}
 }
 

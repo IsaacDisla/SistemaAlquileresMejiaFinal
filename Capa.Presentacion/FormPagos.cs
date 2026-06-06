@@ -592,6 +592,12 @@ namespace Capa.Presentacion
                 e.Handled = true;
             }
         }
+
+        private void btnReportePendientes_Click(object sender, EventArgs e)
+        {
+            Reportedepagos frm = new Reportedepagos();
+            frm.ShowDialog(); // o frm.Show();
         }
+    }
 }
 

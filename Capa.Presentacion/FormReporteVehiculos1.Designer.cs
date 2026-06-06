@@ -38,7 +38,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(12, 39);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1067, 1004);
+            this.reportViewer1.Size = new System.Drawing.Size(1449, 1004);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1091, 1055);
+            this.ClientSize = new System.Drawing.Size(1492, 1055);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormReporteVehiculos1";
