@@ -798,6 +798,7 @@
             this.lblPagos.Size = new System.Drawing.Size(90, 36);
             this.lblPagos.TabIndex = 27;
             this.lblPagos.Text = "Pagos";
+            this.lblPagos.Click += new System.EventHandler(this.lblPagos_Click_1);
             // 
             // lblVehiculos
             // 

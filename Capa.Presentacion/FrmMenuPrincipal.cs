@@ -250,5 +250,11 @@ namespace Capa.Presentacion
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss tt");
         }
+
+        private void lblPagos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(new FormPagos());
+
+        }
     }
 }
