@@ -542,5 +542,57 @@ namespace Capa.Presentacion
                 e.Handled = true;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idCargoSeleccionado == 0)
+                {
+                    MessageBox.Show("Seleccione un cargo para eliminar.");
+                    return;
+                }
+
+                DialogResult resultado = MessageBox.Show(
+                    "¿Está seguro de eliminar este cargo adicional?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    bl.EliminarCargoAdicional(idCargoSeleccionado);
+
+                    CargarCargos();
+
+                    if (dgvCargos.Columns.Contains("Id_Cargo"))
+                        dgvCargos.Columns["Id_Cargo"].Visible = false;
+
+                    if (dgvCargos.Columns.Contains("Id_Detalle"))
+                        dgvCargos.Columns["Id_Detalle"].Visible = false;
+
+                    idCargoSeleccionado = 0;
+                    idDetalleSeleccionado = 0;
+
+                    txtCliente.Clear();
+                    txtVehiculo.Clear();
+                    txtEstadoAlquiler.Clear();
+                    txtDescripcion.Clear();
+                    txtMonto.Clear();
+
+                    cbTipoCargo.SelectedIndex = -1;
+
+                    dtpFecha.Value = DateTime.Now;
+
+                    dgvCargos.ClearSelection();
+
+                    MessageBox.Show("Cargo eliminado correctamente.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

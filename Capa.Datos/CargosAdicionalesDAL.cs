@@ -93,5 +93,19 @@ namespace Capa.Datos
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void EliminarCargoAdicional(int idCargo)
+        {
+            using (SqlConnection cn = new SqlConnection(conexion))
+            {
+                SqlCommand cmd = new SqlCommand("sp_EliminarCargoAdicional", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Id_Cargo", idCargo);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

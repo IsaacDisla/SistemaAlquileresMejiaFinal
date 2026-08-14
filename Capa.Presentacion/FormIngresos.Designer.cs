@@ -34,17 +34,17 @@
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Capa.Presentacion.Report4.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(69, 87);
+            this.reportViewer1.Location = new System.Drawing.Point(28, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(620, 338);
+            this.reportViewer1.Size = new System.Drawing.Size(1324, 1031);
             this.reportViewer1.TabIndex = 0;
             // 
             // FormIngresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1360, 1055);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FormIngresos";
             this.Text = "FormIngresos";

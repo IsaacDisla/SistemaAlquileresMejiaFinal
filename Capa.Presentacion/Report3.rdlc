@@ -725,13 +725,13 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>7.875in</Height>
+        <Height>2.76667in</Height>
         <Style />
       </Body>
       <Width>11.85406in</Width>
       <Page>
         <PageFooter>
-          <Height>2.4765cm</Height>
+          <Height>2.77283cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -747,7 +747,7 @@
                           <Value>Mejia Rent A Car</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>11pt</FontSize>
+                            <FontSize>12pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                             <Color>White</Color>
                           </Style>
@@ -757,8 +757,8 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox12</rd:DefaultName>
-                  <Top>0.73641cm</Top>
-                  <Left>17.5387cm</Left>
+                  <Top>0.41486cm</Top>
+                  <Left>15.33737cm</Left>
                   <Height>0.6635cm</Height>
                   <Width>3.72766cm</Width>
                   <Style>
@@ -781,6 +781,7 @@
                           <Value>Tu mejor opcion para alquilar</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>12pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                             <Color>White</Color>
                           </Style>
@@ -790,9 +791,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox13</rd:DefaultName>
-                  <Top>1.39991cm</Top>
-                  <Left>17.5387cm</Left>
-                  <Height>0.6cm</Height>
+                  <Top>1.22219cm</Top>
+                  <Left>15.33737cm</Left>
+                  <Height>0.93867cm</Height>
                   <Width>7.66467cm</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -806,8 +807,8 @@
                   </Style>
                 </Textbox>
                 <Line Name="Line1">
-                  <Top>0.73641cm</Top>
-                  <Left>16.9272cm</Left>
+                  <Top>0.41486cm</Top>
+                  <Left>14.31537cm</Left>
                   <Height>1.40733cm</Height>
                   <Width>0cm</Width>
                   <ZIndex>2</ZIndex>
@@ -839,10 +840,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox2</rd:DefaultName>
-                  <Top>0.73641cm</Top>
-                  <Left>4.7117cm</Left>
+                  <Top>0.41486cm</Top>
+                  <Left>2.88304cm</Left>
                   <Height>1.02033cm</Height>
-                  <Width>11.11483cm</Width>
+                  <Width>10.34821cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -856,8 +857,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>0.03528cm</Top>
-              <Height>2.34713cm</Height>
+              <Height>2.77283cm</Height>
               <Width>30.1093cm</Width>
               <Style>
                 <Border>

@@ -136,11 +136,11 @@
             // dgvPagos
             // 
             this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagos.Location = new System.Drawing.Point(1005, 249);
+            this.dgvPagos.Location = new System.Drawing.Point(1005, 242);
             this.dgvPagos.Name = "dgvPagos";
             this.dgvPagos.RowHeadersWidth = 51;
             this.dgvPagos.RowTemplate.Height = 24;
-            this.dgvPagos.Size = new System.Drawing.Size(1012, 773);
+            this.dgvPagos.Size = new System.Drawing.Size(1032, 753);
             this.dgvPagos.TabIndex = 0;
             this.dgvPagos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagos_CellContentClick);
             // 
@@ -571,7 +571,7 @@
             this.panel8.Controls.Add(this.label3);
             this.panel8.Location = new System.Drawing.Point(1005, 147);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(949, 102);
+            this.panel8.Size = new System.Drawing.Size(1032, 102);
             this.panel8.TabIndex = 41;
             // 
             // label3

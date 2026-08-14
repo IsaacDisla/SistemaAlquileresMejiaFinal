@@ -89,6 +89,7 @@
             this.lblVehiculos = new System.Windows.Forms.Label();
             this.lblClientes = new System.Windows.Forms.Label();
             this.dgvCargos = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
             label15 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -187,7 +188,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Cambria", 15.2F);
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(479, 233);
+            this.btnGuardar.Location = new System.Drawing.Point(454, 236);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(221, 69);
             this.btnGuardar.TabIndex = 55;
@@ -201,7 +202,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNuevo.Font = new System.Drawing.Font("Cambria", 15.2F);
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(948, 236);
+            this.btnNuevo.Location = new System.Drawing.Point(1094, 236);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(207, 69);
             this.btnNuevo.TabIndex = 56;
@@ -308,6 +309,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btnEliminar);
             this.panel4.Controls.Add(this.btnActualizar);
             this.panel4.Controls.Add(this.label16);
             this.panel4.Controls.Add(this.label10);
@@ -338,7 +340,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnActualizar.Font = new System.Drawing.Font("Cambria", 15.2F);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(719, 236);
+            this.btnActualizar.Location = new System.Drawing.Point(681, 236);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(207, 69);
             this.btnActualizar.TabIndex = 71;
@@ -854,6 +856,20 @@
             this.dgvCargos.TabIndex = 68;
             this.dgvCargos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargos_CellDoubleClick_2);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Cambria", 15.2F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(894, 236);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(194, 69);
+            this.btnEliminar.TabIndex = 72;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // FormCargosAdicionales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -959,5 +975,6 @@
         private System.Windows.Forms.Label lblCerrarSesion;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridView dgvCargos;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

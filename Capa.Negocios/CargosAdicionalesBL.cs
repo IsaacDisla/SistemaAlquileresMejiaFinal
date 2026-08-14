@@ -42,5 +42,10 @@ namespace Capa.Negocios
         {
             dal.ActualizarCargoAdicional(cargo);
         }
+
+        public void EliminarCargoAdicional(int idCargo)
+        {
+            dal.EliminarCargoAdicional(idCargo);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Capa.Negocios;
+﻿using Capa.Entidades;
+using Capa.Negocios;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,9 @@ namespace Capa.Presentacion
         public FormIngresos()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
         }
 
         private void FormIngresos_Load(object sender, EventArgs e)
@@ -35,6 +39,12 @@ namespace Capa.Presentacion
                 reportViewer1.LocalReport.DataSources.Clear();
                 
                 ReportDataSource rds = new ReportDataSource("DataSet1",dt);
+
+                // Asignar parámetro
+                ReportParameter usuario =
+                    new ReportParameter("UsuarioGenerador", Sesion.Nombre);
+
+                reportViewer1.LocalReport.SetParameters(usuario);
 
                 reportViewer1.LocalReport.DataSources.Add(rds);
 
